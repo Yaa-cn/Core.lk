@@ -1,0 +1,23 @@
+import Category from '../componenets/Category'
+import Hero from '../componenets/Hero'
+import Newsletter from '../componenets/Newsletter'
+import RecentProducts from '../componenets/RecentProducts'
+import TitleBar from '../componenets/TitleBar'
+
+function Home() {
+
+  const titleColor = 'text-sec'
+  const titleStyles = 'sm:text-lg font-bold pt-4 sm:pt-5 pb-4 sm:pb-5 mx-6 sm:mx-10'
+
+  return (
+    <>
+    <Hero/>
+    <TitleBar firstText='Components' secText=' categories' className={titleStyles} color={titleColor} />
+    <Category/>
+    <TitleBar firstText='Recent' secText=' components' className={titleStyles} color={titleColor}/>
+    <RecentProducts/>
+    <Newsletter/>
+    </>
+  )
+}
+export default Home
