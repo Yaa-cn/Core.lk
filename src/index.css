@@ -3,28 +3,28 @@
 
 @font-face {
     font-family: Nunito;
-    src: url('/src/assets/fonts/nunito-latin-400-normal.woff');
+    src: url('/src/assets/fonts/nunito-latin-400-normal.woff2');
     font-weight: 400;
     font-display: block;
 }
 
 @font-face {
     font-family: Nunito;
-    src: url('/src/assets/fonts/nunito-latin-500-normal.woff');
+    src: url('/src/assets/fonts/nunito-latin-500-normal.woff2');
     font-weight: 500;
     font-display: block;
 }
 
 @font-face {
     font-family: Nunito;
-    src: url('/src/assets/fonts/nunito-latin-700-normal.woff');
+    src: url('/src/assets/fonts/nunito-latin-700-normal.woff2');
     font-weight: 700;
     font-display: block;
 }
 
 @font-face {
     font-family: Nunito;
-    src: url('/src/assets/fonts/nunito-latin-800-normal.woff');
+    src: url('/src/assets/fonts/nunito-latin-800-normal.woff2');
     font-weight: 800;
     font-display: block;
 }
