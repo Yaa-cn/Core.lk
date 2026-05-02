@@ -17,6 +17,7 @@ body {
 
 .nunito {
     font-family: 'Nunito', sans-serif;
+    font-display: block;
 }
 
 body::-webkit-scrollbar {
