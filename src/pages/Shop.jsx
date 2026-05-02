@@ -74,7 +74,7 @@ function Shop() {
       <div className="mainSection flex flex-col w-full">
 
         <div className={`${visibleSearchBar ? 'flex' : 'hidden'} shopSearchBar sm:flex bg-light mx-6 sm:mx-10 mt-6 mb-1 sm:mt-8 transition-all`}>
-          <input type="search" onChange={(e) => setTimeout(() => setSearchTerm(e.target.value), 1000)} placeholder="Search" className="border border-sec rounded-s-xs sm:rounded-e-xs px-4 py-2 text-xs w-full outline-0" />
+          <input type="search" onChange={(e) => setTimeout(() => setSearchTerm(e.target.value), 1000)} placeholder="Search" className="border border-sec rounded-s-xs sm:rounded-e-xs px-4 py-2 text-xs w-full outline-0 placeholder:tracking-wide" />
           <span onClick={() => setVisibleSearchBar(false)} className="border-e border-b border-t border-sec rounded-e-xs px-2.5 py-2 bg-mainBlur text-xs my-auto sm:hidden"><RiCloseLine size={16} /></span>
         </div>
 

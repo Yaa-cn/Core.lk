@@ -18,15 +18,15 @@ function Contact() {
           <form className="flex flex-col gap-7 text-xs">
             <div className="flex flex-col gap-5 mt-6">
               <input type="text" placeholder="Full Name"
-                className="px-4 py-2 bg-white text-slate-900 rounded-xs w-full border border-sec focus:border-main outline-0" />
+                className="px-4 py-2 bg-white text-slate-900 rounded-xs w-full border border-sec focus:border-main outline-0 placeholder:tracking-wide" />
               <input type="number" placeholder="Phone No."
-                className="px-4 py-2 bg-white text-slate-900 rounded-xs w-full border border-sec focus:border-main outline-0" />
+                className="px-4 py-2 bg-white text-slate-900 rounded-xs w-full border border-sec focus:border-main outline-0 placeholder:tracking-wide" />
               <input type="email" placeholder="Email"
-                className="px-4 py-2 bg-white text-slate-900 rounded-xs w-full border border-sec focus:border-main outline-0" />
+                className="px-4 py-2 bg-white text-slate-900 rounded-xs w-full border border-sec focus:border-main outline-0 placeholder:tracking-wide" />
               <input type="text" placeholder="Subject"
-                className="px-4 py-2 bg-white text-slate-900 rounded-xs w-full border border-sec focus:border-main outline-0" />
+                className="px-4 py-2 bg-white text-slate-900 rounded-xs w-full border border-sec focus:border-main outline-0 placeholder:tracking-wide" />
               <textarea placeholder="Write Message" rows="5"
-                className="px-4 pt-2 bg-white text-slate-900 rounded-xs w-full border border-sec focus:border-main outline-0"></textarea>
+                className="px-4 pt-2 bg-white text-slate-900 rounded-xs w-full border border-sec focus:border-main outline-0 placeholder:tracking-wide"></textarea>
             </div>
             <button type="button" className="w-full px-4 py-2 border-[1.5px] border-sec rounded-xs bg-mainBlur hover:bg-sec hover:text-white transition-colors cursor-pointer">
               Send message

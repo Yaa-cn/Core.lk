@@ -19,7 +19,7 @@ function About() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 nunito">
 
-        <div style={{ backgroundImage: `url(${Uss})` }} className="flex row-span-2 bg-cover bg-center h-[50vh] max-h-120 rounded-sm overflow-hidden border">
+        <div style={{ backgroundImage: `url(${Uss})` }} className="flex row-span-2 bg-cover bg-center h-full min-h-100 rounded-sm overflow-hidden border">
           <div className="flex p-8 bg-linear-to-t from-black h-full ">
             <div className="flex flex-col gap-2 mt-auto">
               <h4 className="font-medium text-white">Our Story</h4>
