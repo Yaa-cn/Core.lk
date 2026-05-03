@@ -4,20 +4,22 @@ import ProductCard from "../componenets/ProductCard"
 import { useEffect, useMemo, useState } from "react"
 import { useShop } from "../context/ShopContext"
 import { useFilter } from "../context/FilterContext"
-import { RiCloseLine, RiFilter3Line, RiCloseCircleFill } from "@remixicon/react"
+import { RiCloseLine, RiFilter3Line, RiCloseCircleFill, RiArrowUpSFill, RiArrowUpWideFill, RiArrowUpWideLine } from "@remixicon/react"
 import { useUi } from "../context/UiContext"
 
 function Shop() {
 
   const [visible, setVisible] = useState(false)
   const { visibleSearchBar, setVisibleSearchBar } = useUi()
+  const [query, setQuery] = useState('')
   const [searchTerm, setSearchTerm] = useState('')
   const { category, setCategory, sortBy, sortList } = useFilter()
-  const {
-    items,
-    loading,
-    setLoading
-  } = useShop()
+  const { items, loading, setLoading } = useShop()
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setSearchTerm(query), 500)
+    return () => clearTimeout(timeout)
+  }, [query])
 
   const products = useMemo(() => {
     return items.filter(item => category === 'all' ? true : item.category.toLowerCase() === category.toLowerCase())
@@ -29,7 +31,12 @@ function Shop() {
           case 'rating': return b.rating - a.rating;
           default: return 0;
         }
-      }).filter(item => item.title.toLowerCase().includes(searchTerm.toLowerCase()))
+      }).filter(item =>
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.description.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+
 
   }, [items, category, sortBy, searchTerm])
 
@@ -74,8 +81,8 @@ function Shop() {
       <div className="mainSection flex flex-col w-full">
 
         <div className={`${visibleSearchBar ? 'flex' : 'hidden'} shopSearchBar sm:flex bg-light mx-6 sm:mx-10 mt-6 mb-1 sm:mt-8 transition-all`}>
-          <input type="search" onChange={(e) => setTimeout(() => setSearchTerm(e.target.value), 1000)} placeholder="Search" className="border border-secondary rounded-s sm:rounded-e px-4 py-2 text-xs w-full outline-0 placeholder:tracking-wide" />
-          <span onClick={() => setVisibleSearchBar(false)} className="border-e border-b border-t border-secondary rounded-e px-2.5 py-2 bg-accent text-xs my-auto sm:hidden"><RiCloseCircleFill size={18} className="text-choco"/></span>
+          <input type="search" onChange={(e) => setQuery(e.target.value)} placeholder="Search" className="border border-secondary rounded-s-[3px] sm:rounded-e-[3px] px-4 py-2 sm:py-2.5 text-xs w-full outline-0 placeholder:tracking-wide" />
+          <span onClick={() => setVisibleSearchBar(false)} className="border-e border-b border-t border-secondary rounded-e-[3px] px-2.5 py-2 bg-accent text-xs my-auto sm:hidden cursor-pointer"><RiArrowUpWideLine size={18} className="text-secondary" /></span>
         </div>
 
         <div className="productsListSection">

@@ -19,7 +19,7 @@ function About() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 nunito">
 
-        <div style={{ backgroundImage: `url(${Uss})` }} className="flex row-span-2 bg-cover bg-center h-full min-h-100 rounded-sm overflow-hidden border">
+        <div style={{ backgroundImage: `url(${Uss})` }} className="flex row-span-2 bg-cover bg-center h-full min-h-100 rounded-sm overflow-hidden border border-neutral-600">
           <div className="flex p-8 bg-linear-to-t from-black h-full ">
             <div className="flex flex-col gap-2 mt-auto">
               <h4 className="font-medium text-white">Our Story</h4>
@@ -30,12 +30,12 @@ function About() {
           </div>
         </div>
 
-        <div className="flex flex-col justify-end gap-2 col-span-1 bg-accent p-8 rounded-sm border border-secondary">
+        <div className="flex flex-col justify-end gap-2 min-h-45 col-span-1 bg-accent p-8 rounded-sm border border-secondary">
           <h4 className="font-medium">Our Mission</h4>
           <p className="text-sm text-gray-600">To provide high-quality, affordable computer accessories while making technology accessible to everyone.</p>
         </div>
 
-        <div className="flex flex-col justify-end gap-2 col-span-1 bg-primary p-8 rounded-sm border border-glassBlack">
+        <div className="flex flex-col justify-end gap-2 min-h-45 col-span-1 bg-primary p-8 rounded-sm border border-neutral-600">
           <h4 className="font-medium text-white">Our Vision</h4>
           <p className="text-sm text-gray-200">To become a leading and trusted name in the tech industry, empowering users to build and innovate with confidence.</p>
         </div>

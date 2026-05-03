@@ -31,10 +31,9 @@
 
 :root {
     --color-primary: #936639;
+    --color-secondary: #b08968;
     --color-light: #fffbf7;
-    --color-secondary: #a68a64;
     --color-accent: #eee6dd;
-    --color-choco: #b08968;
 }
 
 body {
@@ -56,25 +55,6 @@ body::-webkit-scrollbar {
 
 .showBar::-webkit-scrollbar {
     display: block;
-}
-
-
-/* Button */
-
-.btn {
-    background-color: var(--color-accent);
-    border: solid 2px var(--color-secondary);
-    padding: 6px 12px;
-    border-radius: 2px;
-    font-size: 12px;
-    width: fit-content;
-    cursor: pointer;
-    backdrop-filter: blur(2px);
-}
-
-.btn:hover {
-    transform: translate(2px);
-    transition: ease 0.3s;
 }
 
 
@@ -119,7 +99,7 @@ body::-webkit-scrollbar {
 }
 
 .navBtn:hover {
-    transform: translate(2px);
+    transform: translateX(2px);
     transition: ease 0.3s;
 }
 
