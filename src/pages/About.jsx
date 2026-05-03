@@ -30,12 +30,12 @@ function About() {
           </div>
         </div>
 
-        <div className="flex flex-col justify-end gap-2 col-span-1 bg-mainBlur p-8 rounded-sm border border-sec">
+        <div className="flex flex-col justify-end gap-2 col-span-1 bg-accent p-8 rounded-sm border border-secondary">
           <h4 className="font-medium">Our Mission</h4>
           <p className="text-sm text-gray-600">To provide high-quality, affordable computer accessories while making technology accessible to everyone.</p>
         </div>
 
-        <div className="flex flex-col justify-end gap-2 col-span-1 bg-main p-8 rounded-sm border border-glassBlack">
+        <div className="flex flex-col justify-end gap-2 col-span-1 bg-primary p-8 rounded-sm border border-glassBlack">
           <h4 className="font-medium text-white">Our Vision</h4>
           <p className="text-sm text-gray-200">To become a leading and trusted name in the tech industry, empowering users to build and innovate with confidence.</p>
         </div>

@@ -20,7 +20,7 @@ function ProductCard({ id, imgSrc, imgAlt, category, name, price, rating }) {
 
         <div className="flex justify-between">
           <p className='text-xs xl:text-sm font-medium my-auto'>{price} LKR</p>
-          <button onClick={() => deleteItem(id)} className='rounded-full bg-mainBlur w-7 sm:w-8 h-7 sm:h-8 border border-sec cursor-pointer hover:bg-sec hover:text-white transition ease-in duration-200'><RiShoppingCart2Fill className="m-auto w-3.5 h-3.5 sm:w-4 sm:h-4" /></button>
+          <button onClick={() => deleteItem(id)} className='rounded-full bg-accent w-7 sm:w-8 h-7 sm:h-8 border border-secondary cursor-pointer hover:bg-secondary hover:text-white transition ease-in duration-200'><RiShoppingCart2Fill className="m-auto w-3.5 h-3.5 sm:w-4 sm:h-4" /></button>
         </div>
       </div>
     </div>

@@ -30,16 +30,15 @@
 }
 
 :root {
-    --main: #936639;
-    --light: #FFFBF7;
-    --sec: #a68a64;
-    --mainBlur: #93663920;
-    --glassBlack: #00000030;
-    --glassWhite: #ffffff50;
+    --color-primary: #936639;
+    --color-light: #fffbf7;
+    --color-secondary: #a68a64;
+    --color-accent: #eee6dd;
+    --color-choco: #b08968;
 }
 
 body {
-    background-color: var(--light);
+    background-color: var(--color-light);
     scroll-behavior: smooth;
 }
 
@@ -63,8 +62,8 @@ body::-webkit-scrollbar {
 /* Button */
 
 .btn {
-    background-color: var(--mainBlur);
-    border: solid 2px var(--sec);
+    background-color: var(--color-accent);
+    border: solid 2px var(--color-secondary);
     padding: 6px 12px;
     border-radius: 2px;
     font-size: 12px;
@@ -92,7 +91,7 @@ body::-webkit-scrollbar {
     bottom: -18px;
     width: 0;
     height: 2.5px;
-    background-color: var(--main);
+    background-color: var(--color-primary);
 }
 
 .activeLine.active::after {
@@ -106,16 +105,16 @@ body::-webkit-scrollbar {
 }
 
 .iconColor.active {
-    color: var(--main);
+    color: var(--color-primary);
 }
 
 .navBtn {
     display: flex;
     align-items: center;
     font-size: 12px;
-    border: solid var(--sec) 1px;
+    border: solid var(--color-secondary) 1px;
     border-radius: 2px;
-    background-color: var(--mainBlur);
+    background-color: var(--color-accent);
     backdrop-filter: blur(1px);
 }
 
@@ -125,7 +124,7 @@ body::-webkit-scrollbar {
 }
 
 .navBtnText {
-    border-right: 1px solid var(--sec);
+    border-right: 1px solid var(--color-secondary);
     padding: 4px 10px;
 }
 
@@ -137,7 +136,7 @@ body::-webkit-scrollbar {
 /* Hero banner Sec */
 
 .heroCon {
-    background-color: #DFDBE5;
+    background-color: #dfdbe5;
     background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%23936639' fill-opacity='0.18' fill-rule='evenodd'/%3E%3C/svg%3E");
     height: 100%;
 }
@@ -148,10 +147,10 @@ body::-webkit-scrollbar {
 .categoryCard {
     display: flex;
     position: relative;
-    border: solid 2px var(--sec);
+    border: solid 2px var(--color-secondary);
     border-radius: 4px;
     padding: 2px 10px;
-    background-color: var(--mainBlur);
+    background-color: var(--color-accent);
     backdrop-filter: blur(1px);
     cursor: pointer;
     transition: ease 0.5s;
@@ -165,7 +164,7 @@ body::-webkit-scrollbar {
 }
 
 .categoryCardCon::-webkit-scrollbar-thumb {
-    background-image: linear-gradient(to left, var(--mainBlur), var(--sec));
+    background-image: linear-gradient(to left, var(--color-accent), var(--color-secondary));
     width: 250px;
 }
 
@@ -178,7 +177,7 @@ body::-webkit-scrollbar {
 .categoryCard h6 {
     position: absolute;
     font-weight: 900;
-    color: var(--main);
+    color: var(--color-primary);
     opacity: 85%;
     left: 70px;
     bottom: -6px;
@@ -196,12 +195,12 @@ body::-webkit-scrollbar {
 }
 
 .productCardCon::-webkit-scrollbar-thumb {
-    background-color: var(--mainBlur);
+    background-color: var(--color-accent);
     width: 200px;
 }
 
 .productCard {
-    border: 1px solid var(--sec);
+    border: 1px solid var(--color-secondary);
     overflow: hidden;
 }
 
@@ -218,9 +217,9 @@ body::-webkit-scrollbar {
     align-items: center;
     padding: 0.5px 0;
     width: fit-content;
-    color: var(--main);
-    background-color: var(--mainBlur);
-    border: 1px solid var(--sec);
+    color: var(--color-primary);
+    background-color: var(--color-accent);
+    border: 1px solid var(--color-secondary);
     padding-inline: 6px;
     border-radius: 1.5px;
 }
@@ -228,8 +227,8 @@ body::-webkit-scrollbar {
 .productCard .cartBtn {
     display: flex;
     width: fit-content;
-    border: 1px solid var(--sec);
-    background-color: var(--mainBlur);
+    border: 1px solid var(--color-secondary);
+    background-color: var(--color-accent);
     border-radius: 2px;
     cursor: pointer;
 }

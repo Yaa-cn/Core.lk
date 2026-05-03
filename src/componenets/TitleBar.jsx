@@ -1,4 +1,4 @@
-function TitleBar({ firstText, secText, className, color = 'text-sec' }) {
+function TitleBar({ firstText, secText, className, color = 'text-secondary' }) {
     return (
         <h1 className={`uppercase ${className}`}>
             <span className={color}>{firstText}</span>
