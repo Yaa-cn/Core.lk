@@ -12,9 +12,9 @@ function Home() {
   return (
     <>
     <Hero/>
-    <TitleBar firstText='Components' secText=' categories' className={titleStyles} color={titleColor} />
+    <TitleBar firstText='Products' secText=' categories' className={titleStyles} color={titleColor} />
     <Category/>
-    <TitleBar firstText='Recent' secText=' components' className={titleStyles} color={titleColor}/>
+    <TitleBar firstText='Recent' secText=' Products' className={titleStyles} color={titleColor}/>
     <RecentProducts/>
     <Newsletter/>
     </>

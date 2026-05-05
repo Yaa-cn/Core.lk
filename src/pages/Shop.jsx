@@ -46,9 +46,8 @@ function Shop() {
 
   return (
     <div className="relative sm:flex">
-
       {/* Sidebar */}
-      <div className={`sideBar ${visible ? 'translate-x-0' : '-translate-x-full'} sm:translate-x-0 fixed top-14 h-screen bg-light z-30 sm:sticky sm:top-14.25 flex flex-col gap-5 p-5 w-60 lg:w-70 sm:h-screen border-r border-secondary overflow-y-auto hideBar transition-transform ease-in`}>
+      <div className={`sideBar ${visible ? 'translate-x-0' : '-translate-x-full'} sm:translate-x-0 fixed top-14 h-screen bg-light z-30 sm:sticky sm:top-14.25 flex flex-col gap-5 p-5 w-70 sm:h-screen border-r border-secondary overflow-y-auto hideBar transition-transform ease-in`}>
         <div className="flex justify-between">
           <TitleBar secText={'Filter'} className={'text-xs font-medium tracking-wide my-auto'} />
           <div onClick={() => setVisible(false)} className='block sm:hidden cursor-pointer'><RiCloseLine size={16} /></div>
@@ -81,14 +80,14 @@ function Shop() {
       <div className="mainSection flex flex-col w-full">
 
         <div className={`${visibleSearchBar ? 'flex' : 'hidden'} shopSearchBar sm:flex bg-light mx-6 sm:mx-10 mt-6 mb-1 sm:mt-8 transition-all`}>
-          <input type="search" onChange={(e) => setQuery(e.target.value)} placeholder="Search" className="border border-secondary rounded-s-[3px] sm:rounded-e-[3px] px-4 py-2 sm:py-2.5 text-xs w-full outline-0 placeholder:tracking-wide" />
-          <span onClick={() => setVisibleSearchBar(false)} className="border-e border-b border-t border-secondary rounded-e-[3px] px-2.5 py-2 bg-accent text-xs my-auto sm:hidden cursor-pointer"><RiArrowUpWideLine size={18} className="text-secondary" /></span>
+          <input type="search" onChange={(e) => setQuery(e.target.value)} placeholder="Search" className="border border-secondary rounded-s-[3px] sm:rounded-e-[3px] px-4 py-3 text-xs w-full outline-0 nunito" />
+          <span onClick={() => setVisibleSearchBar(false)} className="border-e border-b border-t border-secondary rounded-e-[3px] px-3.5 py-3 bg-accent my-auto sm:hidden cursor-pointer"><RiArrowUpWideLine size={18} className="text-secondary" /></span>
         </div>
 
         <div className="productsListSection">
           <div className="flex justify-between items-center">
             <TitleBar secText={category} className={'text-base sm:text-lg font-bold pt-4 sm:pt-5 pb-4 sm:pb-5 mx-6 sm:mx-10'} />
-            <div onClick={() => setVisible(true)} className={`${visible ? 'hidden' : 'flex'} gap-1.5 mr-7 cursor-pointer sm:hidden`}><RiFilter3Line size={16} className="my-auto" /><span className="text-sm font-medium my-auto tracking-wide">Filter</span></div>
+            <div onClick={() => setVisible(true)} className={`${visible ? 'hidden' : 'flex'} gap-1.5 mr-7 cursor-pointer sm:hidden`}><RiFilter3Line size={16} className="my-auto" /><span className="text-sm font-semibold my-auto nunito">Filter</span></div>
           </div>
           <div className="grid grid-cols-2 gap-4 sm:gap-5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mb-10 mx-6 sm:mx-10">
             {productsList}

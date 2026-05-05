@@ -7,10 +7,6 @@ export const ShopProvider = ({ children }) => {
   const [items, setItems] = useState([])
   const [loading, setLoading] = useState(true)
 
-  const deleteItem = (id) => {
-    setItems(items.filter((items) => items.id !== id))
-  }
-
   useEffect(() => {
     const getItems = async () => {
       try {
@@ -31,7 +27,6 @@ export const ShopProvider = ({ children }) => {
       items,
       loading,
       setLoading,
-      deleteItem,
     }}>
       {children}
     </ShopContext.Provider>

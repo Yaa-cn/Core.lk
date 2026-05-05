@@ -1,6 +1,12 @@
 import { RiFacebookCircleLine, RiInstagramLine, RiTwitterXLine, RiWhatsappLine } from "@remixicon/react"
+import { useNavigate } from "react-router-dom"
+import { useFilter } from "../context/FilterContext"
 
 function Footer() {
+
+  const navigate = useNavigate()
+  const { setCategory } = useFilter()
+
   return (
 
     <footer className="bg-white w-full nunito text-primary py-8 px-6 sm:px-10 border-t border-secondary">
@@ -42,9 +48,9 @@ function Footer() {
           <div>
             <h3 className="font-bold text-md mb-3">Products</h3>
             <ul className="space-y-3 text-sm text-primary">
-              <li><a href="#" className="hover:text-secondary">Input devices</a></li>
-              <li><a href="#" className="hover:text-secondary">Audio</a></li>
-              <li><a href="#" className="hover:text-secondary">Network</a></li>
+              <li><a onClick={() => { setCategory('input devices'); navigate('/shop'); scrollTo({ top: 0, behavior: 'smooth' }) }}  className="hover:text-secondary cursor-pointer">Input devices</a></li>
+              <li><a onClick={() => { setCategory('audio'); navigate('/shop'); scrollTo({ top: 0, behavior: 'smooth' }) }}  className="hover:text-secondary cursor-pointer">Audio</a></li>
+              <li><a onClick={() => { setCategory('networking'); navigate('/shop'); scrollTo({ top: 0, behavior: 'smooth' }) }}  className="hover:text-secondary cursor-pointer">Networking</a></li>
             </ul>
           </div>
 
@@ -52,9 +58,9 @@ function Footer() {
           <div>
             <h3 className="font-bold text-md mb-3">Quick Links</h3>
             <ul className="space-y-3 text-sm text-primary">
-              <li><a href="#" className="hover:text-secondary">Shop</a></li>
-              <li><a href="#" className="hover:text-secondary">Contact</a></li>
-              <li><a href="#" className="hover:text-secondary">Profile</a></li>
+              <li><a onClick={() => { navigate("/shop"); scrollTo({ top: 0, behavior: 'smooth' }) }} className="hover:text-secondary cursor-pointer">Shop</a></li>
+              <li><a onClick={() => { navigate("/contact"); scrollTo({ top: 0, behavior: 'smooth' }) }} className="hover:text-secondary cursor-pointer">Contact</a></li>
+              <li><a onClick={() => { navigate("/profile"); scrollTo({ top: 0, behavior: 'smooth' }) }} className="hover:text-secondary cursor-pointer">Profile</a></li>
             </ul>
           </div>
 
@@ -62,9 +68,9 @@ function Footer() {
           <div className="col-span-2 md:col-span-1">
             <h3 className="font-bold text-md mb-3">Company</h3>
             <ul className="space-y-3 text-sm text-primary">
-              <li><a href="#" className="hover:text-secondary">About</a></li>
-              <li><a href="#" className="hover:text-secondary">Vision</a></li>
-              <li><a href="#" className="hover:text-secondary">Privacy policy</a></li>
+              <li><a onClick={() => { navigate("/about"); scrollTo({ top: 0, behavior: 'smooth' }) }} className="hover:text-secondary cursor-pointer">About</a></li>
+              <li><a onClick={() => { navigate("/about"); scrollTo({ top: 0, behavior: 'smooth' }) }} className="hover:text-secondary cursor-pointer">Vision</a></li>
+              <li><a onClick={() => { navigate(""); scrollTo({ top: 0, behavior: 'smooth' }) }} className="hover:text-secondary cursor-pointer">Privacy policy</a></li>
             </ul>
           </div>
         </div>
