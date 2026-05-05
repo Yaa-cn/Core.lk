@@ -21,17 +21,17 @@ function Contact() {
           <form className="flex flex-col gap-7 text-xs nunito">
             <div className="flex flex-col gap-5 mt-6">
               <input type="text" placeholder="Full Name"
-                className="px-4 py-3 bg-white rounded-[3px] w-full border border-gray focus:border-primary outline-0" />
+                className="px-4 py-2.5 bg-white rounded-[3px] w-full border border-gray focus:border-primary outline-0" />
               <input type="number" placeholder="Phone No"
-                className="px-4 py-3 bg-white rounded-[3px] w-full border border-gray focus:border-primary outline-0" />
+                className="px-4 py-2.5 bg-white rounded-[3px] w-full border border-gray focus:border-primary outline-0" />
               <input type="email" placeholder="Email"
-                className="px-4 py-3 bg-white rounded-[3px] w-full border border-gray focus:border-primary outline-0" />
+                className="px-4 py-2.5 bg-white rounded-[3px] w-full border border-gray focus:border-primary outline-0" />
               <input type="text" placeholder="Subject"
-                className="px-4 py-3 bg-white rounded-[3px] w-full border border-gray focus:border-primary outline-0" />
+                className="px-4 py-2.5 bg-white rounded-[3px] w-full border border-gray focus:border-primary outline-0" />
               <textarea placeholder="Write Message" rows="5"
-                className="px-4 pt-3 bg-white rounded-[3px] w-full border border-gray focus:border-primary outline-0"></textarea>
+                className="px-4 pt-2.5 bg-white rounded-[3px] w-full border border-gray focus:border-primary outline-0"></textarea>
             </div>
-            <button type="button" className="w-full px-4 py-3 border-[1.5px] border-gray rounded-[3px] bg-accent hover:bg-secondary hover:text-white transition-colors cursor-pointer">
+            <button type="button" className="w-full px-4 py-2.5 border-[1.5px] border-gray rounded-[3px] bg-accent hover:bg-secondary hover:text-white transition-colors cursor-pointer">
               Send message
             </button>
           </form>

@@ -8,7 +8,7 @@ function App() {
     <>
       <Navbar />
       <Outlet />
-      <ToastContainer position='bottom-right' autoClose={1000} hideProgressBar={true} className={'toastCon'} closeButton={false} />
+      <ToastContainer position='bottom-right' autoClose={1000} hideProgressBar={true} className={'toastCon'} closeButton={false} pauseOnHover={false} />
       <Footer />
     </>
   )
