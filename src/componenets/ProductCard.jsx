@@ -1,11 +1,12 @@
 import { RiShoppingCart2Fill, RiStarFill } from "@remixicon/react";
 import { useShop } from "../context/ShopContext"
 import { useCart } from "../context/CartContext";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function ProductCard({ id, imgSrc, imgAlt, category, name, price, rating }) {
 
   const location = useLocation()
+  const navigate = useNavigate()
   const { addToCart } = useCart()
 
   const product = {
@@ -16,7 +17,7 @@ function ProductCard({ id, imgSrc, imgAlt, category, name, price, rating }) {
   }
 
   return (
-    <div className='productCard flex flex-col bg-white shadow-xs nunito'>
+    <div onClick={() => navigate(`/product/${id}`)} className='productCard flex flex-col bg-white shadow-xs nunito'>
       <div className="overflow-hidden aspect-5/4">
         <img className='aspect-5/4 object-cover' src={imgSrc} alt={imgAlt} loading="lazy" />
       </div>
