@@ -7,7 +7,7 @@ import TitleBar from '../componenets/TitleBar'
 function Home() {
 
   const titleColor = 'text-secondary'
-  const titleStyles = 'sm:text-lg font-bold pt-4 sm:pt-5 pb-4 sm:pb-5 mx-6 sm:mx-10'
+  const titleStyles = 'sm:text-lg font-bold pt-4 sm:pt-5 pb-4 sm:pb-5 mx-4 sm:mx-10'
 
   return (
     <>

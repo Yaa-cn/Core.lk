@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { RiStarFill } from "@remixicon/react"
+import { Riple } from "react-loading-indicators"
 
 function ProductDetails() {
 
@@ -23,7 +24,7 @@ function ProductDetails() {
     }, [id])
 
     return (
-        <div className="my-10 mx-6 sm:mx-10 md:mx-20 xl:mx-40">
+        <div className="flex justify-center items-center my-10 mx-4 sm:mx-10 md:mx-20 xl:mx-40">
             {item ?
                 <div className='flex gap-8 nunito flex-col md:flex-row'>
                     <img className='aspect-square max-w-75 max-h-75 rounded-xs border border-gray object-cover' src={item.image} alt={item.image} loading="lazy" />
@@ -44,7 +45,7 @@ function ProductDetails() {
                         </div>
 
                     </div>
-                </div> : <h1>Loading.....</h1>}
+                </div> : <Riple color="#936639" size="large" />}
         </div>
     )
 }

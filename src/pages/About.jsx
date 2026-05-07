@@ -3,7 +3,7 @@ import TitleBar from '../componenets/TitleBar'
 
 function About() {
   return (
-    <div className="flex flex-col mx-6 my-6 sm:mx-10 sm:my-10 gap-10">
+    <div className="flex flex-col mx-4 my-6 sm:mx-10 sm:my-10 gap-10">
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div className="flex flex-col gap-3">

@@ -4,6 +4,7 @@ import Footer from './componenets/Footer'
 import { ToastContainer } from 'react-toastify'
 
 function App() {
+
   return (
     <>
       <Navbar />

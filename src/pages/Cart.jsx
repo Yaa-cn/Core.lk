@@ -1,6 +1,5 @@
 import { use } from 'react'
 import TitleBar from '../componenets/TitleBar'
-import { useShop } from '../context/ShopContext'
 import CartItem from '../componenets/CartItem'
 import { useCart } from '../context/CartContext'
 import { RiShoppingBagFill, RiShoppingBasketFill, RiShoppingCartLine } from '@remixicon/react'
@@ -24,9 +23,9 @@ function Cart() {
 
   return (
     <>
-      <TitleBar firstText={'Shopping'} secText={'Cart'} className={'sm:text-lg font-bold pt-4 sm:pt-5 pb-4 sm:pb-5 mx-6 sm:mx-10'} />
+      <TitleBar firstText={'Shopping'} secText={'Cart'} className={'sm:text-lg font-bold pt-4 sm:pt-5 pb-4 sm:pb-5 mx-4 sm:mx-10'} />
 
-      <div className='flex flex-col md:flex-row gap-8 mx-6 sm:mx-10 mb-10'>
+      <div className='flex flex-col md:flex-row gap-8 mx-4 sm:mx-10 mb-10'>
 
         <div className={`w-full ${cart.length === 0 ? 'w-full' : 'md:w-3/5 xl:w-4/6'} overflow-y-auto`}>
           {cart.length === 0 ?

@@ -1,5 +1,5 @@
 import { FilterProvider } from "./FilterContext"
-import { ShopProvider } from "./ShopContext"
+import { ProductsProvider } from "./ProductsContext"
 import { UiProvider } from "./UiContext"
 import { CartProvider } from "./CartContext"
 
@@ -9,9 +9,9 @@ export const MainProvider = ({ children }) => {
         <CartProvider>
             <FilterProvider>
                 <UiProvider>
-                    <ShopProvider>
+                    <ProductsProvider>
                         {children}
-                    </ShopProvider>
+                    </ProductsProvider>
                 </UiProvider>
             </FilterProvider>
         </CartProvider>

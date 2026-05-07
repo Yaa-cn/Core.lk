@@ -8,7 +8,7 @@ function Contact() {
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row gap-10 my-10 mx-6 sm:mx-20 md:mx-30 xl:mx-40">
+      <div className="flex flex-col lg:flex-row gap-10 my-10 mx-4 sm:mx-20 md:mx-30 xl:mx-40">
 
         {/* Form Section */}
         <div className="flex flex-col gap-2 py-8 px-8 sm:px-12 sm:py-10 bg-white rounded-sm border border-gray w-full">

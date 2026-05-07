@@ -9,7 +9,7 @@ function Footer() {
 
   return (
 
-    <footer className="bg-white w-full nunito text-primary py-8 px-6 sm:px-10 border-t border-secondary">
+    <footer className="bg-white w-full nunito text-primary py-8 px-4 sm:px-10 border-t border-secondary">
 
       <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 md:gap-12">
 

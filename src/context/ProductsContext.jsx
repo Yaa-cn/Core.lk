@@ -1,8 +1,8 @@
 import { useState, createContext, useEffect, useContext } from "react";
 
-export const ShopContext = createContext()
+export const ProductsContext = createContext()
 
-export const ShopProvider = ({ children }) => {
+export const ProductsProvider = ({ children }) => {
 
   const [items, setItems] = useState([])
   const [loading, setLoading] = useState(true)
@@ -23,19 +23,19 @@ export const ShopProvider = ({ children }) => {
   }, [])
 
   return (
-    <ShopContext.Provider value={{
+    <ProductsContext.Provider value={{
       items,
       loading,
       setLoading,
     }}>
       {children}
-    </ShopContext.Provider>
+    </ProductsContext.Provider>
   )
 
 }
 
-export const useShop = () => {
-  return useContext(ShopContext);
+export const useProducts = () => {
+  return useContext(ProductsContext);
 }
 
 // https://69eb2c9497482ad5c5273fa1.mockapi.io/api/products
