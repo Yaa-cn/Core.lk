@@ -1,5 +1,5 @@
 import { useContext, createContext, useEffect, useState } from "react";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 
 const CartContext = createContext()
 
@@ -14,11 +14,11 @@ export const CartProvider = ({ children }) => {
         setCart(prevCart => {
             const exist = prevCart.find(item => item.id === product.id)
             if (exist) {
-                toast.warn('Item already added', { className: 'toast' })
+                // toast.warn('Item already added', { className: 'toast' })
                 return [...prevCart]
 
             } else {
-                toast.success('Item added to cart', { className: 'toast' })
+                // toast.success('Item added to cart', { className: 'toast' })
                 return [...prevCart, { ...product, quantity: 1 }]
             }
         })

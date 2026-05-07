@@ -244,8 +244,9 @@ body::-webkit-scrollbar {
 
 @media (width <=480px) {
     .Toastify__toast {
+        margin-top: 10px;
         width: 80% !important;
-        bottom: 25px;
-        right: 15px;
+        bottom: 30px;
+        right: 10px;
     }
 }

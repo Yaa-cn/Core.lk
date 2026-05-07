@@ -48,7 +48,7 @@ function Shop() {
   return (
     <div className="relative sm:flex">
       {/* Sidebar */}
-      <div className={`sideBar ${visible ? 'translate-x-0' : '-translate-x-full'} sm:translate-x-0 fixed top-14 h-screen bg-light z-30 sm:sticky sm:top-14.25 flex flex-col gap-5 p-5 w-70 sm:h-screen border-r border-secondary overflow-y-auto hideBar transition-transform ease-in`}>
+      <div className={`sideBar ${visible ? 'translate-x-0' : '-translate-x-full'} sm:translate-x-0 fixed top-14 h-screen bg-light z-30 sm:sticky sm:top-14.25 flex flex-col gap-5 p-5 w-full max-w-60 sm:h-screen border-r border-secondary overflow-y-auto hideBar transition-transform ease-in`}>
         <div className="flex justify-between">
           <TitleBar secText={'Filter'} className={'text-xs font-medium tracking-wide my-auto'} />
           <div onClick={() => setVisible(false)} className='block sm:hidden cursor-pointer'><RiCloseLine size={16} /></div>
