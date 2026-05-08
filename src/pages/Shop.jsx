@@ -5,17 +5,20 @@ import { Riple } from "react-loading-indicators"
 import { useEffect, useMemo, useState } from "react"
 import { useProducts } from "../context/ProductsContext"
 import { useFilter } from "../context/FilterContext"
-import { RiCloseLine, RiFilter3Line, RiCloseCircleFill, RiArrowUpSFill, RiArrowUpWideFill, RiArrowUpWideLine } from "@remixicon/react"
+import { RiCloseLine, RiFilter3Line, RiArrowUpWideLine } from "@remixicon/react"
 import { useUi } from "../context/UiContext"
+import { useCart } from "../context/CartContext"
+import { Alert } from "@mui/material"
 
 function Shop() {
 
-  const [visible, setVisible] = useState(false)
+  const { visible, setVisible } = useUi()
   const { visibleSearchBar, setVisibleSearchBar } = useUi()
   const [query, setQuery] = useState('')
   const [searchTerm, setSearchTerm] = useState('')
   const { category, setCategory, sortBy, sortList } = useFilter()
   const { items, loading, setLoading } = useProducts()
+  const { message } = useCart()
 
   useEffect(() => {
     const timeout = setTimeout(() => setSearchTerm(query), 500)
@@ -48,7 +51,7 @@ function Shop() {
   return (
     <div className="relative sm:flex">
       {/* Sidebar */}
-      <div className={`sideBar ${visible ? 'translate-x-0' : '-translate-x-full'} sm:translate-x-0 fixed top-14 h-screen bg-light z-30 sm:sticky sm:top-14.25 flex flex-col gap-5 p-5 w-full max-w-60 sm:h-screen border-r border-secondary overflow-y-auto hideBar transition-transform ease-in`}>
+      <div className={`sideBar ${visible ? 'translate-x-0' : '-translate-x-full'} sm:translate-x-0 fixed z-10 left-0 top-14 h-screen bg-light sm:sticky sm:top-14.25 flex flex-col gap-5 p-5 w-full max-w-65 sm:max-w-60 border-r border-secondary overflow-y-auto hideBar transition-transform ease-in`}>
         <div className="flex justify-between">
           <TitleBar secText={'Filter'} className={'text-xs font-medium tracking-wide my-auto'} />
           <div onClick={() => setVisible(false)} className='block sm:hidden cursor-pointer'><RiCloseLine size={16} /></div>
@@ -56,13 +59,13 @@ function Shop() {
         <div>
           <h6 className="text-xs font-medium uppercase mb-2 text-primary tracking-wide">Categories</h6>
           <ul className="categoryFilter flex flex-col nunito text-xs gap-2">
-            <li onClick={() => { setCategory('all'); setVisible(false) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "all" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>All</li>
-            <li onClick={() => { setCategory('input devices'); setVisible(false) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "input devices" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Input Devices</li>
-            <li onClick={() => { setCategory('audio'); setVisible(false) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "audio" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Audio</li>
-            <li onClick={() => { setCategory('storage'); setVisible(false) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "storage" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Storage</li>
-            <li onClick={() => { setCategory('networking'); setVisible(false) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "networking" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Networking</li>
-            <li onClick={() => { setCategory('display'); setVisible(false) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "display" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Display</li>
-            <li onClick={() => { setCategory('accessories'); setVisible(false) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "accessories" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Accessories</li>
+            <li onClick={() => { setCategory('all'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "all" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>All</li>
+            <li onClick={() => { setCategory('input devices'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "input devices" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Input Devices</li>
+            <li onClick={() => { setCategory('audio'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "audio" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Audio</li>
+            <li onClick={() => { setCategory('storage'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "storage" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Storage</li>
+            <li onClick={() => { setCategory('networking'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "networking" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Networking</li>
+            <li onClick={() => { setCategory('display'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "display" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Display</li>
+            <li onClick={() => { setCategory('accessories'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "accessories" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Accessories</li>
           </ul>
         </div>
 
@@ -78,7 +81,7 @@ function Shop() {
       </div>
 
       {/* primary Section */}
-      <div className="mainSection flex flex-col w-full">
+      <div className={`mainSection flex flex-col w-full ${visible ? 'opacity-10' : ''} sm:opacity-100`}>
 
         <div className={`${visibleSearchBar ? 'flex' : 'hidden'} shopSearchBar sm:flex bg-light mx-4 sm:mx-10 mt-6 mb-1 sm:mt-8 transition-all`}>
           <input type="search" onChange={(e) => setQuery(e.target.value)} placeholder="Search" className="border border-secondary rounded-s-[3px] sm:rounded-e-[3px] px-4 py-3 text-xs w-full outline-0 nunito" />
@@ -95,6 +98,9 @@ function Shop() {
               {productsList}
             </div>
           }
+          {message && (<Alert severity={message.type} className="fixed bottom-10 right-3 sm:right-5 rounded! w-65 sm:w-80 text-xs! items-center! border border-neutral-400">
+            {message.text}
+          </Alert>)}
         </div>
 
       </div>

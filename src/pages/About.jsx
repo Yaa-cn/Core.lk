@@ -3,14 +3,14 @@ import TitleBar from '../componenets/TitleBar'
 
 function About() {
   return (
-    <div className="flex flex-col gap-6 sm:gap-10 mx-4 my-5 sm:mx-10 sm:my-10">
+    <div className="flex flex-col gap-8 sm:gap-10 mx-4 my-5 sm:mx-10 sm:my-10">
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-10">
         <div className="flex flex-col gap-3">
           <TitleBar firstText={'About'} secText={'Us'} className={'text-base sm:text-lg font-bold ml-0.5'}/>
           <h1 className="text-3xl sm:text-4xl font-medium">Power Your Setup <br /> Trusted Tech Starts Here</h1>
         </div>
-        <p className="nunito text-sm text-gray-600">We are your trusted destination for high quality computer accessories. From everyday users to gamers and developers,
+        <p className="nunito text-sm text-gray-600 ml-0.5 sm:ml-0">We are your trusted destination for high quality computer accessories. From everyday users to gamers and developers,
           we provide the essential gear that keeps your technology running smoothly and enhances your experience.
           We make upgrading and customizing your setup simple, affordable, and accessible online.
           Your satisfaction and trust are at the core of everything we do. With reliable products and a seamless shopping experience,
@@ -18,7 +18,6 @@ function About() {
       </div>
 
       <div className="grid grid-cols-1 gap-5 sm:gap-10 md:grid-cols-2 nunito">
-
         <div style={{ backgroundImage: `url(${Uss})` }} className="flex row-span-2 bg-cover bg-center h-full min-h-100 rounded-sm overflow-hidden border border-neutral-600">
           <div className="flex p-8 bg-linear-to-t from-black h-full ">
             <div className="flex flex-col gap-2 mt-auto">
@@ -40,7 +39,6 @@ function About() {
           <p className="text-sm text-gray-200">To become a leading and trusted name in the tech industry, empowering users to build and innovate with confidence.</p>
         </div>
       </div>
-
     </div>
   )
 }

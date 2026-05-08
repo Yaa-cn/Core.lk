@@ -1,15 +1,17 @@
 import { RiFacebookCircleLine, RiInstagramLine, RiTwitterXLine, RiWhatsappLine } from "@remixicon/react"
 import { useNavigate } from "react-router-dom"
 import { useFilter } from "../context/FilterContext"
+import { useUi } from "../context/UiContext"
 
 function Footer() {
 
   const navigate = useNavigate()
   const { setCategory } = useFilter()
+  const { visible } = useUi()
 
   return (
 
-    <footer className="bg-white w-full nunito text-primary py-8 px-4 sm:px-10 border-t border-secondary">
+    <footer className={`bg-white w-full nunito text-primary py-8 px-4 sm:px-10 border-t border-secondary ${visible ? 'opacity-10' : ''} sm:opacity-100 `}>
 
       <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 md:gap-12">
 
@@ -48,9 +50,9 @@ function Footer() {
           <div>
             <h3 className="font-bold text-md mb-3">Products</h3>
             <ul className="space-y-3 text-sm text-primary">
-              <li><a onClick={() => { setCategory('input devices'); navigate('/shop'); scrollTo({ top: 0, behavior: 'smooth' }) }}  className="hover:text-secondary cursor-pointer">Input devices</a></li>
-              <li><a onClick={() => { setCategory('audio'); navigate('/shop'); scrollTo({ top: 0, behavior: 'smooth' }) }}  className="hover:text-secondary cursor-pointer">Audio</a></li>
-              <li><a onClick={() => { setCategory('networking'); navigate('/shop'); scrollTo({ top: 0, behavior: 'smooth' }) }}  className="hover:text-secondary cursor-pointer">Networking</a></li>
+              <li><a onClick={() => { setCategory('input devices'); navigate('/shop'); scrollTo({ top: 0, behavior: 'smooth' }) }} className="hover:text-secondary cursor-pointer">Input devices</a></li>
+              <li><a onClick={() => { setCategory('audio'); navigate('/shop'); scrollTo({ top: 0, behavior: 'smooth' }) }} className="hover:text-secondary cursor-pointer">Audio</a></li>
+              <li><a onClick={() => { setCategory('networking'); navigate('/shop'); scrollTo({ top: 0, behavior: 'smooth' }) }} className="hover:text-secondary cursor-pointer">Networking</a></li>
             </ul>
           </div>
 

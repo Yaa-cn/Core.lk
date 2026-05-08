@@ -17,7 +17,7 @@ function Navbar() {
       <nav className='flex gap-10 sm:gap-0 sticky top-0 left-0 right-0 justify-between nunito w-full py-3.5 px-4 sm:px-10 z-100 bg-light border-secondary border-b'>
 
         <div className='flex gap-16 md:gap-35'>
-          <div onClick={() => setVisible(false), scrollTo({ top: 0, behavior: 'smooth' })} className='text-primary text-xl font-bold'><Link to='/'>Core.lk</Link></div>
+          <div onClick={() => { setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className='text-primary text-xl font-bold'><Link to='/'>Core.lk</Link></div>
           <ul className='hidden sm:flex no-underline text-sm font-medium'>
             <li className='flex items-center px-5' ><NavLink className='activeLine' to='/shop'>Shop</NavLink></li>
             <li className='flex items-center border-x border-secondary px-5' ><NavLink className='activeLine' to='/about'>About</NavLink></li>
@@ -31,7 +31,7 @@ function Navbar() {
         </ul>
 
         <div className='sm:hidden flex items-center gap-4'>
-          {location.pathname === '/shop' && <RiSearchLine size={15} onClick={() => { setVisibleSearchBar(true), scrollTo({ top: 0, behavior: 'smooth' }) }} className={` ${visible ? 'hidden' : 'block'} my-auto cursor-pointer`} />}
+          {location.pathname === '/shop' && <RiSearchLine size={15} onClick={() => { setVisibleSearchBar(true); scrollTo({ top: 0, behavior: 'smooth' }) }} className={` ${visible ? 'hidden' : 'block'} my-auto cursor-pointer`} />}
           {
             !visible ? <div onClick={() => setVisible(true)} className='iconColor cursor-pointer my-auto'><RiMenu2Line size={18} /></div> :
               <div onClick={() => setVisible(false)} className='iconColor cursor-pointer my-auto'><RiCloseLine size={18} /></div>
