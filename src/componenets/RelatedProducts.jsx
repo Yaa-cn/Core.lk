@@ -16,7 +16,7 @@ function RelatedProducts({ category, id }) {
     return (
         <>
             {loading ? <div className='flex justify-center items-center min-h-40'><Riple color='#936639' /></div> :
-                <div className='grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:gap-6 mb-10 mx-4 sm:mx-0'>
+                <div className='grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:gap-6 mx-4 sm:mx-0'>
                     {products}
                 </div>
             }

@@ -59,7 +59,7 @@ function ProductDetails() {
                             <button className="text-sm text-secondary font-bold border border-primary bg-transparent px-5 py-2 rounded-xs hover:bg-secondary hover:text-white cursor-pointer hover:border-secondary transition-colors">Buy Now</button>
                         </div>
                         <hr className="text-gray mt-5 mb-3" />
-                        <div className="flex flex-col text-xs text-neutral-500">
+                        <div className="flex flex-col text-xs text-neutral-500 mb-1">
                             <p>Cash on Delivery Support.</p>
                             <p>Safe & Secure Checkout.</p>
                             <p>24/7 Customer Support.</p>
