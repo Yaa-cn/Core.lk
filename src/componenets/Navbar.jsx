@@ -16,7 +16,7 @@ function Navbar() {
     <>
       <nav className='flex gap-10 sm:gap-0 sticky top-0 left-0 right-0 justify-between nunito w-full py-3.5 px-4 sm:px-10 z-100 bg-light border-secondary border-b'>
 
-        <div className='flex gap-16 md:gap-35'>
+        <div className='flex sm:gap-[13.5%] md:gap-[45%]'>
           <div onClick={() => { setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className='text-primary text-xl font-bold'><Link to='/'>Core.lk</Link></div>
           <ul className='hidden sm:flex no-underline text-sm font-medium'>
             <li className='flex items-center px-5' ><NavLink className='activeLine' to='/shop'>Shop</NavLink></li>

@@ -1,8 +1,9 @@
-import { useProducts } from "../context/ProductsContext";
 import ProductCard from "../componenets/ProductCard"
+import Loader from "./Loader";
+import Toast from "./Toast";
+import { useProducts } from "../context/ProductsContext";
 import { useCart } from "../context/CartContext";
-import { Riple } from "react-loading-indicators";
-import { Alert } from "@mui/material";
+
 
 function RelatedProducts({ category, id }) {
 
@@ -15,14 +16,12 @@ function RelatedProducts({ category, id }) {
 
     return (
         <>
-            {loading ? <div className='flex justify-center items-center min-h-40'><Riple color='#936639' /></div> :
+            {loading ? <div className='flex justify-center items-center min-h-50'><Loader /></div> :
                 <div className='grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:gap-6 mx-4 sm:mx-0'>
                     {products}
                 </div>
             }
-            {message && (<Alert severity={message.type} className="fixed bottom-10 right-3 sm:right-5 rounded! w-65 sm:w-80 text-xs! items-center! border border-neutral-400">
-                {message.text}
-            </Alert>)}
+            {message && <Toast type={message.type} text={message.text} />}
         </>
     )
 }

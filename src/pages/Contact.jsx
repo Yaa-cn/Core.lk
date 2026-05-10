@@ -1,6 +1,6 @@
-import { RiMapPinFill, RiBallPenFill, RiPhoneFill } from "@remixicon/react"
 import Newsletter from '../componenets/Newsletter'
 import TitleBar from "../componenets/TitleBar"
+import { RiMapPinFill, RiBallPenFill, RiPhoneFill } from "@remixicon/react"
 
 function Contact() {
 

@@ -1,4 +1,3 @@
-import { use } from 'react'
 import TitleBar from '../componenets/TitleBar'
 import CartItem from '../componenets/CartItem'
 import { useCart } from '../context/CartContext'
@@ -35,7 +34,7 @@ function Cart() {
               <p className='text-sm text-gray-500 w-70 text-center sm:w-fit'>Your cart is empty, but your next favorite find is just a click away !</p>
               <button onClick={() => navigate('/shop')} className='text-xs bg-accent border border-secondary text-primary px-4 py-2 mt-2 rounded-xs font-bold nunito hover:bg-secondary hover:text-light transition-colors cursor-pointer'>Shop Now</button>
             </div> :
-            <div className='flex flex-col gap-5'> {cartItems} </div>}
+            <div className='flex flex-col gap-4'> {cartItems} </div>}
         </div>
 
 

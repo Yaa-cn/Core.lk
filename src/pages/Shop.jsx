@@ -1,14 +1,14 @@
 import RecentProducts from "../componenets/RecentProducts"
 import TitleBar from "../componenets/TitleBar"
 import ProductCard from "../componenets/ProductCard"
-import { Riple } from "react-loading-indicators"
+import Toast from "../componenets/Toast"
+import Loader from "../componenets/Loader"
 import { useEffect, useMemo, useState } from "react"
 import { useProducts } from "../context/ProductsContext"
 import { useFilter } from "../context/FilterContext"
 import { RiCloseLine, RiFilter3Line, RiArrowUpWideLine } from "@remixicon/react"
 import { useUi } from "../context/UiContext"
 import { useCart } from "../context/CartContext"
-import { Alert } from "@mui/material"
 
 function Shop() {
 
@@ -51,7 +51,7 @@ function Shop() {
   return (
     <div className="relative sm:flex">
       {/* Sidebar */}
-      <div className={`sideBar ${visible ? 'translate-x-0' : '-translate-x-full'} sm:translate-x-0 fixed z-10 left-0 top-14 h-screen bg-light sm:sticky sm:top-14.25 flex flex-col gap-5 p-5 w-full max-w-65 sm:max-w-60 border-r border-secondary overflow-y-auto hideBar transition-transform ease-in`}>
+      <div className={`sideBar ${visible ? 'translate-x-0' : '-translate-x-full'} sm:translate-x-0 fixed z-10 left-0 top-14 h-screen bg-light sm:sticky sm:top-14.25 flex flex-col gap-5 p-5 w-full max-w-65 sm:max-w-55 border-r border-secondary overflow-y-auto hideBar transition-transform ease-in`}>
         <div className="flex justify-between">
           <TitleBar secText={'Filter'} className={'text-xs font-medium tracking-wide my-auto'} />
           <div onClick={() => setVisible(false)} className='block sm:hidden cursor-pointer'><RiCloseLine size={16} /></div>
@@ -83,24 +83,22 @@ function Shop() {
       {/* primary Section */}
       <div className={`mainSection flex flex-col w-full ${visible ? 'opacity-10' : ''} sm:opacity-100`}>
 
-        <div className={`${visibleSearchBar ? 'flex' : 'hidden'} shopSearchBar sm:flex bg-light mx-4 sm:mx-10 mt-6 mb-1 sm:mt-8 transition-all`}>
-          <input type="search" onChange={(e) => setQuery(e.target.value)} placeholder="Search" className="border border-secondary rounded-s-[3px] sm:rounded-e-[3px] px-4 py-3 text-xs w-full outline-0 nunito" />
+        <div className={`${visibleSearchBar ? 'flex' : 'hidden'} shopSearchBar sm:flex bg-light mx-4 xl:mx-10 mt-6 mb-1 xl:mt-8 transition-all`}>
+          <input type="search" name="search" onChange={(e) => setQuery(e.target.value)} placeholder="Search" className="border border-secondary rounded-s-[3px] sm:rounded-e-[3px] px-4 py-3 text-xs w-full outline-0 nunito" />
           <span onClick={() => setVisibleSearchBar(false)} className="border-e border-b border-t border-secondary rounded-e-[3px] px-3.5 py-3 bg-accent my-auto sm:hidden cursor-pointer"><RiArrowUpWideLine size={18} className="text-secondary" /></span>
         </div>
 
         <div className="productsListSection">
-          <div className="flex justify-between items-center  pt-4 sm:pt-5 pb-4 sm:pb-5 mx-4 sm:mx-10">
+          <div className="flex justify-between items-center  pt-4 sm:pt-5 pb-4 sm:pb-5 mx-4 xl:mx-10">
             <TitleBar secText={category} className={'text-base sm:text-lg font-bold'} />
             <div onClick={() => setVisible(true)} className={`${visible ? 'hidden' : 'flex'} gap-1.5 mr-0.75 cursor-pointer sm:hidden`}><RiFilter3Line size={16} className="mt-px" /><span className="text-sm font-medium tracking-wide">Filter</span></div>
           </div>
-          {loading ? <div className='flex justify-center items-center h-full min-h-60'><Riple color='#936639' /></div> :
-            <div className="grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mb-10 mx-4 sm:mx-10">
+          {loading ? <div className='flex justify-center items-center h-full min-h-dvh'><Loader /></div> :
+            <div className="grid grid-cols-2 gap-3 xl:gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mb-4 xl:mb-10 mx-4 xl:mx-10">
               {productsList}
             </div>
           }
-          {message && (<Alert severity={message.type} className="fixed bottom-10 right-3 sm:right-5 rounded! w-65 sm:w-80 text-xs! items-center! border border-neutral-400">
-            {message.text}
-          </Alert>)}
+          {message && <Toast type={message.type} text={message.text} />}
         </div>
 
       </div>

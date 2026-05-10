@@ -1,8 +1,8 @@
+import Skeleton from "./Skeleton";
 import { RiShoppingCart2Fill, RiStarFill } from "@remixicon/react";
 import { useCart } from "../context/CartContext";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { Skeleton } from "@mui/material";
 
 function ProductCard({ id, imgSrc, imgAlt, category, name, price, rating }) {
 
@@ -22,8 +22,8 @@ function ProductCard({ id, imgSrc, imgAlt, category, name, price, rating }) {
     <div className='productCard flex flex-col bg-white shadow-xs nunito'>
       <Link to={`/product/${id}`} onClick={() => scrollTo({ top: 0, behavior: 'smooth' })} className="overflow-hidden aspect-7/5 sm:aspect-5/4">
         {!loaded &&
-          <Skeleton animation='wave' width={300} height={300} variant="rectangular" className="aspect-7/5! sm:aspect-5/4! object-cover!" />}
-        <img onLoad={() => setLoaded(true)} className={`aspect-7/5 sm:aspect-5/4 object-cover ${loaded ? 'block' : 'none'}`} src={imgSrc} alt={imgAlt} />
+          <Skeleton/>}
+        <img onLoad={() => setLoaded(true)} className={`aspect-7/5 sm:aspect-5/4 object-cover ${loaded ? 'block' : 'none'} w-full`} src={imgSrc} alt={imgAlt} />
       </Link>
       <div className='flex flex-col gap-2 sm:gap-1.5 lg:gap-2.5 m-2.5 sm:m-3.5 grow justify-between'>
         <div className="flex justify-between">
