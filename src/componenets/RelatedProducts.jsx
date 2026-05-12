@@ -1,17 +1,14 @@
 import ProductCard from "../componenets/ProductCard"
 import Loader from "./Loader";
-import Toast from "./Toast";
 import { useProducts } from "../context/ProductsContext";
-import { useCart } from "../context/CartContext";
 
 
 function RelatedProducts({ category, id }) {
 
     const { items, loading } = useProducts()
-    const { message } = useCart()
 
     const products = items.filter(item => item.category === category && item.id !== id).map((item) => (
-        <ProductCard key={item.id} imgSrc={item.image} category={item.category} rating={item.rating} name={item.title} price={item.price} id={item.id} />
+        <ProductCard key={item.id} imgSrc={item.image} category={item.category} rating={item.rating} name={item.title} price={item.price} id={item.id} stock={item.stock} />
     ))
 
     return (
@@ -21,7 +18,6 @@ function RelatedProducts({ category, id }) {
                     {products}
                 </div>
             }
-            {message && <Toast type={message.type} text={message.text} />}
         </>
     )
 }

@@ -2,19 +2,20 @@ import TitleBar from "../componenets/TitleBar"
 import Newsletter from "../componenets/Newsletter"
 import RelatedProducts from "../componenets/RelatedProducts"
 import Loader from "../componenets/Loader"
+import Skeleton from "../componenets/Skeleton"
+import BackButton from "../componenets/BackButton"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { RiStarFill } from "@remixicon/react"
 import { useCart } from "../context/CartContext"
 import { useProducts } from "../context/ProductsContext"
-import Skeleton from "../componenets/Skeleton"
 
 function ProductDetails() {
 
     const [hide, setHide] = useState(true)
     const [loaded, setLoaded] = useState(false)
     const { items } = useProducts()
-    const { addToCart, message } = useCart()
+    const { addToCart } = useCart()
     const { id } = useParams()
 
     const item = items?.find(item => String(item.id) === id)
@@ -27,7 +28,9 @@ function ProductDetails() {
     }
 
     return (
-        item ? <div className="flex flex-col sm:my-6 md:my-10 sm:mx-6 md:mx-10">
+        
+        item ? <div className="flex flex-col sm:mt-1 sm:mx-6 md:mx-10">
+            <BackButton className={'absolute sm:relative bg-light sm:bg-transparent m-4 sm:m-0 sm:my-2 sm:-ml-2 pr-4 sm:pr-0 border sm:border-none border-secondary rounded-full  '}/>
             <div className='flex gap-4 sm:gap-6 flex-col sm:flex-row nunito'>
                 <div className="aspect-square sm:min-w-80 sm:w-80 sm:h-80 sm:rounded sm:border border-gray sm:overflow-hidden ">
                     {!loaded && <Skeleton />}
@@ -49,7 +52,7 @@ function ProductDetails() {
                         <button className="text-sm text-secondary font-bold border border-primary bg-transparent px-5 py-2 rounded-xs hover:bg-secondary hover:text-white cursor-pointer hover:border-secondary transition-colors">Buy Now</button>
                     </div>
                     <hr className="text-neutral-200 mt-4 mb-4" />
-                    <div className="flex flex-col gap-1 text-xs text-neutral-500 mb-1">
+                    <div className="flex flex-col text-xs gap-1 text-neutral-500 mb-1 ">
                         <p>We proudly offer Cash on Delivery support.</p>
                         <p>Our platform provides a safe and secure checkout process.</p>
                         <p>With our 24/7 customer support team.</p>

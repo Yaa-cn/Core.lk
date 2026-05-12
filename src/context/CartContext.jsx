@@ -1,4 +1,5 @@
 import { useContext, createContext, useEffect, useState } from "react";
+import { toast } from "sonner";
 
 const CartContext = createContext()
 
@@ -14,16 +15,10 @@ export const CartProvider = ({ children }) => {
         setCart(prevCart => {
             const exist = prevCart.find(item => item.id === product.id)
             if (exist) {
-                setMessage({ type: 'info', text: 'Item already in cart' })
-                setTimeout(() => {
-                    setMessage(null)
-                }, 800)
+                toast.info('Item already added to cart')
                 return [...prevCart]
             } else {
-                setMessage({ type: 'success', text: 'Item added to cart' })
-                setTimeout(() => {
-                    setMessage(null)
-                }, 800)
+                toast.success('Item added to cart')
                 return [...prevCart, { ...product, quantity: 1 }]
             }
         })

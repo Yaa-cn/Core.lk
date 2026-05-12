@@ -1,16 +1,13 @@
 import Loader from './Loader';
-import Toast from './Toast'
 import ProductCard from './ProductCard'
 import { useProducts } from '../context/ProductsContext';
-import { useCart } from '../context/CartContext';
 
 function RecentProducts() {
 
     const { items, loading } = useProducts()
-    const { message } = useCart()
 
     const products = items.map((item) => (
-        <ProductCard key={item.id} imgSrc={item.image} category={item.category} rating={item.rating} name={item.title} price={item.price} id={item.id} />
+        <ProductCard key={item.id} imgSrc={item.image} category={item.category} rating={item.rating} name={item.title} price={item.price} id={item.id} stock={item.stock} />
     ))
 
     const recentProducts = products.slice(0, 10);
@@ -22,7 +19,6 @@ function RecentProducts() {
                     {recentProducts}
                 </div>
             }
-            {message && <Toast text={message.text} type={message.type}/>}
         </>
     )
 }

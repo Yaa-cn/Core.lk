@@ -89,50 +89,6 @@ body::-webkit-scrollbar {
     color: var(--color-primary);
 }
 
-.navBtn {
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    border: solid var(--color-secondary) 1px;
-    border-radius: 2px;
-    background-color: var(--color-accent);
-    backdrop-filter: blur(1px);
-}
-
-.navBtn:hover {
-    transform: translateX(2px);
-    transition: ease 0.3s;
-}
-
-.navBtnText {
-    border-right: 1px solid var(--color-secondary);
-    padding: 4px 10px;
-}
-
-.navIcon {
-    padding: 4px 6px;
-    margin: auto;
-}
-
-.cartBtn {
-    position: relative;
-}
-
-.cartBtn::after {
-    content: attr(cartcount);
-    position: absolute;
-    top: -8px;
-    right: -10px;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: var(--color-accent);
-    border: var(--color-secondary) 1px solid;
-    font-weight: 500;
-    align-content: center;
-    text-align: center;
-    font-size: 10px;
-}
 
 /* Hero banner Sec */
 
@@ -208,13 +164,6 @@ body::-webkit-scrollbar {
 }
 
 .productCard .cardCat {
-    /* display: flex;
-    align-items: center;
-    padding: 0.5px 0;
-    background-color: var(--color-accent);
-    border: 1px solid var(--color-gray);
-    padding-inline: 6px;
-    border-radius: 1.5px; */
     width: fit-content;
     color: var(--color-primary);
 }

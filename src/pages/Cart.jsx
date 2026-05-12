@@ -1,8 +1,8 @@
 import TitleBar from '../componenets/TitleBar'
 import CartItem from '../componenets/CartItem'
 import { useCart } from '../context/CartContext'
-import { RiShoppingCartLine } from '@remixicon/react'
 import { useNavigate } from 'react-router-dom'
+import CartIcon from '../assets/icons/cart.png'
 
 function Cart() {
 
@@ -29,9 +29,9 @@ function Cart() {
         <div className={`w-full ${cart.length === 0 ? 'w-full' : 'md:w-3/5 xl:w-4/6'} overflow-y-auto`}>
           {cart.length === 0 ?
             <div className='flex flex-col justify-center items-center gap-3 h-[40vh]'>
-              <RiShoppingCartLine size={100} />
-              <h1 className='text-2xl sm:text-3xl text-secondary font-extrabold'>Your Cart is Empty</h1>
-              <p className='text-sm text-gray-500 w-70 text-center sm:w-fit'>Your cart is empty, but your next favorite find is just a click away !</p>
+              <img src={CartIcon} alt='CartIcon' className='w-25 sm:w-30' />
+              <h1 className='text-2xl sm:text-3xl text-secondary font-extrabold'>Your Cart is Empty !</h1>
+              <p className='text-sm text-gray-500 w-70 text-center sm:w-fit'>Your cart is empty, but your next favorite find is just a click away</p>
               <button onClick={() => navigate('/shop')} className='text-xs bg-accent border border-secondary text-primary px-4 py-2 mt-2 rounded-xs font-bold nunito hover:bg-secondary hover:text-light transition-colors cursor-pointer'>Shop Now</button>
             </div> :
             <div className='flex flex-col gap-4'> {cartItems} </div>}

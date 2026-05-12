@@ -1,14 +1,12 @@
 import RecentProducts from "../componenets/RecentProducts"
 import TitleBar from "../componenets/TitleBar"
 import ProductCard from "../componenets/ProductCard"
-import Toast from "../componenets/Toast"
 import Loader from "../componenets/Loader"
 import { useEffect, useMemo, useState } from "react"
 import { useProducts } from "../context/ProductsContext"
 import { useFilter } from "../context/FilterContext"
 import { RiCloseLine, RiFilter3Line, RiArrowUpWideLine } from "@remixicon/react"
 import { useUi } from "../context/UiContext"
-import { useCart } from "../context/CartContext"
 
 function Shop() {
 
@@ -18,7 +16,6 @@ function Shop() {
   const [searchTerm, setSearchTerm] = useState('')
   const { category, setCategory, sortBy, sortList } = useFilter()
   const { items, loading, setLoading } = useProducts()
-  const { message } = useCart()
 
   useEffect(() => {
     const timeout = setTimeout(() => setSearchTerm(query), 500)
@@ -45,7 +42,7 @@ function Shop() {
   }, [items, category, sortBy, searchTerm])
 
   const productsList = products.map((item) => (
-    <ProductCard key={item.id} imgSrc={item.image} category={item.category} rating={item.rating} name={item.title} price={item.price} id={item.id} />
+    <ProductCard key={item.id} imgSrc={item.image} category={item.category} rating={item.rating} name={item.title} price={item.price} id={item.id} stock={item.stock} />
   ))
 
   return (
@@ -98,7 +95,6 @@ function Shop() {
               {productsList}
             </div>
           }
-          {message && <Toast type={message.type} text={message.text} />}
         </div>
 
       </div>

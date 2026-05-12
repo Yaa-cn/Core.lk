@@ -1,6 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { Suspense, lazy } from 'react'
-import { Riple } from 'react-loading-indicators'
 import Home from '../pages/Home'
 import Shop from '../pages/Shop'
 import About from '../pages/About'
@@ -9,13 +8,15 @@ import Profile from '../pages/Profile'
 import Cart from '../pages/Cart'
 import NotFound from '../pages/NotFound'
 import ProductDetails from '../pages/ProductDetails'
+import Wishlist from '../pages/Wishlist'
+import Loader from '../componenets/Loader'
 
 const App = lazy(() => import('../App'))
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Suspense fallback={<div className='flex justify-center items-center h-dvh'><Riple color='#936639' /></div>} >
+    element: <Suspense fallback={<div className='flex justify-center items-center h-dvh'><Loader /></div>} >
       <App />
     </Suspense>,
     children: [
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: '/cart',
         element: <Cart />
+      },
+      {
+        path: '/wishlist',
+        element: <Wishlist />
       },
       {
         path: '/product/:id',

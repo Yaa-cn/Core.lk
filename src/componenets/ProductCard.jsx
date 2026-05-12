@@ -1,28 +1,29 @@
-import Skeleton from "./Skeleton";
-import { RiShoppingCart2Fill, RiStarFill } from "@remixicon/react";
-import { useCart } from "../context/CartContext";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import Skeleton from "./Skeleton"
+import { RiHeartFill, RiStarFill } from "@remixicon/react"
+import { useWishlist } from "../context/WishlistContext"
+import { Link, useLocation, useNavigate } from "react-router-dom"
+import { useState } from "react"
 
-function ProductCard({ id, imgSrc, imgAlt, category, name, price, rating }) {
+function ProductCard({ id, imgSrc, imgAlt, category, name, price, rating, stock }) {
 
   const [loaded, setLoaded] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
-  const { addToCart } = useCart()
+  const { addToWishlist } = useWishlist()
 
   const product = {
     id,
     name,
     image: imgSrc,
     price,
+    stock
   }
 
   return (
     <div className='productCard flex flex-col bg-white shadow-xs nunito'>
       <Link to={`/product/${id}`} onClick={() => scrollTo({ top: 0, behavior: 'smooth' })} className="overflow-hidden aspect-7/5 sm:aspect-5/4">
         {!loaded &&
-          <Skeleton/>}
+          <Skeleton />}
         <img onLoad={() => setLoaded(true)} className={`aspect-7/5 sm:aspect-5/4 object-cover ${loaded ? 'block' : 'none'} w-full`} src={imgSrc} alt={imgAlt} />
       </Link>
       <div className='flex flex-col gap-2 sm:gap-1.5 lg:gap-2.5 m-2.5 sm:m-3.5 grow justify-between'>
@@ -35,7 +36,7 @@ function ProductCard({ id, imgSrc, imgAlt, category, name, price, rating }) {
 
         <div className="flex justify-between">
           <p className={`text-xs ${location.pathname.includes('/shop') ? 'xl:text-xs' : 'xl:text-sm'} font-medium my-auto`}>{price} LKR</p>
-          <button onClick={() => addToCart(product)} className='rounded-full bg-accent w-7 sm:w-8 h-7 sm:h-8 border border-gray cursor-pointer hover:bg-secondary hover:text-white transition ease-in duration-200'><RiShoppingCart2Fill className="m-auto w-3.5 h-3.5 sm:w-4 sm:h-4" /></button>
+          <button onClick={() => addToWishlist(product)} className='rounded-full bg-accent w-7 sm:w-8 h-7 sm:h-8 border border-gray cursor-pointer hover:bg-secondary hover:text-white transition ease-in duration-200'><RiHeartFill className="m-auto w-3.5 h-3.5 sm:w-4 sm:h-4" /></button>
         </div>
       </div>
     </div>
