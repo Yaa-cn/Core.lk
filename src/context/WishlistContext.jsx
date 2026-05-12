@@ -14,7 +14,7 @@ export const WishlistProvider = ({ children }) => {
         setWishlist(prevCart => {
             const exist = prevCart.find(item => item.id === product.id)
             if (exist) {
-                toast.info('Item already added to wishlist')
+                toast.info('Item already in wishlist')
                 return [...prevCart]
             } else {
                 toast.success('Item added to wishlist')
