@@ -48,31 +48,31 @@ function Shop() {
   return (
     <div className="relative sm:flex">
       {/* Sidebar */}
-      <div className={`sideBar ${visible ? 'translate-x-0' : '-translate-x-full'} sm:translate-x-0 fixed z-10 left-0 top-14 h-screen bg-light sm:sticky sm:top-14.25 flex flex-col gap-5 p-5 w-full max-w-65 sm:max-w-55 border-r border-secondary overflow-y-auto hideBar transition-transform ease-in`}>
+      <div className={`sideBar ${visible ? 'translate-x-0' : '-translate-x-full'} sm:translate-x-0 fixed z-10 left-0 top-14 h-screen bg-light sm:sticky sm:top-14.25 flex flex-col gap-5 p-5 w-full max-w-65 sm:max-w-60 border-r border-secondary/50 overflow-y-auto hideBar transition-transform ease-in`}>
         <div className="flex justify-between">
-          <TitleBar secText={'Filter'} className={'text-xs font-medium tracking-wide my-auto'} />
+          <TitleBar secText={'Filter'} titleStyle={'text-xs font-medium'} showLine />
           <div onClick={() => setVisible(false)} className='block sm:hidden cursor-pointer'><RiCloseLine size={16} /></div>
         </div>
         <div>
-          <h6 className="text-xs font-medium uppercase mb-2 text-primary tracking-wide">Categories</h6>
+          <h6 className="text-xs mb-2 text-primary">Categories</h6>
           <ul className="categoryFilter flex flex-col nunito text-xs gap-2">
-            <li onClick={() => { setCategory('all'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "all" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>All</li>
-            <li onClick={() => { setCategory('input devices'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "input devices" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Input Devices</li>
-            <li onClick={() => { setCategory('audio'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "audio" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Audio</li>
-            <li onClick={() => { setCategory('storage'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "storage" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Storage</li>
-            <li onClick={() => { setCategory('networking'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "networking" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Networking</li>
-            <li onClick={() => { setCategory('display'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "display" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Display</li>
-            <li onClick={() => { setCategory('accessories'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${category === "accessories" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Accessories</li>
+            <li onClick={() => { setCategory('all'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary/50 px-4 py-2.5 rounded-xs ${category === "all" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>All</li>
+            <li onClick={() => { setCategory('input devices'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary/50 px-4 py-2.5 rounded-xs ${category === "input devices" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Input Devices</li>
+            <li onClick={() => { setCategory('audio'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary/50 px-4 py-2.5 rounded-xs ${category === "audio" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Audio</li>
+            <li onClick={() => { setCategory('storage'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary/50 px-4 py-2.5 rounded-xs ${category === "storage" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Storage</li>
+            <li onClick={() => { setCategory('networking'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary/50 px-4 py-2.5 rounded-xs ${category === "networking" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Networking</li>
+            <li onClick={() => { setCategory('display'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary/50 px-4 py-2.5 rounded-xs ${category === "display" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Display</li>
+            <li onClick={() => { setCategory('accessories'); setVisible(false); scrollTo({ top: 0, behavior: 'smooth' }) }} className={`border border-secondary/50 px-4 py-2.5 rounded-xs ${category === "accessories" ? 'bg-accent' : 'bg-transparent'} cursor-pointer hover:bg-accent transition ease-in duration-200`}>Accessories</li>
           </ul>
         </div>
 
         <div>
-          <h6 className="text-xs font-medium uppercase mb-2 text-primary tracking-wide">Sort By</h6>
+          <h6 className="text-xs mb-2 text-primary">Sort By</h6>
           <ul className="sortFilter flex flex-col nunito text-xs gap-2">
-            <li onClick={() => { sortList('newest'); setVisible(false) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${sortBy === "newest" ? 'bg-accent' : 'bg-transparent'}  cursor-pointer hover:bg-accent transition ease-in duration-200`}>Newest</li>
-            <li onClick={() => { sortList('high to low'); setVisible(false) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${sortBy === "high to low" ? 'bg-accent' : 'bg-transparent'}  cursor-pointer hover:bg-accent transition ease-in duration-200`}>High to Low (Price)</li>
-            <li onClick={() => { sortList('low to high'); setVisible(false) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${sortBy === "low to high" ? 'bg-accent' : 'bg-transparent'}  cursor-pointer hover:bg-accent transition ease-in duration-200`}>Low to High (Price)</li>
-            <li onClick={() => { sortList('rating'); setVisible(false) }} className={`border border-secondary px-4 py-2.5 rounded-xs ${sortBy === "rating" ? 'bg-accent' : 'bg-transparent'}  cursor-pointer hover:bg-accent transition ease-in duration-200`}>Rating</li>
+            <li onClick={() => { sortList('newest'); setVisible(false) }} className={`border border-secondary/50 px-4 py-2.5 rounded-xs ${sortBy === "newest" ? 'bg-accent' : 'bg-transparent'}  cursor-pointer hover:bg-accent transition ease-in duration-200`}>Newest</li>
+            <li onClick={() => { sortList('high to low'); setVisible(false) }} className={`border border-secondary/50 px-4 py-2.5 rounded-xs ${sortBy === "high to low" ? 'bg-accent' : 'bg-transparent'}  cursor-pointer hover:bg-accent transition ease-in duration-200`}>High to Low (Price)</li>
+            <li onClick={() => { sortList('low to high'); setVisible(false) }} className={`border border-secondary/50 px-4 py-2.5 rounded-xs ${sortBy === "low to high" ? 'bg-accent' : 'bg-transparent'}  cursor-pointer hover:bg-accent transition ease-in duration-200`}>Low to High (Price)</li>
+            <li onClick={() => { sortList('rating'); setVisible(false) }} className={`border border-secondary/50 px-4 py-2.5 rounded-xs ${sortBy === "rating" ? 'bg-accent' : 'bg-transparent'}  cursor-pointer hover:bg-accent transition ease-in duration-200`}>Rating</li>
           </ul>
         </div>
       </div>
@@ -81,13 +81,13 @@ function Shop() {
       <div className={`mainSection flex flex-col w-full ${visible ? 'opacity-10' : ''} sm:opacity-100`}>
 
         <div className={`${visibleSearchBar ? 'flex' : 'hidden'} shopSearchBar sm:flex bg-light mx-4 xl:mx-10 mt-6 mb-1 xl:mt-8 transition-all`}>
-          <input type="search" name="search" onChange={(e) => setQuery(e.target.value)} placeholder="Search" className="border border-secondary rounded-s-[3px] sm:rounded-e-[3px] px-4 py-3 text-xs w-full outline-0 nunito" />
-          <span onClick={() => setVisibleSearchBar(false)} className="border-e border-b border-t border-secondary rounded-e-[3px] px-3.5 py-3 bg-accent my-auto sm:hidden cursor-pointer"><RiArrowUpWideLine size={18} className="text-secondary" /></span>
+          <input type="search" name="search" onChange={(e) => setQuery(e.target.value)} placeholder="Search" className="border border-secondary/50 rounded-s-[3px] sm:rounded-e-[3px] px-4 py-3 text-xs w-full outline-0 nunito" />
+          <span onClick={() => setVisibleSearchBar(false)} className="border-e border-b border-t border-secondary/50 rounded-e-[3px] px-3.5 py-3 bg-accent my-auto sm:hidden cursor-pointer"><RiArrowUpWideLine size={18} className="text-secondary" /></span>
         </div>
 
         <div className="productsListSection">
           <div className="flex justify-between items-center  pt-4 sm:pt-5 pb-4 sm:pb-5 mx-4 xl:mx-10">
-            <TitleBar secText={category} className={'text-base sm:text-lg font-bold'} />
+            <TitleBar secText={category} showLine />
             <div onClick={() => setVisible(true)} className={`${visible ? 'hidden' : 'flex'} gap-1.5 mr-0.75 cursor-pointer sm:hidden`}><RiFilter3Line size={16} className="mt-px" /><span className="text-sm font-medium tracking-wide">Filter</span></div>
           </div>
           {loading ? <div className='flex justify-center items-center h-full min-h-dvh'><Loader /></div> :

@@ -14,7 +14,7 @@ function BackButton({ className }) {
     }
 
     return (
-        <button onClick={() => goBack()} className={`flex nunito font-bold text-sm items-center text-primary cursor-pointer ${className}`}><RiArrowDropLeftLine />Back</button>
+        <button onClick={() => goBack()} className={`flex nunito font-bold text-sm items-center text-secondary cursor-pointer ${className}`}><RiArrowDropLeftLine />Back</button>
     )
 }
 export default BackButton

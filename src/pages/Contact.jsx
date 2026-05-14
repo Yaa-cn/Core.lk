@@ -4,8 +4,6 @@ import { RiMapPinFill, RiBallPenFill, RiPhoneFill } from "@remixicon/react"
 
 function Contact() {
 
-  const titleColor = 'text-secondary'
-
   return (
     <>
       <div className="flex flex-col lg:flex-row gap-10 my-5 sm:my-10 mx-4 sm:mx-20 md:mx-30 xl:mx-40">
@@ -13,7 +11,7 @@ function Contact() {
         {/* Form Section */}
         <div className="flex flex-col gap-5 sm:gap-6 py-6 px-7 sm:px-12 sm:py-10 bg-white rounded-sm border border-gray w-full">
           <div className="flex flex-col gap-2 sm:gap-3">
-            <TitleBar firstText={'Get'} secText={'Support'} className={'text-[23px] sm:text-2xl font-bold'} color={titleColor} />
+            <TitleBar firstText={'Get'} secText={'Support'} showLine titleStyle={'text-secondary text-[23px] sm:text-2xl font-extrabold'} />
             <p className="text-[13px] sm:text-sm text-gray-600">Have a specific inquiry Our
               experienced team is ready to engage with you.</p>
           </div>
@@ -42,7 +40,7 @@ function Contact() {
           <div className="relative flex bg-white border border-gray rounded overflow-hidden">
             <RiPhoneFill size={60} className="text-secondary mt-8 mr-1 ml-4" />
             <div className="flex flex-col mt-4 mb-12 ml-5">
-              <TitleBar firstText={'Call'} secText={'Us'} className={'text-xl font-extrabold mb-0.5'} color={titleColor} />
+              <TitleBar firstText={'Call'} secText={'Us'} showLine />
               <p className="nunito font-extrabold text-lg" >Phone Number</p>
               <p className="nunito text-sm mb-5">+94542050700</p>
             </div>
@@ -52,7 +50,7 @@ function Contact() {
           <div className="relative flex bg-white border border-gray rounded overflow-hidden">
             <RiBallPenFill size={60} className="text-secondary mt-8 mr-1 ml-4" />
             <div className="flex flex-col mt-4 mb-12 ml-5">
-              <TitleBar firstText={'Write to'} secText={'Us'} className={'text-xl font-extrabold mb-0.5'} color={titleColor} />
+              <TitleBar firstText={'Write to'} secText={'Us'} showLine />
               <p className="nunito font-extrabold text-lg" >Email Address</p>
               <p className="nunito text-sm mb-5">Core.lk@store.com</p>
             </div>
@@ -62,7 +60,7 @@ function Contact() {
           <div className="relative flex bg-white border border-gray rounded overflow-hidden">
             <RiMapPinFill size={60} className="text-secondary mt-8 mr-1 ml-4" />
             <div className="flex flex-col mt-4 mb-12 ml-5">
-              <TitleBar firstText={'Visit'} secText={'Us'} className={'text-xl font-extrabold mb-0.5'} color={titleColor} />
+              <TitleBar firstText={'Visit'} secText={'Us'} showLine />
               <p className="nunito font-extrabold text-lg">Location</p>
               <p className="nunito text-sm mb-5">No 100, Colombo Road, Nawalapitiya</p>
             </div>

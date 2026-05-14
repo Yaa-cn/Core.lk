@@ -7,7 +7,7 @@ function About() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-10">
         <div className="flex flex-col gap-3">
-          <TitleBar firstText={'About'} secText={'Us'} className={'text-base sm:text-lg font-bold ml-0.5'}/>
+          <TitleBar firstText={'About'} secText={'Us'} showLine className={'ml-0.5'}/>
           <h1 className="text-3xl sm:text-4xl font-medium">Power Your Setup <br /> Trusted Tech Starts Here</h1>
         </div>
         <p className="nunito text-sm text-gray-600 ml-0.5 sm:ml-0">We are your trusted destination for high quality computer accessories. From everyday users to gamers and developers,
@@ -29,7 +29,7 @@ function About() {
           </div>
         </div>
 
-        <div className="flex flex-col justify-end gap-2 min-h-45 col-span-1 bg-accent p-8 rounded-sm border border-secondary">
+        <div className="flex flex-col justify-end gap-2 min-h-45 col-span-1 bg-accent p-8 rounded-sm border border-secondary/50">
           <h4 className="font-medium">Our Mission</h4>
           <p className="text-sm text-gray-600">To provide high-quality, affordable computer accessories while making technology accessible to everyone.</p>
         </div>

@@ -28,9 +28,9 @@ function ProductDetails() {
     }
 
     return (
-        
+
         item ? <div className="flex flex-col sm:mt-1 sm:mx-6 md:mx-10">
-            <BackButton className={'absolute sm:relative bg-light sm:bg-transparent m-4 sm:m-0 sm:my-2 sm:-ml-2 pr-4 sm:pr-0 border sm:border-none border-secondary rounded-full  '}/>
+            <BackButton className={'absolute sm:relative bg-light sm:bg-transparent m-4 sm:m-0 sm:my-2 sm:-ml-2 pr-4 sm:pr-0 border sm:border-none border-secondary/50 rounded-full  '} />
             <div className='flex gap-4 sm:gap-6 flex-col sm:flex-row nunito'>
                 <div className="aspect-square sm:min-w-80 sm:w-80 sm:h-80 sm:rounded sm:border border-gray sm:overflow-hidden ">
                     {!loaded && <Skeleton />}
@@ -48,11 +48,11 @@ function ProductDetails() {
                         <h6 onClick={() => setHide(prev => !prev)} className={`text-sm text-neutral-600 ${hide ? 'line-clamp-3' : 'line-clamp-none'} cursor-pointer`}>{item.description}</h6>
                     </div>
                     <div className="flex gap-5 mb-1">
-                        <button onClick={() => addToCart(product)} className="text-sm text-white font-bold border border-primary bg-secondary px-5 py-2 rounded-xs hover:bg-transparent hover:text-secondary hover:border-secondary cursor-pointer transition-colors">Add to Cart</button>
-                        <button className="text-sm text-secondary font-bold border border-primary bg-transparent px-5 py-2 rounded-xs hover:bg-secondary hover:text-white cursor-pointer hover:border-secondary transition-colors">Buy Now</button>
+                        <button onClick={() => addToCart(product)} className="text-sm text-white font-bold border border-secondary/50 bg-secondary px-5 py-2 rounded-xs hover:bg-transparent hover:text-secondary hover:border-secondary/50 cursor-pointer transition-colors">Add to Cart</button>
+                        <button className="text-sm text-secondary font-bold border border-secondary/50 bg-transparent px-5 py-2 rounded-xs hover:bg-secondary hover:text-white cursor-pointer hover:border-secondary/50 transition-colors">Buy Now</button>
                     </div>
                     <hr className="text-neutral-200 mt-4 mb-4" />
-                    <div className="flex flex-col text-xs gap-1 text-neutral-500 mb-1 ">
+                    <div className="flex flex-col text-sm gap-0.5 text-neutral-500 mb-1 ">
                         <p>We proudly offer Cash on Delivery support.</p>
                         <p>Our platform provides a safe and secure checkout process.</p>
                         <p>With our 24/7 customer support team.</p>
@@ -60,7 +60,7 @@ function ProductDetails() {
                 </div>
             </div>
             <>
-                <TitleBar firstText='Related' secText=' Products' className={'sm:text-lg font-bold pt-4 sm:pt-5 pb-4 sm:pb-5 mx-4 sm:mx-0'} />
+                <TitleBar firstText='Related' secText=' Products' showLine className={'pt-4 sm:pt-5 pb-4 sm:pb-5 mx-4 sm:mx-0'} />
                 <RelatedProducts category={item.category} id={id} />
             </>
             <Newsletter />

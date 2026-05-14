@@ -6,7 +6,7 @@ function Toast() {
             richColors
             toastOptions={{
                 classNames: {
-                    toast: "bg-white! rounded! border border-gray! w-80! ml-auto mr-7 mb-6 sm:w-full sm:m-0"
+                    toast: "bg-white! rounded! border border-secondary/50! w-80! ml-auto mr-7 mb-6 sm:w-full sm:m-0"
                 }
             }} />
     )

@@ -11,7 +11,7 @@ function Footer() {
 
   return (
 
-    <footer className={`bg-white w-full nunito text-primary py-8 px-4 sm:px-10 border-t border-secondary ${visible ? 'opacity-10' : ''} sm:opacity-100 `}>
+    <footer className={`bg-white w-full nunito text-primary py-8 px-4 sm:px-10 border-t border-secondary/50 ${visible ? 'opacity-10' : ''} sm:opacity-100 `}>
 
       <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 md:gap-12">
 
@@ -79,7 +79,7 @@ function Footer() {
 
       </div>
 
-      <div className="mt-10 pt-5 border-t border-secondary flex justify-between items-center">
+      <div className="mt-10 pt-5 border-t border-secondary/50 flex justify-between items-center">
         <p className="text-sm text-primary">Copyright © 2026 Core.lk</p>
         <p className='text-sm text-primary'>All rights reserved.</p>
       </div>
