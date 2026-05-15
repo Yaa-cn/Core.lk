@@ -14,9 +14,11 @@ function Wishlist() {
 
   return (
     <>
-      <TitleBar firstText={'My'} secText={'Wishlist'} showLine={true} className={'pt-4 sm:pt-5 pb-4 sm:pb-5 mx-4 sm:mx-10'} />
-      <div className='flex flex-col md:flex-row gap-8 mx-4 mb-6 sm:mx-10 sm:mb-10'>
+      <div className='pt-4 sm:pt-5 pb-4 sm:pb-5 mx-4 sm:mx-10'>
+        <TitleBar firstText={'My'} secText={'Wishlist'} showLine={true} className={'sm:text-lg md:text-xl text-secondary font-extrabold'} />
+      </div>
 
+      <div className='flex flex-col md:flex-row gap-8 mx-4 mb-6 sm:mx-10 sm:mb-10'>
         <div className={`w-full`}>
           {wishlist.length === 0 ?
             <div className='flex flex-col justify-center items-center gap-3 h-[40vh]'>

@@ -22,7 +22,9 @@ function Cart() {
 
   return (
     <>
-      <TitleBar firstText={'Shopping'} secText={'Cart'} showLine className={'pt-4 sm:pt-5 pb-4 sm:pb-5 mx-4 sm:mx-10'} />
+      <div className='pt-4 sm:pt-5 pb-4 sm:pb-5 mx-4 sm:mx-10'>
+        <TitleBar firstText={'Shopping'} secText={'Cart'} showLine={true} className={'sm:text-lg md:text-xl text-secondary font-extrabold'} />
+      </div>
 
       <div className='flex flex-col md:flex-row gap-8 mx-4 sm:mx-10 mb-10'>
 
@@ -39,15 +41,15 @@ function Cart() {
 
 
         {cart.length > 0 &&
-          <div className='flex flex-col border bg-white border-gray w-full md:w-2/5 xl:w-2/6 px-6 py-4 h-fit rounded'>
-            <TitleBar firstText={'Order'} secText={'Total'} />
+          <div className='flex flex-col border bg-white border-neutral-200 w-full md:w-2/5 xl:w-2/6 px-6 py-4 h-fit rounded'>
+            <TitleBar firstText={'Order'} secText={'Total'} className={'sm:text-lg text-secondary font-extrabold mb-2'} />
             <div className='flex flex-col gap-2 nunito'>
               <div className='flex justify-between text-xs xl:text-sm'><p className='font-medium'>Subtotal</p><span>LKR {subTotal.toFixed(2)}</span></div>
-              <div className='flex justify-between text-xs xl:text-sm'><p className='font-medium'>Shipping fee</p><span>{shippingFee <= 0 ? '' : 'LKR'} {shippingFee <= 0 ? 'Free shipping' : shippingFee.toFixed(2)}</span></div>
+              <div className='flex justify-between text-xs xl:text-sm'><p className='font-medium'>Shipping fee</p><span>LKR {shippingFee.toFixed(2)}</span></div>
             </div>
-            <hr className='text-gray my-4 sm:my-3' />
+            <hr className='text-neutral-200 my-4 sm:my-3' />
             <div className='flex justify-between text-xs xl:text-sm nunito font-bold'><p>Total</p><span>LKR {total.toFixed(2)}</span></div>
-            <button className='bg-accent border border-secondary/50 rounded-[3px] text-xs text-primary uppercase font-medium px-4 py-2 w-fit ml-auto mt-5 mb-2 hover:bg-secondary hover:text-light cursor-pointer transition-colors tracking-wide'>Proceed to Checkout</button>
+            <button className='bg-accent border border-secondary/50 rounded-[3px] text-xs text-primary uppercase nunito font-extrabold px-5 py-2.5 w-fit ml-auto mt-5 mb-2 hover:bg-secondary hover:text-light cursor-pointer transition-colors'>Proceed to Checkout</button>
           </div>}
 
       </div>

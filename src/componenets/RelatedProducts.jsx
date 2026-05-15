@@ -1,6 +1,7 @@
 import ProductCard from "../componenets/ProductCard"
-import Loader from "./Loader";
-import { useProducts } from "../context/ProductsContext";
+import Loader from "./Loader"
+import TitleBar from "./TitleBar"
+import { useProducts } from "../context/ProductsContext"
 
 
 function RelatedProducts({ category, id }) {
@@ -14,9 +15,14 @@ function RelatedProducts({ category, id }) {
     return (
         <>
             {loading ? <div className='flex justify-center items-center min-h-50'><Loader /></div> :
-                <div className='grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:gap-6 mx-4 sm:mx-0'>
-                    {products}
-                </div>
+                <>
+                    <div className="pt-4 sm:pt-5 pb-4 sm:pb-5 mx-4 sm:mx-0">
+                        <TitleBar firstText='Related' secText=' Products' showLine className={'sm:text-lg md:text-xl text-secondary font-extrabold'} />
+                    </div>
+                    <div className='grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:gap-6 mx-4 sm:mx-0'>
+                        {products}
+                    </div>
+                </>
             }
         </>
     )

@@ -48,11 +48,11 @@ function ProductDetails() {
                         <h6 onClick={() => setHide(prev => !prev)} className={`text-sm text-neutral-600 ${hide ? 'line-clamp-3' : 'line-clamp-none'} cursor-pointer`}>{item.description}</h6>
                     </div>
                     <div className="flex gap-5 mb-1">
-                        <button onClick={() => addToCart(product)} className="text-sm text-white font-bold border border-secondary/50 bg-secondary px-5 py-2 rounded-xs hover:bg-transparent hover:text-secondary hover:border-secondary/50 cursor-pointer transition-colors">Add to Cart</button>
-                        <button className="text-sm text-secondary font-bold border border-secondary/50 bg-transparent px-5 py-2 rounded-xs hover:bg-secondary hover:text-white cursor-pointer hover:border-secondary/50 transition-colors">Buy Now</button>
+                        <button onClick={() => addToCart(product)} className="text-sm text-white font-bold border border-secondary/50 bg-secondary px-5 py-2 rounded-[3px] hover:bg-transparent hover:text-secondary hover:border-secondary/50 cursor-pointer transition-colors">Add to Cart</button>
+                        <button className="text-sm text-secondary font-bold border border-secondary/50 bg-transparent px-5 py-2 rounded-[3px] hover:bg-secondary hover:text-white cursor-pointer hover:border-secondary/50 transition-colors">Buy Now</button>
                     </div>
                     <hr className="text-neutral-200 mt-4 mb-4" />
-                    <div className="flex flex-col text-sm gap-0.5 text-neutral-500 mb-1 ">
+                    <div className="flex flex-col text-xs  font-sans tracking-wider gap-0.5 text-neutral-500 mb-1 ">
                         <p>We proudly offer Cash on Delivery support.</p>
                         <p>Our platform provides a safe and secure checkout process.</p>
                         <p>With our 24/7 customer support team.</p>
@@ -60,7 +60,6 @@ function ProductDetails() {
                 </div>
             </div>
             <>
-                <TitleBar firstText='Related' secText=' Products' showLine className={'pt-4 sm:pt-5 pb-4 sm:pb-5 mx-4 sm:mx-0'} />
                 <RelatedProducts category={item.category} id={id} />
             </>
             <Newsletter />
