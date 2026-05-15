@@ -23,14 +23,14 @@ function Cart() {
   return (
     <>
       <div className='pt-4 sm:pt-5 pb-4 sm:pb-5 mx-4 sm:mx-10'>
-        <TitleBar firstText={'Shopping'} secText={'Cart'} showLine={true} className={'sm:text-lg md:text-xl text-secondary font-extrabold'} />
+        <TitleBar firstText={'Shopping'} secText={'Cart'} showLine={true} className={'sm:text-lg lg:text-xl text-secondary font-extrabold'} />
       </div>
 
-      <div className='flex flex-col md:flex-row gap-8 mx-4 sm:mx-10 mb-10'>
+      <div className='flex flex-col md:flex-row gap-8 mb-10 mx-4 sm:mx-10'>
 
         <div className={`w-full ${cart.length === 0 ? 'w-full' : 'md:w-3/5 xl:w-4/6'} overflow-y-auto`}>
           {cart.length === 0 ?
-            <div className='flex flex-col justify-center items-center gap-3 h-[40vh]'>
+            <div className='flex flex-col justify-center items-center gap-3 mt-10 mb-10'>
               <img src={CartIcon} alt='CartIcon' className='w-25 sm:w-30' />
               <h1 className='text-2xl sm:text-3xl text-secondary font-extrabold'>Your Cart is Empty !</h1>
               <p className='text-sm text-gray-500 w-70 text-center sm:w-fit'>Your cart is empty, but your next favorite find is just a click away</p>
@@ -49,7 +49,7 @@ function Cart() {
             </div>
             <hr className='text-neutral-200 my-4 sm:my-3' />
             <div className='flex justify-between text-xs xl:text-sm nunito font-bold'><p>Total</p><span>LKR {total.toFixed(2)}</span></div>
-            <button className='bg-accent border border-secondary/50 rounded-[3px] text-xs text-primary uppercase nunito font-extrabold px-5 py-2.5 w-fit ml-auto mt-5 mb-2 hover:bg-secondary hover:text-light cursor-pointer transition-colors'>Proceed to Checkout</button>
+            <button className='bg-accent border border-secondary/50 rounded-[3px] text-xs tracking-wide text-secondary uppercase font-bold px-4 py-2 w-fit ml-auto mt-5 mb-2 hover:bg-secondary hover:text-light cursor-pointer transition-colors'>Go to Checkout</button>
           </div>}
 
       </div>

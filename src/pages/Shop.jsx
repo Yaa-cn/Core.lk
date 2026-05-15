@@ -87,7 +87,7 @@ function Shop() {
 
         <div className="productsListSection">
           <div className="flex justify-between items-center  pt-4 sm:pt-5 pb-4 sm:pb-5 mx-4 xl:mx-10">
-            <TitleBar secText={category} className={'sm:text-lg md:text-xl text-secondary font-extrabold'} showLine />
+            <TitleBar secText={category} className={'sm:text-lg lg:text-xl text-secondary font-extrabold'} showLine />
             <div onClick={() => setVisible(true)} className={`${visible ? 'hidden' : 'flex'} gap-1.5 mr-0.75 cursor-pointer sm:hidden`}><RiFilter3Line size={16} className="mt-px" /><span className="text-sm font-medium tracking-wide">Filter</span></div>
           </div>
           {loading ? <div className='flex justify-center items-center h-full min-h-dvh'><Loader /></div> :

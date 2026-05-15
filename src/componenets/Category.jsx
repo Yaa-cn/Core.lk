@@ -12,7 +12,7 @@ function Category() {
     return (
         <div className="px-4 sm:px-10 pb-2 sm:pb-4">
             <div className="flex flex-col gap-1 mt-5 mb-4 sm:mt-8 sm:mb-6">
-                <TitleBar firstText={'Explore by'} secText={'categories'} className={'sm:text-lg md:text-xl text-secondary font-extrabold'}/>
+                <TitleBar firstText={'Explore by'} secText={'categories'} className={'sm:text-lg lg:text-xl text-secondary font-extrabold'}/>
                 <p className="text-xs sm:text-sm text-neutral-500">Find exactly what you need. Browse our collections by category and discover your next favorite item.</p>
             </div>
             

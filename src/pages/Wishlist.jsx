@@ -15,13 +15,14 @@ function Wishlist() {
   return (
     <>
       <div className='pt-4 sm:pt-5 pb-4 sm:pb-5 mx-4 sm:mx-10'>
-        <TitleBar firstText={'My'} secText={'Wishlist'} showLine={true} className={'sm:text-lg md:text-xl text-secondary font-extrabold'} />
+        <TitleBar firstText={'My'} secText={'Wishlist'} showLine={true} className={'sm:text-lg lg:text-xl text-secondary font-extrabold'} />
       </div>
 
-      <div className='flex flex-col md:flex-row gap-8 mx-4 mb-6 sm:mx-10 sm:mb-10'>
-        <div className={`w-full`}>
+      <div className='flex flex-col md:flex-row gap-8 mb-10 mx-4 sm:mx-10'>
+
+        <div className='w-full'>
           {wishlist.length === 0 ?
-            <div className='flex flex-col justify-center items-center gap-3 h-[40vh]'>
+            <div className='flex flex-col justify-center items-center gap-3 mt-10 mb-10'>
               <img src={HeartIcon} alt="HeartIcon" className='w-25 sm:w-30' />
               <h1 className='text-2xl sm:text-3xl text-secondary font-extrabold'>Your Wishlist is Empty !</h1>
               <p className='text-sm text-gray-500 w-70 text-center sm:w-fit'>You haven’t added any items yet. Start exploring and save your favorites here for quick access later</p>

@@ -18,7 +18,7 @@ function RecentProducts() {
             {loading ? <div className='flex justify-center items-center min-h-50'><Loader /></div> :
                 <div className='mb-10 mx-4 sm:mx-10'>
                     <div className='mt-4 mb-3 sm:my-6'>
-                        <TitleBar firstText={'Recent'} secText={'Products'} className={'sm:text-lg md:text-xl text-secondary font-extrabold'} />
+                        <TitleBar firstText={'Recent'} secText={'Products'} className={'sm:text-lg lg:text-xl text-secondary font-extrabold'} />
                     </div>
                     <div className='grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:gap-6'>
                         {recentProducts}

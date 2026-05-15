@@ -17,7 +17,7 @@ function RelatedProducts({ category, id }) {
             {loading ? <div className='flex justify-center items-center min-h-50'><Loader /></div> :
                 <>
                     <div className="pt-4 sm:pt-5 pb-4 sm:pb-5 mx-4 sm:mx-0">
-                        <TitleBar firstText='Related' secText=' Products' showLine className={'sm:text-lg md:text-xl text-secondary font-extrabold'} />
+                        <TitleBar firstText='Related' secText=' Products' showLine className={'sm:text-lg lg:text-xl text-secondary font-extrabold'} />
                     </div>
                     <div className='grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:gap-6 mx-4 sm:mx-0'>
                         {products}
