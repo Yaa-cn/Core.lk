@@ -15,7 +15,7 @@ function Wishlist() {
   return (
     <>
       <div className='pt-4 sm:pt-5 pb-4 sm:pb-5 mx-4 sm:mx-10'>
-        <TitleBar firstText={'My'} secText={'Wishlist'} showLine={true} className={'sm:text-lg lg:text-xl text-secondary font-extrabold'} />
+        <TitleBar firstText={'My'} secText={'Wishlist'} showLine />
       </div>
 
       <div className='flex flex-col md:flex-row gap-8 mb-10 mx-4 sm:mx-10'>

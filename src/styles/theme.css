@@ -1,7 +1,15 @@
 @theme {
+    --color-primary: #212529;
+    --color-secondary: #495057;
+    --color-light: #f8f9fa;
+    --color-accent: #dee2e6;
+    --color-gray: #d3d3d3;
+}
+
+/* @theme {
     --color-primary: #936639;
     --color-secondary: #b08968;
     --color-light: #faf9f9;
     --color-accent: #eee6dd;
     --color-gray: #d3d3d3;
-}
+} */

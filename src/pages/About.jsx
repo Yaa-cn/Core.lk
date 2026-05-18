@@ -7,7 +7,7 @@ function About() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-10">
         <div className="flex flex-col gap-3">
-          <TitleBar firstText={'About'} secText={'Us'} showLine className={'md:text-lg text-secondary font-extrabold ml-0.5'} />
+          <h4 className='outfit sm:text-lg font-medium text-secondary m-0.5'>About Us</h4>
           <h1 className="text-3xl sm:text-4xl font-medium">Power Your Setup <br /> Trusted Tech Starts Here</h1>
         </div>
         <p className="nunito text-sm text-gray-600 ml-0.5 sm:ml-0">We are your trusted destination for high quality computer accessories. From everyday users to gamers and developers,

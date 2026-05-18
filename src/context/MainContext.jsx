@@ -3,6 +3,7 @@ import { ProductsProvider } from "./ProductsContext"
 import { UiProvider } from "./UiContext"
 import { CartProvider } from "./CartContext"
 import { WishlistProvider } from "./WishlistContext"
+import { OrdersProvider } from "./OrdersContext"
 
 export const MainProvider = ({ children }) => {
 
@@ -11,9 +12,11 @@ export const MainProvider = ({ children }) => {
             <CartProvider>
                 <FilterProvider>
                     <UiProvider>
-                        <ProductsProvider>
-                            {children}
-                        </ProductsProvider>
+                        <OrdersProvider>
+                            <ProductsProvider>
+                                {children}
+                            </ProductsProvider>
+                        </OrdersProvider>
                     </UiProvider>
                 </FilterProvider>
             </CartProvider>

@@ -1,3 +1,4 @@
+import BrandsSlider from '../componenets/BrandsSlider'
 import Category from '../componenets/Category'
 import Hero from '../componenets/Hero'
 import Newsletter from '../componenets/Newsletter'
@@ -11,6 +12,7 @@ function Home() {
     <Hero/>
     <Category/>
     <RecentProducts/>
+    {/* <BrandsSlider/> */}
     <Newsletter/>
     </>
   )

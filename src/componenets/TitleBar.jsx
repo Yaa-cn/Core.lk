@@ -4,7 +4,7 @@ function TitleBar({ firstText, secText, className, showLine }) {
 
     return (
         <div>
-            <h4 className={`${className} uppercase`}>{firstText} <span className="text-black">{secText} </span>{showLine && <span className="text-secondary font-extrabold tracking-tight">_______</span>}</h4>
+            <h4 className={`${className} outfit text-sm sm:text-base lg:text-lg uppercase font-medium`}>{firstText} <span>{secText} </span>{showLine && <span className="text-secondary font-extrabold tracking-tight">_______</span>}</h4>
         </div>
     )
 }

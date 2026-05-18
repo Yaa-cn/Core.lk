@@ -23,7 +23,7 @@ function Cart() {
   return (
     <>
       <div className='pt-4 sm:pt-5 pb-4 sm:pb-5 mx-4 sm:mx-10'>
-        <TitleBar firstText={'Shopping'} secText={'Cart'} showLine={true} className={'sm:text-lg lg:text-xl text-secondary font-extrabold'} />
+        <TitleBar firstText={'Shopping'} secText={'Cart'} showLine />
       </div>
 
       <div className='flex flex-col md:flex-row gap-8 mb-10 mx-4 sm:mx-10'>
@@ -42,14 +42,14 @@ function Cart() {
 
         {cart.length > 0 &&
           <div className='flex flex-col border bg-white border-neutral-200 w-full md:w-2/5 xl:w-2/6 px-6 py-4 h-fit rounded'>
-            <TitleBar firstText={'Order'} secText={'Total'} className={'sm:text-lg text-secondary font-extrabold mb-2'} />
+            <h1 className={'sm:text-lg uppercase outfit text-secondary font-extrabold mb-2'} >Order Total</h1>
             <div className='flex flex-col gap-2 nunito'>
               <div className='flex justify-between text-xs xl:text-sm'><p className='font-medium'>Subtotal</p><span>LKR {subTotal.toFixed(2)}</span></div>
               <div className='flex justify-between text-xs xl:text-sm'><p className='font-medium'>Shipping fee</p><span>LKR {shippingFee.toFixed(2)}</span></div>
             </div>
             <hr className='text-neutral-200 my-4 sm:my-3' />
             <div className='flex justify-between text-xs xl:text-sm nunito font-bold'><p>Total</p><span>LKR {total.toFixed(2)}</span></div>
-            <button className='bg-accent border border-secondary/50 rounded-[3px] text-xs tracking-wide text-secondary uppercase font-bold px-4 py-2 w-fit ml-auto mt-5 mb-2 hover:bg-secondary hover:text-light cursor-pointer transition-colors'>Go to Checkout</button>
+            <button className='bg-primary outfit border border-secondary/50 rounded-[3px] text-xs text-white uppercase tracking-wide px-4 py-2 w-fit ml-auto mt-5 mb-2 hover:bg-secondary  cursor-pointer transition-colors duration-300'>Go to Checkout</button>
           </div>}
 
       </div>

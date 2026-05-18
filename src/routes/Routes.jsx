@@ -15,10 +15,13 @@ const App = lazy(() => import('../App'))
 
 const router = createBrowserRouter([
   {
+    // path: '/',
+    // element: <Suspense fallback={<div className='flex justify-center items-center h-dvh'><Loader /></div>} >
+    //   <App />
+    // </Suspense>,
+    
     path: '/',
-    element: <Suspense fallback={<div className='flex justify-center items-center h-dvh'><Loader /></div>} >
-      <App />
-    </Suspense>,
+    element: <App />,
     children: [
       {
         path: '/',

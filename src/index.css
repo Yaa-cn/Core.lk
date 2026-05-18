@@ -2,38 +2,33 @@
 @import "./styles/theme.css";
 
 @font-face {
-    font-family: Nunito;
-    src: url('/src/assets/fonts/nunito-latin-400-normal.woff2');
-    font-weight: 400;
+    font-family: nunito;
+    src: url('/src/assets/fonts/Nunito-Variable.woff2');
+    font-weight: 100 900;
     font-display: block;
 }
 
 @font-face {
-    font-family: Nunito;
-    src: url('/src/assets/fonts/nunito-latin-500-normal.woff2');
-    font-weight: 500;
+    font-family: outfit;
+    src: url('/src/assets/fonts/Outfit-Variable.woff2');
+    font-weight: 100 900;
     font-display: block;
 }
 
-@font-face {
-    font-family: Nunito;
-    src: url('/src/assets/fonts/nunito-latin-700-normal.woff2');
-    font-weight: 700;
-    font-display: block;
-}
 
-@font-face {
-    font-family: Nunito;
-    src: url('/src/assets/fonts/nunito-latin-800-normal.woff2');
-    font-weight: 800;
-    font-display: block;
-}
-
-:root {
+/* :root {
     --color-primary: #936639;
     --color-secondary: #b08968;
     --color-light: #faf9f9;
     --color-accent: #eee6dd;
+    --color-gray: #d3d3d3;
+} */
+
+:root {
+    --color-primary: #212529;
+    --color-secondary: #495057;
+    --color-light: #f8f9fa;
+    --color-accent: #e9ecef;
     --color-gray: #d3d3d3;
 }
 
@@ -43,7 +38,11 @@ body {
 }
 
 .nunito {
-    font-family: 'Nunito' !important;
+    font-family: 'nunito' !important;
+}
+
+.outfit {
+    font-family: 'outfit' !important;
 }
 
 body::-webkit-scrollbar {
@@ -126,12 +125,6 @@ body::-webkit-scrollbar {
     width: 200px;
 }
 
-.productCard {
-    border: 1px solid var(--color-gray);
-    overflow: hidden;
-    border-radius: 4px;
-}
-
 .productCard img {
     transition: ease-in 0.2s;
 }
@@ -157,4 +150,18 @@ body::-webkit-scrollbar {
 .productCard .cartBtn:hover {
     transform: translate(2px);
     transition: ease-in 0.3s;
+}
+
+.scroll {
+    animation: slide 30s infinite linear;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
