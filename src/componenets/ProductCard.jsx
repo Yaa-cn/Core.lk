@@ -20,7 +20,7 @@ function ProductCard({ id, imgSrc, imgAlt, category, name, price, rating, stock 
   }
 
   return (
-    <div className='productCard flex flex-col bg-white nunito border border-gray shadow-xs rounded overflow-hidden'>
+    <div className='productCard flex flex-col bg-white nunito border border-gray/50 shadow-xs rounded overflow-hidden'>
       <Link to={`/product/${id}`} onClick={() => scrollTo({ top: 0, behavior: 'smooth' })} className="overflow-hidden aspect-7/5 sm:aspect-5/4">
         {!loaded &&
           <Skeleton />}
@@ -36,7 +36,7 @@ function ProductCard({ id, imgSrc, imgAlt, category, name, price, rating, stock 
 
         <div className="flex justify-between">
           <p className={`text-xs ${location.pathname.includes('/shop') ? 'xl:text-xs' : 'xl:text-sm'} font-medium my-auto`}>{price} LKR</p>
-          <button onClick={() => addToWishlist(product)} className='rounded-full bg-accent w-7 sm:w-8 h-7 sm:h-8 border border-gray cursor-pointer hover:bg-secondary hover:text-white transition ease-in duration-200'><RiHeartFill className="m-auto w-3.5 h-3.5 sm:w-4 sm:h-4" /></button>
+          <button onClick={() => addToWishlist(product)} className='rounded-full bg-accent w-7 sm:w-8 h-7 sm:h-8 border border-gray cursor-pointer hover:bg-secondary hover:text-white transition ease-in duration-200'><RiHeartFill className="m-auto w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" /></button>
         </div>
       </div>
     </div>

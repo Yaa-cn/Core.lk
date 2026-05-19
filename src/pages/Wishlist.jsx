@@ -24,9 +24,9 @@ function Wishlist() {
           {wishlist.length === 0 ?
             <div className='flex flex-col justify-center items-center gap-3 mt-10 mb-10'>
               <img src={HeartIcon} alt="HeartIcon" className='w-25 sm:w-30' />
-              <h1 className='text-2xl sm:text-3xl text-secondary font-extrabold'>Your Wishlist is Empty !</h1>
+              <h1 className='text-2xl sm:text-3xl text-secondary outfit font-bold'>Your Wishlist is Empty !</h1>
               <p className='text-sm text-gray-500 w-70 text-center sm:w-fit'>You haven’t added any items yet. Start exploring and save your favorites here for quick access later</p>
-              <button onClick={() => navigate('/shop')} className='text-xs bg-accent border border-secondary/50 text-primary px-4 py-2 mt-2 rounded-xs font-bold nunito hover:bg-secondary hover:text-light transition-colors cursor-pointer'>Explore now</button>
+              <button onClick={() => { navigate('/shop'); scrollTo({ top: 0, behavior: 'smooth' }) }} className='text-[10px] sm:text-xs bg-accent border border-secondary/50 text-secondary px-4 py-2.5 mt-2 rounded-[3px] font-medium outfit uppercase hover:bg-secondary hover:text-light transition-colors duration-300 cursor-pointer'>Explore now</button>
             </div> :
             <div className='flex flex-col gap-4'> {wishlistItems} </div>}
         </div>

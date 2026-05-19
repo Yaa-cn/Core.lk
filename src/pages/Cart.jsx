@@ -32,9 +32,9 @@ function Cart() {
           {cart.length === 0 ?
             <div className='flex flex-col justify-center items-center gap-3 mt-10 mb-10'>
               <img src={CartIcon} alt='CartIcon' className='w-25 sm:w-30' />
-              <h1 className='text-2xl sm:text-3xl text-secondary font-extrabold'>Your Cart is Empty !</h1>
+              <h1 className='text-2xl sm:text-3xl text-secondary outfit font-bold'>Your Cart is Empty !</h1>
               <p className='text-sm text-gray-500 w-70 text-center sm:w-fit'>Your cart is empty, but your next favorite find is just a click away</p>
-              <button onClick={() => navigate('/shop')} className='text-xs bg-accent border border-secondary/50 text-primary px-4 py-2 mt-2 rounded-xs font-bold nunito hover:bg-secondary hover:text-light transition-colors cursor-pointer'>Shop Now</button>
+              <button onClick={() => { navigate('/shop'); scrollTo({ top: 0, behavior: 'smooth' }) }} className='text-[10px] sm:text-xs bg-accent border border-secondary/50 text-secondary px-4 py-2.5 mt-2 rounded-[3px] font-medium outfit uppercase hover:bg-secondary hover:text-light transition-colors duration-300 cursor-pointer' >Shop Now</button>
             </div> :
             <div className='flex flex-col gap-4'> {cartItems} </div>}
         </div>
@@ -49,7 +49,7 @@ function Cart() {
             </div>
             <hr className='text-neutral-200 my-4 sm:my-3' />
             <div className='flex justify-between text-xs xl:text-sm nunito font-bold'><p>Total</p><span>LKR {total.toFixed(2)}</span></div>
-            <button className='bg-primary outfit border border-secondary/50 rounded-[3px] text-xs text-white uppercase tracking-wide px-4 py-2 w-fit ml-auto mt-5 mb-2 hover:bg-secondary  cursor-pointer transition-colors duration-300'>Go to Checkout</button>
+            <button className='bg-primary outfit border border-secondary/50 rounded-[3px] text-xs text-white uppercase font-medium px-5 py-2.5 w-fit ml-auto mt-5 mb-2 hover:bg-secondary cursor-pointer transition-colors duration-300'>Go to Checkout</button>
           </div>}
 
       </div>
