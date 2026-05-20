@@ -1,34 +1,17 @@
-import { useState, useRef } from "react"
-import TitleBar from "../componenets/TitleBar"
+import { Outlet, useLocation } from "react-router-dom"
+import { useAuth } from "../context/AuthContext"
+import { NavLink } from "react-router-dom"
+import { useState } from "react"
 
 function Profile() {
 
-  const [activeSection, setActiveSection] = useState('settings')
-
-  const [user, setUser] = useState({
-    name: 'John Wick',
-    email: 'Johnn@gmail.com',
-    phone: '0773939701'
-  })
-
-  const nameInput = useRef()
-  const emailInput = useRef()
-  const phoneInput = useRef()
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setUser({
-      name: nameInput.current.value,
-      email: emailInput.current.value,
-      phone: phoneInput.current.value
-    }
-    )
-  }
+  const { user } = useAuth()
+  const location = useLocation()
 
   return (
     <div className="flex flex-col gap-10 mx-4 my-5 sm:mx-10 sm:my-10">
 
-      <div className="flex justify-between items-center gap-6 bg-accent border border-secondary/50 rounded px-8 py-6 ">
+      <div className="flex justify-between items-center gap-6 bg-accent border border-secondary/50 outfit rounded-[3px] px-8 py-6 ">
         <div className="grid place-items-center uppercase bg-secondary text-white border border-primary rounded-full w-14 h-14 text-2xl font-bold">
           <span>{user.name?.charAt(0)}</span>
         </div>
@@ -36,57 +19,18 @@ function Profile() {
           <h1 className="text-xl font-extrabold text-primary">{user.name}</h1>
           <p className="text-xs text-neutral-500">{user.email}</p>
         </div>
-
       </div>
 
       <div className="flex flex-col gap-5">
-
         <div className="flex flex-col">
-          <div className="flex gap-6 text-xs nunito font-medium text-neutral-500">
-            {[['settings', 'Settings'], ['myOrders', 'My Orders'], ['addresses', 'Addresses']].map(([id, label]) => (
-              <button key={id} onClick={() => setActiveSection(id)} className={`${activeSection === id ? 'text-secondary border-b-3 border-primary' : ''} pb-2 cursor-pointer`}>{label}</button>))}
-            <button className="text-xs text-red-400 pb-2 ml-auto mr-0.5 cursor-pointer">Logout</button>
+          <div className="flex gap-6 text-xs outfit text-neutral-500">
+            {[['accountsettings', 'Settings'], ['myorders', 'My Orders'], ['addresses', 'Addresses']].map(([path, label]) => (
+              <NavLink key={path} to={path} end className={`${location.pathname === `/profile/${path}` ? 'text-secondary border-b-3 border-secondary' : ''} pb-2 cursor-pointer`}>{label}</NavLink>))}
+            <button className="text-xs outfit text-red-400/90 pb-2 ml-auto mr-0.5 cursor-pointer">Logout</button>
           </div>
           <hr className="border-neutral-300" />
         </div>
-
-        <div className={`${activeSection === 'settings' ? 'block' : 'hidden'}`}>
-          <div>
-            <TitleBar firstText={'Account'} secText={'Settings'} showLine />
-          </div>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-3 my-4">
-
-            <div className="flex flex-col gap-0.5">
-              <label className="text-[10px] uppercase text-neutral-500 ">Full Name</label>
-              <input ref={nameInput} type="text" placeholder="Full Name" name="name" defaultValue={user.name} className="text-xs text-primary px-4 py-2.5 border border-secondary/50 rounded-xs max-w-120 w-full outline-none" />
-            </div>
-
-            <div className="flex flex-col gap-0.5">
-              <label className="text-[10px] uppercase text-neutral-500 ">Email</label>
-              <input ref={emailInput} type="email" placeholder="Email" name="email" defaultValue={user.email} className="text-xs text-primary px-4 py-2.5 border border-secondary/50 rounded-xs max-w-120 w-full outline-none" />
-            </div>
-
-            <div className="flex flex-col gap-0.5">
-              <label className="text-[10px] uppercase text-neutral-500 ">Phone</label>
-              <input ref={phoneInput} type="text" placeholder="Phone" name="phone" defaultValue={user.phone} className="text-xs text-primary px-4 py-2.5 border border-secondary/50 rounded-xs max-w-120 w-full outline-none transition-colors duration-300" />
-            </div>
-
-            <input type="submit" value={'Save Changes'} className="text-xs mt-2 px-4 py-2.5 border border-secondary/50 rounded-[3px] w-fit bg-primary text-[10px] sm:text-xs font-medium text-white outfit uppercase cursor-pointer hover:bg-accent hover:text-secondary transition-colors" />
-          </form>
-        </div>
-
-        <div className={`${activeSection === 'myOrders' ? 'block' : 'hidden'}`}>
-          <div>
-            <TitleBar firstText={'Order'} secText={'History'} showLine />
-          </div>
-        </div>
-
-        <div className={`${activeSection === 'addresses' ? 'block' : 'hidden'}`}>
-          <div>
-            <TitleBar secText={'Addresses'} showLine />
-          </div>
-        </div>
-
+        <Outlet />
       </div>
 
     </div>

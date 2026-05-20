@@ -4,6 +4,7 @@ import { UiProvider } from "./UiContext"
 import { CartProvider } from "./CartContext"
 import { WishlistProvider } from "./WishlistContext"
 import { OrdersProvider } from "./OrdersContext"
+import { AuthProvider } from "./AuthContext"
 
 export const MainProvider = ({ children }) => {
 
@@ -13,9 +14,11 @@ export const MainProvider = ({ children }) => {
                 <FilterProvider>
                     <UiProvider>
                         <OrdersProvider>
-                            <ProductsProvider>
-                                {children}
-                            </ProductsProvider>
+                            <AuthProvider>
+                                <ProductsProvider>
+                                    {children}
+                                </ProductsProvider>
+                            </AuthProvider>
                         </OrdersProvider>
                     </UiProvider>
                 </FilterProvider>

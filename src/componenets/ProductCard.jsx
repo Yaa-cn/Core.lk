@@ -20,7 +20,7 @@ function ProductCard({ id, imgSrc, imgAlt, category, name, price, rating, stock 
   }
 
   return (
-    <div className='productCard flex flex-col bg-white nunito border border-gray/50 shadow-xs rounded overflow-hidden'>
+    <div className='productCard flex flex-col bg-white nunito border border-gray/70 shadow-xs rounded overflow-hidden'>
       <Link to={`/product/${id}`} onClick={() => scrollTo({ top: 0, behavior: 'smooth' })} className="overflow-hidden aspect-7/5 sm:aspect-5/4">
         {!loaded &&
           <Skeleton />}

@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 import { Suspense, lazy } from 'react'
 import Home from '../pages/Home'
 import Shop from '../pages/Shop'
@@ -10,6 +10,9 @@ import NotFound from '../pages/NotFound'
 import ProductDetails from '../pages/ProductDetails'
 import Wishlist from '../pages/Wishlist'
 import Loader from '../componenets/Loader'
+import AccountSettings from '../pages/profile/AccountSettings'
+import MyOrders from '../pages/profile/MyOrders'
+import Addresses from '../pages/profile/Addresses'
 
 const App = lazy(() => import('../App'))
 
@@ -19,7 +22,7 @@ const router = createBrowserRouter([
     // element: <Suspense fallback={<div className='flex justify-center items-center h-dvh'><Loader /></div>} >
     //   <App />
     // </Suspense>,
-    
+
     path: '/',
     element: <App />,
     children: [
@@ -41,7 +44,25 @@ const router = createBrowserRouter([
       },
       {
         path: '/profile',
-        element: <Profile />
+        element: <Profile />,
+        children: [
+          {
+            index: true,
+            element: <Navigate to='accountsettings' replace />,
+          },
+          {
+            path: 'accountsettings',
+            element: <AccountSettings />,
+          },
+          {
+            path: 'myorders',
+            element: <MyOrders />
+          },
+          {
+            path: 'addresses',
+            element: <Addresses />
+          },
+        ]
       },
       {
         path: '/cart',

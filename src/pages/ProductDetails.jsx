@@ -52,7 +52,7 @@ function ProductDetails() {
                         <button className="text-xs text-secondary outfit font-medium uppercase border border-secondary/50 bg-accent px-5 py-2.5 rounded-[3px] hover:bg-primary hover:text-white cursor-pointer hover:border-secondary/50 transition-colors duration-300">Buy Now</button>
                     </div>
                     <hr className="text-neutral-200 mt-4 mb-4" />
-                    <div className="flex flex-col outfit text-xs  gap-1 text-neutral-500 mb-1 ">
+                    <div className="flex flex-col outfit text-xs gap-1 text-neutral-500/90 mb-1 ">
                         <p>We proudly offer Cash on Delivery support.</p>
                         <p>Our platform provides a safe and secure checkout process.</p>
                         <p>With our 24/7 customer support team.</p>

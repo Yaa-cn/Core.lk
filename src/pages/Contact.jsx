@@ -38,7 +38,7 @@ function Contact() {
         {/* Contact Section */}
         <div className="flex flex-col gap-6 sm:gap-10 lg:justify-between w-full">
           <div className="relative flex bg-white border border-gray rounded overflow-hidden">
-            <RiPhoneFill size={60} className="text-primary mt-8 mr-1 ml-4" />
+            <RiPhoneFill size={60} className="text-secondary mt-8 mr-1 ml-4" />
             <div className="flex flex-col mt-4 mb-12 ml-5">
               <h2 className='text-lg text-primary uppercase font-extrabold'>Call Us <span className='tracking-tight text-secondary' >______</span></h2>
               <p className="nunito font-extrabold text-lg text-secondary" >Phone Number</p>
@@ -48,7 +48,7 @@ function Contact() {
           </div>
 
           <div className="relative flex bg-white border border-gray rounded overflow-hidden">
-            <RiBallPenFill size={60} className="text-primary mt-8 mr-1 ml-4" />
+            <RiBallPenFill size={60} className="text-secondary mt-8 mr-1 ml-4" />
             <div className="flex flex-col mt-4 mb-12 ml-5">
               <h2 className='text-lg text-primary uppercase font-extrabold'>Write to Us <span className='tracking-tight text-secondary' >______</span></h2>
               <p className="nunito font-extrabold text-lg text-secondary" >Email Address</p>
@@ -58,7 +58,7 @@ function Contact() {
           </div>
 
           <div className="relative flex bg-white border border-gray rounded overflow-hidden">
-            <RiMapPinFill size={60} className="text-primary mt-8 mr-1 ml-4" />
+            <RiMapPinFill size={60} className="text-secondary mt-8 mr-1 ml-4" />
             <div className="flex flex-col mt-4 mb-12 ml-5">
               <h2 className='text-lg text-primary uppercase font-extrabold'>Visit Us <span className='tracking-tight text-secondary' >______</span></h2>
               <p className="nunito font-extrabold text-lg text-secondary">Location</p>

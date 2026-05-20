@@ -15,15 +15,6 @@
     font-display: block;
 }
 
-
-/* :root {
-    --color-primary: #936639;
-    --color-secondary: #b08968;
-    --color-light: #faf9f9;
-    --color-accent: #eee6dd;
-    --color-gray: #d3d3d3;
-} */
-
 :root {
     --color-primary: #323031;
     --color-secondary: #495057;
@@ -71,7 +62,7 @@ body::-webkit-scrollbar {
     bottom: -18px;
     width: 0;
     height: 2.5px;
-    background-color: var(--color-primary);
+    background-color: var(--color-secondary);
 }
 
 .activeLine.active::after {
@@ -85,7 +76,7 @@ body::-webkit-scrollbar {
 }
 
 .iconColor.active {
-    color: var(--color-primary);
+    color: var(--color-secondary);
 }
 
 
@@ -139,7 +130,7 @@ body::-webkit-scrollbar {
     transition: ease-in 0.3s;
 }
 
-.slide {
+/* .slide {
     animation: slide 5s infinite linear;
 }
 
@@ -152,4 +143,12 @@ body::-webkit-scrollbar {
         transform: translateX(-50%);
     }
 
-}
+} */
+
+/* :root {
+    --color-primary: #936639;
+    --color-secondary: #b08968;
+    --color-light: #faf9f9;
+    --color-accent: #eee6dd;
+    --color-gray: #d3d3d3;
+} */
