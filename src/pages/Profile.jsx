@@ -1,12 +1,14 @@
-import { Outlet, useLocation } from "react-router-dom"
+import { Outlet, useLocation, useNavigate } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
 import { NavLink } from "react-router-dom"
 import { useState } from "react"
+import LoginPage from "./LoginPage"
 
 function Profile() {
 
   const { user } = useAuth()
   const location = useLocation()
+  const navigate = useNavigate()
 
   return (
     <div className="flex flex-col gap-10 mx-4 my-5 sm:mx-10 sm:my-10">
@@ -26,7 +28,7 @@ function Profile() {
           <div className="flex gap-6 text-xs outfit text-neutral-500">
             {[['accountsettings', 'Settings'], ['myorders', 'My Orders'], ['addresses', 'Addresses']].map(([path, label]) => (
               <NavLink key={path} to={path} end className={`${location.pathname === `/profile/${path}` ? 'text-secondary border-b-3 border-secondary' : ''} pb-2 cursor-pointer`}>{label}</NavLink>))}
-            <button className="text-xs outfit text-red-400/90 pb-2 ml-auto mr-0.5 cursor-pointer">Logout</button>
+            <button onClick={() => navigate('/login')} className="text-xs outfit text-red-400/90 pb-2 ml-auto mr-0.5 cursor-pointer">Logout</button>
           </div>
           <hr className="border-neutral-300" />
         </div>

@@ -13,6 +13,8 @@ import Loader from '../componenets/Loader'
 import AccountSettings from '../pages/profile/AccountSettings'
 import MyOrders from '../pages/profile/MyOrders'
 import Addresses from '../pages/profile/Addresses'
+import LoginPage from '../pages/LoginPage'
+import RegisterPage from '../pages/RegisterPage'
 
 const App = lazy(() => import('../App'))
 
@@ -75,6 +77,14 @@ const router = createBrowserRouter([
       {
         path: '/product/:id',
         element: <ProductDetails />
+      },
+      {
+        path: '/login',
+        element: <LoginPage/>
+      },
+      {
+        path: '/register',
+        element: <RegisterPage/>
       },
       {
         path: '*',
