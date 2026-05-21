@@ -1,17 +1,18 @@
 import { RiFacebookCircleLine, RiInstagramLine, RiTwitterXLine, RiWhatsappLine } from "@remixicon/react"
-import { useNavigate } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 import { useFilter } from "../context/FilterContext"
 import { useUi } from "../context/UiContext"
 
 function Footer() {
 
   const navigate = useNavigate()
+  const location = useLocation()
   const { setCategory } = useFilter()
   const { visible } = useUi()
 
   return (
 
-    <footer className={`bg-white w-full nunito text-primary py-8 px-4 sm:px-10 border-t border-secondary/50 ${visible ? 'opacity-10' : ''} sm:opacity-100 `}>
+    <footer className={`bg-white w-full nunito text-primary py-8 px-4 sm:px-10 border-t border-secondary/50 ${location.pathname.includes('/shop') && visible ? 'blur-3xl' : ''} sm:blur-none`}>
 
       <div className="grid grid-cols-1 lg:grid-cols-6 gap-8 md:gap-12">
 

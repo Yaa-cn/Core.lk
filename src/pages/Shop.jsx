@@ -18,6 +18,13 @@ function Shop() {
   const { items, loading, setLoading } = useProducts()
 
   useEffect(() => {
+    if (!visible) return
+    document.body.style.overflow = 'hidden'
+    document.body.classList.add('autoOverflow')
+    return () => document.body.style.overflow = 'auto'
+  }, [visible])
+
+  useEffect(() => {
     const timeout = setTimeout(() => setSearchTerm(query), 500)
     return () => clearTimeout(timeout)
   }, [query])
@@ -78,7 +85,7 @@ function Shop() {
       </div>
 
       {/* primary Section */}
-      <div className={`mainSection flex flex-col w-full ${visible ? 'opacity-10' : ''} sm:opacity-100`}>
+      <div className={`mainSection flex flex-col w-full ${visible ? 'blur-3xl' : ''} sm:blur-none`}>
 
         <div className={`${visibleSearchBar ? 'flex' : 'hidden'} shopSearchBar sm:flex bg-light mx-4 xl:mx-10 mt-6 mb-1 xl:mt-8 transition-all`}>
           <input type="search" name="search" onChange={(e) => setQuery(e.target.value)} placeholder="Search" className="border border-secondary/50 rounded-s-[3px] sm:rounded-e-[3px] px-4 py-3 text-xs w-full outline-0 nunito" />

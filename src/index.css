@@ -130,6 +130,12 @@ body::-webkit-scrollbar {
     transition: ease-in 0.3s;
 }
 
+@media (width >=640px) {
+    body.autoOverflow {
+        overflow: auto !important;
+    }
+}
+
 /* .slide {
     animation: slide 5s infinite linear;
 }
