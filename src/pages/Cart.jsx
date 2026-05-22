@@ -1,25 +1,13 @@
 import TitleBar from '../componenets/TitleBar'
-import CartItem from '../componenets/CartItem'
 import { useCart } from '../context/CartContext'
 import { useNavigate } from 'react-router-dom'
 import CartIcon from '../assets/icons/cart.png'
 
 function Cart() {
 
-  const { cart } = useCart()
+  const { cart, subTotal, total, shippingFee, cartItems } = useCart()
   const navigate = useNavigate()
-
-  const subTotal = cart.reduce((sum, item) =>
-    sum + item.price * item.quantity, 0
-  )
-  const shippingFee = 0
-
-  const total = subTotal + shippingFee
-
-  const cartItems = cart.map((item) =>
-    <CartItem key={item.id} imgSrc={item.image} imgAlt={item.image} name={item.name} price={item.price} quantity={item.quantity} id={item.id} />
-  )
-
+  
   return (
     <>
       <div className='pt-4 sm:pt-5 pb-4 sm:pb-5 mx-4 sm:mx-10'>
@@ -28,7 +16,7 @@ function Cart() {
 
       <div className='flex flex-col md:flex-row gap-8 mb-10 mx-4 sm:mx-10'>
 
-        <div className={`w-full ${cart.length === 0 ? 'w-full' : 'md:w-3/5 xl:w-4/6'} overflow-y-auto`}>
+        <div className={`w-full ${cart.length === 0 ? 'w-full' : 'md:1/2 lg:w-4/7 xl:w-5/8'} overflow-y-auto`}>
           {cart.length === 0 ?
             <div className='flex flex-col justify-center items-center gap-3 mt-10 mb-10'>
               <img src={CartIcon} alt='CartIcon' className='w-25 sm:w-30' />
@@ -41,14 +29,43 @@ function Cart() {
 
 
         {cart.length > 0 &&
-          <div className='flex flex-col border bg-white border-neutral-200 w-full md:w-2/5 xl:w-2/6 px-6 py-4 h-fit rounded'>
-            <h1 className={'sm:text-lg uppercase outfit text-secondary font-extrabold mb-2'} >Order Total</h1>
-            <div className='flex flex-col gap-2 nunito'>
-              <div className='flex justify-between text-xs xl:text-sm'><p className='font-medium'>Subtotal</p><span>LKR {subTotal.toFixed(2)}</span></div>
-              <div className='flex justify-between text-xs xl:text-sm'><p className='font-medium'>Shipping fee</p><span>LKR {shippingFee.toFixed(2)}</span></div>
+          <div className='flex flex-col border outfit bg-white border-neutral-200 w-full md:1/2 lg:w-3/7 xl:w-3/8 px-6 py-4 h-fit rounded'>
+            <h1 className={'sm:text-lg uppercase text-secondary font-extrabold mb-2.5'} >Order Total</h1>
+            <div className='flex flex-col gap-2'>
+              <div className='flex flex-col gap-2.5'>
+                {cart.map(item =>
+
+                  <div key={item.id} className='flex justify-between gap-2 font-light text-xs xl:text-sm'>
+                    <div className='flex gap-2 w-5/8'>
+                      <p >{item.name} * {item.quantity}</p>
+                    </div>
+                    <span className='w-3/8 text-end'>LKR {(item.price * item.quantity).toFixed(2)}</span>
+                  </div>
+
+                )}
+              </div>
+
+              <hr className='text-neutral-200 my-1 sm:my-2' />
+
+              <div className='flex justify-between text-xs xl:text-sm'>
+                <p>Subtotal</p>
+                <span>LKR {subTotal.toFixed(2)}</span>
+              </div>
+
+              <div className='flex justify-between text-xs xl:text-sm'>
+                <p>Shipping fee</p>
+                <span>LKR {shippingFee.toFixed(2)}</span>
+              </div>
+
             </div>
+
             <hr className='text-neutral-200 my-4 sm:my-3' />
-            <div className='flex justify-between text-xs xl:text-sm nunito font-bold'><p>Total</p><span>LKR {total.toFixed(2)}</span></div>
+
+            <div className='flex justify-between text-xs xl:text-sm font-medium'>
+              <p>Total</p>
+              <span>LKR {total.toFixed(2)}</span>
+            </div>
+
             <button className='bg-primary outfit border border-secondary/50 rounded-[3px] text-xs text-white uppercase font-medium px-5 py-2.5 w-fit ml-auto mt-5 mb-2 hover:bg-secondary cursor-pointer transition-colors duration-300'>Go to Checkout</button>
           </div>}
 

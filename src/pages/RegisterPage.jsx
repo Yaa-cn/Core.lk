@@ -7,20 +7,20 @@ function RegisterPage() {
   const navigate = useNavigate()
 
   return (
-    <div className='flex w-full'>
-      <div style={{ backgroundImage: `url(${loginPic})` }} className='bg-cover bg-center w-0 sm:w-2/5 md:w-2/4 lg:w-4/7 xl:w-3/5' >
+    <div className='flex flex-col sm:flex-row w-full'>
+      <div style={{ backgroundImage: `url(${loginPic})` }} className='bg-cover bg-center h-40 sm:h-auto w-full sm:w-2/5 md:w-2/4 lg:w-4/7 xl:w-3/5' >
         <div className='bg-black/40 h-full'></div>
       </div>
-      <div className='flex flex-col justify-center gap-8 w-full sm:w-3/5 md:w-2/4 lg:w-3/7 xl:w-2/5 mx-6 my-12 sm:mx-10 md:mx-15 md:my-20 lg:my-30 xl:my-44'>
+      <div className='flex flex-col justify-center gap-8 sm:w-3/5 md:w-2/4 lg:w-3/7 xl:w-2/5 mx-6 sm:mx-10 md:mx-15 h-100 sm:h-110 md:h-130 lg:h-150 xl:h-170'>
         <div className='flex flex-col gap-2'>
-          <TitleBar firstText={'Create'} secText={'Account'} className={'text-2xl! font-semibold!'} showLine />
+          <TitleBar firstText={'Create'} secText={'Account'} className={'text-xl sm:text-2xl! font-semibold!'} showLine />
           <p className='text-xs text-primary/50'>Please enter your details</p>
         </div>
         <form className="flex flex-col gap-5">
           <input type="text" placeholder='Name' className='text-primary text-xs border-b border-primary/40 nunito py-2 px-1 outline-none ' />
           <input type="text" placeholder='Email Address' className='text-primary text-xs border-b border-primary/40 nunito py-2 px-1 outline-none ' />
           <input type="password" placeholder='Password' className='text-primary text-xs border-b border-primary/40 nunito py-2 px-1 outline-none ' />
-          <button onClick={(e)=> {navigate('/profile'); e.preventDefault()}} className='text-xs text-white uppercase mt-2 font-medium border outfit border-primary/50 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-transparent hover:text-secondary hover:border-secondary/50 cursor-pointer transition-colors duration-300'>Register</button>
+          <button onClick={(e) => { navigate('/profile'); e.preventDefault() }} className='text-xs text-white uppercase mt-2 font-medium border outfit border-primary/50 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-transparent hover:text-secondary hover:border-secondary/50 cursor-pointer transition-colors duration-300'>Register</button>
           <p className='text-xs text-secondary cursor-pointer'>Already have an account ? <span className='cursor-pointer hover:text-primary/60 transition-colors'><Link to={'/login'}>Login</Link></span> </p>
         </form>
       </div>

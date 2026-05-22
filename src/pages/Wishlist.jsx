@@ -1,16 +1,11 @@
 import TitleBar from '../componenets/TitleBar'
-import WishlistItem from '../componenets/WishlistItem'
 import { useNavigate } from 'react-router-dom'
 import { useWishlist } from '../context/WishlistContext'
 import HeartIcon from '../assets/icons/heart.png'
 
 function Wishlist() {
-  const { wishlist } = useWishlist()
+  const { wishlist, wishlistItems } = useWishlist()
   const navigate = useNavigate()
-
-  const wishlistItems = wishlist.map((item) =>
-    <WishlistItem key={item.id} imgSrc={item.image} imgAlt={item.image} name={item.name} price={item.price} quantity={item.quantity} id={item.id} stock={item.stock} />
-  )
 
   return (
     <>

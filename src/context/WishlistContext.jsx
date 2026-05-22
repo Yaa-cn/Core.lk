@@ -1,5 +1,6 @@
 import { useContext, createContext, useEffect, useState } from "react";
 import { toast } from "sonner";
+import WishlistItem from '../componenets/WishlistItem'
 
 const WishlistContext = createContext()
 
@@ -9,6 +10,10 @@ export const WishlistProvider = ({ children }) => {
         const data = localStorage.getItem('wishlist')
         return data ? JSON.parse(data) : []
     })
+
+    const wishlistItems = wishlist.map((item) =>
+        <WishlistItem key={item.id} imgSrc={item.image} imgAlt={item.image} name={item.name} price={item.price} quantity={item.quantity} id={item.id} stock={item.stock} />
+    )
 
     const addToWishlist = (product) => {
         setWishlist(prevCart => {
@@ -33,7 +38,7 @@ export const WishlistProvider = ({ children }) => {
 
 
     return (
-        <WishlistContext.Provider value={{ wishlist, addToWishlist, removeFromWishlist }}>
+        <WishlistContext.Provider value={{ wishlist, addToWishlist, removeFromWishlist, wishlistItems }}>
             {children}
         </WishlistContext.Provider>
     )

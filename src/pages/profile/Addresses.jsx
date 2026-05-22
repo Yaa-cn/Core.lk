@@ -47,27 +47,27 @@ function Addresses() {
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="name" className="text-[10px] uppercase text-neutral-500">Name</label>
-                        <input type="text" name="name" id="name" placeholder="Name" className="text-xs border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
+                        <input type="text" name="name" id="name" placeholder="Name" className="text-xs text-primary/80 border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="phone" className="text-[10px] uppercase text-neutral-500">Phone Number</label>
-                        <input type="number" name="phone" id="phone" placeholder="Number" className="text-xs border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
+                        <input type="number" name="phone" id="phone" placeholder="Number" className="text-xs text-primary/80 border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="address" className="text-[10px] uppercase text-neutral-500">Address</label>
-                        <input type="text" name="address" id="address" placeholder="Address" className="text-xs border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
+                        <input type="text" name="address" id="address" placeholder="Address" className="text-xs text-primary/80 border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="city" className="text-[10px] uppercase text-neutral-500">City</label>
-                        <input type="text" name="city" id="city" placeholder="City" className="text-xs border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
+                        <input type="text" name="city" id="city" placeholder="City" className="text-xs text-primary/80 border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="district" className="text-[10px] uppercase text-neutral-500">District</label>
-                        <input type="text" name="district" id="district" placeholder="District" className="text-xs border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
+                        <input type="text" name="district" id="district" placeholder="District" className="text-xs text-primary/80 border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
 
                     <div className="flex gap-1">
@@ -95,27 +95,27 @@ function Addresses() {
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="name" className="text-[10px] uppercase text-neutral-500">Name</label>
-                        <input type="text" name="name" id="name" placeholder="Name" className="text-xs border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
+                        <input type="text" name="name" id="name" placeholder="Name" className="text-xs text-primary/80 border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="phone" className="text-[10px] uppercase text-neutral-500">Phone Number</label>
-                        <input type="number" name="phone" id="phone" placeholder="Number" className="text-xs border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
+                        <input type="number" name="phone" id="phone" placeholder="Number" className="text-xs text-primary/80 border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="address" className="text-[10px] uppercase text-neutral-500">Address</label>
-                        <input type="text" name="address" id="address" placeholder="Address" className="text-xs border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
+                        <input type="text" name="address" id="address" placeholder="Address" className="text-xs text-primary/80 border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="city" className="text-[10px] uppercase text-neutral-500">City</label>
-                        <input type="text" name="city" id="city" placeholder="City" className="text-xs border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
+                        <input type="text" name="city" id="city" placeholder="City" className="text-xs text-primary/80 border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="district" className="text-[10px] uppercase text-neutral-500">District</label>
-                        <input type="text" name="district" id="district" placeholder="District" className="text-xs border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
+                        <input type="text" name="district" id="district" placeholder="District" className="text-xs text-primary/80 border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
 
                     <div className="flex gap-1">

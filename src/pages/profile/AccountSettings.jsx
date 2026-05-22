@@ -14,8 +14,7 @@ function AccountSettings() {
         e.preventDefault()
         setUser({
             name: nameInput.current.value,
-            email: emailInput.current.value,
-            phone: phoneInput.current.value
+            email: emailInput.current.value
         })
     }
 
@@ -34,11 +33,6 @@ function AccountSettings() {
                 <div className="flex flex-col gap-0.5">
                     <label className="text-[10px] uppercase text-neutral-500 ">Email</label>
                     <input ref={emailInput} type="email" placeholder="Email" disabled name="email" value={user.email} className="text-xs text-primary/40 px-4 py-2.5 border border-secondary/50 rounded-xs max-w-120 w-full outline-none" />
-                </div>
-
-                <div className="flex flex-col gap-0.5">
-                    <label className="text-[10px] uppercase text-neutral-500 ">Phone</label>
-                    <input ref={phoneInput} type="text" placeholder="Phone" name="phone" defaultValue={user.phone} className="text-xs text-primary/80 px-4 py-2.5 border border-secondary/50 rounded-xs max-w-120 w-full outline-none transition-colors duration-300" />
                 </div>
 
                 <input type="submit" value={'Save Changes'} className="mt-2 px-4 py-2.5 border border-secondary/50 rounded-[3px] w-fit bg-primary text-[10px] sm:text-xs font-medium text-white outfit uppercase cursor-pointer hover:bg-accent hover:text-secondary transition-colors" />

@@ -4,7 +4,6 @@ const UiContext = createContext()
 
 export const UiProvider = ({ children }) => {
 
-
     const [visible, setVisible] = useState(false)
     const [visibleSearchBar, setVisibleSearchBar] = useState(false)
 

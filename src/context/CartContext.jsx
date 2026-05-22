@@ -1,5 +1,6 @@
 import { useContext, createContext, useEffect, useState } from "react";
 import { toast } from "sonner";
+import CartItem from '../componenets/CartItem'
 
 const CartContext = createContext()
 
@@ -24,6 +25,17 @@ export const CartProvider = ({ children }) => {
         })
     }
 
+    const subTotal = cart.reduce((sum, item) =>
+        sum + item.price * item.quantity, 0
+    )
+    const shippingFee = 0
+
+    const total = subTotal + shippingFee
+
+    const cartItems = cart.map((item) =>
+        <CartItem key={item.id} imgSrc={item.image} imgAlt={item.image} name={item.name} price={item.price} quantity={item.quantity} id={item.id} />
+    )
+
     const removeFromCart = (id) => {
         setCart(prevCart => prevCart.filter(item => item.id !== id))
     }
@@ -42,7 +54,7 @@ export const CartProvider = ({ children }) => {
 
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, message }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, message, subTotal, total, shippingFee, cartItems }}>
             {children}
         </CartContext.Provider>
     )

@@ -14,6 +14,7 @@ function ProductDetails() {
 
     const [hide, setHide] = useState(true)
     const [loaded, setLoaded] = useState(false)
+    const [tab, setTab] = useState('addComment')
     const { items } = useProducts()
     const { addToCart } = useCart()
     const { id } = useParams()
@@ -52,13 +53,63 @@ function ProductDetails() {
                         <button className="text-xs text-secondary outfit font-medium uppercase border border-secondary/50 bg-accent px-5 py-2.5 rounded-[3px] hover:bg-primary hover:text-white cursor-pointer hover:border-secondary/50 transition-colors duration-300">Buy Now</button>
                     </div>
                     <hr className="text-neutral-200 mt-4 mb-4" />
-                    <div className="flex flex-col outfit text-xs gap-1 text-neutral-500/90 mb-1 ">
+                    <div className="flex flex-col outfit uppercase text-[10px] gap-1 text-neutral-500/90 mb-1 ">
                         <p>We proudly offer Cash on Delivery support.</p>
                         <p>Our platform provides a safe and secure checkout process.</p>
                         <p>With our 24/7 customer support team.</p>
                     </div>
                 </div>
             </div>
+
+            <div className="flex flex-col gap-5 mt-4 mx-4 sm:mx-0">
+                <div className="flex flex-col">
+                    <div className="flex text-[10px] outfit font-medium text-secondary">
+                        <button onClick={() => setTab('reviews')} className={`${tab === 'reviews' ? 'bg-accent' : ''} px-5 py-2 border-t border-x rounded-tl-[3px] border-neutral-200 cursor-pointer uppercase`}>Reviews</button>
+                        <button onClick={() => setTab('addComment')} className={`${tab === 'addComment' ? 'bg-accent' : ''} px-5 py-2 border-t border-r rounded-tr-[3px] border-neutral-200 cursor-pointer uppercase`}>Add Comment</button>
+                    </div>
+                    <hr className=" border-neutral-200" />
+
+                    {/* Review Sec */}
+                    {tab === 'reviews' && <div className="flex flex-col gap-4 my-4">
+
+                        <div className="flex flex-col gap-3">
+                            <div className="flex justify-between">
+                                <h5 className="text-xs text-primary font-semibold">John Wick</h5>
+                                <span className="flex gap-3 nunito"><RiStarFill size={12} className="text-yellow-400 mt-px sm:mt-[1.5px]" /><p className="text-xs font-bold">{item.rating}</p></span>
+                            </div>
+                            <p className="text-xs text-primary/70">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quae alias nisi, harum sint, ex sapiente commodi, cupiditate itaque asperiores quia doloribus ipsum provident rem quaerat tempore mollitia quas facere accusantium excepturi ipsam consectetur quod. Sit voluptates, ea minima, deserunt placeat unde ad cumque laudantium sint officiis hic, et temporibus.</p>
+                            <hr className=" border-neutral-200 mt-3" />
+                        </div>
+
+                        <div className="flex flex-col gap-3">
+                            <div className="flex justify-between">
+                                <h5 className="text-xs text-primary font-semibold">John Cooper</h5>
+                                <span className="flex gap-3 nunito"><RiStarFill size={12} className="text-yellow-400 mt-px sm:mt-[1.5px]" /><p className="text-xs font-bold">{item.rating}</p></span>
+                            </div>
+                            <p className="text-xs text-primary/70">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quae alias nisi, harum sint, ex sapiente commodi, cupiditate itaque asperiores quia doloribus ipsum provident rem quaerat tempore mollitia quas facere accusantium excepturi ipsam consectetur quod. Sit voluptates, ea minima, deserunt placeat unde ad cumque laudantium sint officiis hic, et temporibus.</p>
+                            <hr className=" border-neutral-200 mt-3" />
+                        </div>
+
+                        <div className="flex flex-col gap-3">
+                            <div className="flex justify-between">
+                                <h5 className="text-xs text-primary font-semibold">William Butcher</h5>
+                                <span className="flex gap-3 nunito"><RiStarFill size={12} className="text-yellow-400 mt-px sm:mt-[1.5px]" /><p className="text-xs font-bold">{item.rating}</p></span>
+                            </div>
+                            <p className="text-xs text-primary/70">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quae alias nisi, harum sint, ex sapiente commodi, cupiditate itaque asperiores quia doloribus ipsum provident rem quaerat tempore mollitia quas facere accusantium excepturi ipsam consectetur quod. Sit voluptates, ea minima, deserunt placeat unde ad cumque laudantium sint officiis hic, et temporibus.</p>
+                            <hr className=" border-neutral-200 mt-3" />
+                        </div>
+
+                    </div>}
+
+
+                    {/* Add Comment Sec */}
+                    {tab === 'addComment' && <div>
+
+                    </div>}
+                </div>
+
+            </div>
+
             <>
                 <RelatedProducts category={item.category} id={id} />
             </>
