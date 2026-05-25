@@ -21,7 +21,7 @@ function Wishlist() {
               <img src={HeartIcon} alt="HeartIcon" className='w-25 sm:w-30' />
               <h1 className='text-xl sm:text-2xl text-secondary outfit font-bold'>Your Wishlist is Empty !</h1>
               <p className='text-xs sm:text-sm text-gray-500 w-70 text-center sm:w-fit'>You haven’t added any items yet. Start exploring and save your favorites here for quick access later</p>
-              <button onClick={() => { navigate('/shop'); scrollTo({ top: 0, behavior: 'smooth' }) }} className='text-[10px] sm:text-xs bg-accent border border-secondary/50 text-secondary px-4 py-2.5 mt-2 rounded-[3px] font-medium outfit uppercase hover:bg-secondary hover:text-light transition-colors duration-300 cursor-pointer'>Explore now</button>
+              <button onClick={() => navigate('/shop')} className='text-[10px] sm:text-xs bg-accent border border-secondary/20 text-secondary px-4 py-2.5 mt-2 rounded-[3px] font-medium outfit uppercase hover:bg-secondary hover:text-light transition-colors duration-300 cursor-pointer'>Explore now</button>
             </div> :
             <div className='flex flex-col gap-4'> {wishlistItems} </div>}
         </div>

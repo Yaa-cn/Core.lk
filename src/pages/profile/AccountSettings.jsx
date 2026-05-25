@@ -27,12 +27,12 @@ function AccountSettings() {
 
                 <div className="flex flex-col gap-0.5">
                     <label className="text-[10px] uppercase text-neutral-500 ">Full Name</label>
-                    <input ref={nameInput} type="text" placeholder="Full Name" name="name" defaultValue={user.name} className="text-xs text-primary/80 px-4 py-2.5 border border-secondary/50 rounded-xs max-w-120 w-full outline-none" />
+                    <input ref={nameInput} type="text" placeholder="Full Name" name="name" defaultValue={user.name} className="text-xs text-primary/80 px-4 py-2.5 border border-secondary/20 rounded-xs max-w-120 w-full outline-none" />
                 </div>
 
                 <div className="flex flex-col gap-0.5">
                     <label className="text-[10px] uppercase text-neutral-500 ">Email</label>
-                    <input ref={emailInput} type="email" placeholder="Email" disabled name="email" value={user.email} className="text-xs text-primary/40 px-4 py-2.5 border border-secondary/50 rounded-xs max-w-120 w-full outline-none" />
+                    <input ref={emailInput} type="email" placeholder="Email" disabled name="email" value={user.email} className="text-xs text-primary/40 px-4 py-2.5 border border-secondary/20 rounded-xs max-w-120 w-full outline-none" />
                 </div>
 
                 <input type="submit" value={'Save Changes'} className="mt-2 px-4 py-2.5 border border-secondary/50 rounded-[3px] w-fit bg-primary text-[10px] sm:text-xs font-medium text-white outfit uppercase cursor-pointer hover:bg-accent hover:text-secondary transition-colors" />

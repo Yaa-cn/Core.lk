@@ -29,7 +29,7 @@ function About() {
           </div>
         </div>
 
-        <div className="flex flex-col justify-end gap-2 min-h-45 col-span-1 bg-accent p-8 rounded-sm border border-secondary/50">
+        <div className="flex flex-col justify-end gap-2 min-h-45 col-span-1 bg-accent p-8 rounded-sm border border-secondary/20">
           <h4 className="font-medium">Our Mission</h4>
           <p className="text-sm text-gray-600">To provide high-quality, affordable computer accessories while making technology accessible to everyone.</p>
         </div>

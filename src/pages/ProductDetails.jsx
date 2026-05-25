@@ -14,7 +14,8 @@ function ProductDetails() {
 
     const [hide, setHide] = useState(true)
     const [loaded, setLoaded] = useState(false)
-    const [tab, setTab] = useState('addComment')
+    const [rate, setRate] = useState(null)
+    const [tab, setTab] = useState('reviews')
     const { items } = useProducts()
     const { addToCart } = useCart()
     const { id } = useParams()
@@ -26,6 +27,14 @@ function ProductDetails() {
         name: item.title,
         image: item.image,
         price: item.price,
+    }
+
+    const renderStars = (rating) => {
+        let stars = []
+        for (let i = 1; i <= rating; i++) {
+            stars.push(<RiStarFill size={10} className="text-yellow-400 mt-px sm:mt-[1.5px]" />)
+        }
+        return stars
     }
 
     return (
@@ -49,8 +58,8 @@ function ProductDetails() {
                         <h6 onClick={() => setHide(prev => !prev)} className={`text-sm text-neutral-600 ${hide ? 'line-clamp-3' : 'line-clamp-none'} cursor-pointer`}>{item.description}</h6>
                     </div>
                     <div className="flex gap-5 mb-1">
-                        <button onClick={() => addToCart(product)} className="text-xs text-white uppercase font-medium border outfit border-primary/50 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-transparent hover:text-secondary hover:border-secondary/50 cursor-pointer transition-colors duration-300">Add to Cart</button>
-                        <button className="text-xs text-secondary outfit font-medium uppercase border border-secondary/50 bg-accent px-5 py-2.5 rounded-[3px] hover:bg-primary hover:text-white cursor-pointer hover:border-secondary/50 transition-colors duration-300">Buy Now</button>
+                        <button onClick={() => addToCart(product)} className="text-xs text-white uppercase font-medium border outfit border-primary/20 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-transparent hover:text-secondary hover:border-secondary/20 cursor-pointer transition-colors duration-300">Add to Cart</button>
+                        <button className="text-xs text-secondary outfit font-medium uppercase border border-secondary/20 bg-accent px-5 py-2.5 rounded-[3px] hover:bg-primary hover:text-white cursor-pointer hover:border-secondary/20 transition-colors duration-300">Buy Now</button>
                     </div>
                     <hr className="text-neutral-200 mt-4 mb-4" />
                     <div className="flex flex-col outfit uppercase text-[10px] gap-1 text-neutral-500/90 mb-1 ">
@@ -63,48 +72,62 @@ function ProductDetails() {
 
             <div className="flex flex-col gap-5 mt-4 mx-4 sm:mx-0">
                 <div className="flex flex-col">
-                    <div className="flex text-[10px] outfit font-medium text-secondary">
-                        <button onClick={() => setTab('reviews')} className={`${tab === 'reviews' ? 'bg-accent' : ''} px-5 py-2 border-t border-x rounded-tl-[3px] border-neutral-200 cursor-pointer uppercase`}>Reviews</button>
-                        <button onClick={() => setTab('addComment')} className={`${tab === 'addComment' ? 'bg-accent' : ''} px-5 py-2 border-t border-r rounded-tr-[3px] border-neutral-200 cursor-pointer uppercase`}>Add Comment</button>
+                    <div className="flex text-[10px] outfit font-medium text-secondary ml-1">
+                        <button onClick={() => setTab('reviews')} className={`${tab === 'reviews' ? 'bg-accent' : ''} px-5 py-2 border-t border-x rounded-tl-[3px] border-secondary/20 cursor-pointer uppercase`}>Reviews</button>
+                        <button onClick={() => setTab('addReview')} className={`${tab === 'addReview' ? 'bg-accent' : ''} px-5 py-2 border-t border-r rounded-tr-[3px] border-secondary/20 cursor-pointer uppercase`}>Write a Review</button>
                     </div>
-                    <hr className=" border-neutral-200" />
+                    <hr className=" border-secondary/20" />
 
                     {/* Review Sec */}
                     {tab === 'reviews' && <div className="flex flex-col gap-4 my-4">
 
                         <div className="flex flex-col gap-3">
-                            <div className="flex justify-between">
-                                <h5 className="text-xs text-primary font-semibold">John Wick</h5>
-                                <span className="flex gap-3 nunito"><RiStarFill size={12} className="text-yellow-400 mt-px sm:mt-[1.5px]" /><p className="text-xs font-bold">{item.rating}</p></span>
+                            <div className="flex flex-col gap-2">
+                                <h5 className="text-xs outfit text-primary font-semibold">John Wick</h5>
+                                <span className="flex gap-3 nunito">{renderStars(item.rating)}</span>
                             </div>
-                            <p className="text-xs text-primary/70">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quae alias nisi, harum sint, ex sapiente commodi, cupiditate itaque asperiores quia doloribus ipsum provident rem quaerat tempore mollitia quas facere accusantium excepturi ipsam consectetur quod. Sit voluptates, ea minima, deserunt placeat unde ad cumque laudantium sint officiis hic, et temporibus.</p>
+                            <p className="text-xs nunito text-primary/70">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quae alias nisi, harum sint, ex sapiente commodi, cupiditate itaque asperiores quia doloribus ipsum provident rem quaerat tempore mollitia quas facere accusantium excepturi ipsam consectetur quod. Sit voluptates, ea minima, deserunt placeat unde ad cumque laudantium sint officiis hic, et temporibus.</p>
                             <hr className=" border-neutral-200 mt-3" />
                         </div>
 
                         <div className="flex flex-col gap-3">
-                            <div className="flex justify-between">
-                                <h5 className="text-xs text-primary font-semibold">John Cooper</h5>
-                                <span className="flex gap-3 nunito"><RiStarFill size={12} className="text-yellow-400 mt-px sm:mt-[1.5px]" /><p className="text-xs font-bold">{item.rating}</p></span>
+                            <div className="flex flex-col gap-2">
+                                <h5 className="text-xs outfit text-primary font-semibold">John Cooper</h5>
+                                <span className="flex gap-3 nunito">{renderStars(item.rating)}</span>
                             </div>
-                            <p className="text-xs text-primary/70">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quae alias nisi, harum sint, ex sapiente commodi, cupiditate itaque asperiores quia doloribus ipsum provident rem quaerat tempore mollitia quas facere accusantium excepturi ipsam consectetur quod. Sit voluptates, ea minima, deserunt placeat unde ad cumque laudantium sint officiis hic, et temporibus.</p>
+                            <p className="text-xs nunito text-primary/70">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quae alias nisi, harum sint, ex sapiente commodi, cupiditate itaque asperiores quia doloribus ipsum provident rem quaerat tempore mollitia quas facere accusantium excepturi ipsam consectetur quod. Sit voluptates, ea minima, deserunt placeat unde ad cumque laudantium sint officiis hic, et temporibus.</p>
                             <hr className=" border-neutral-200 mt-3" />
                         </div>
 
                         <div className="flex flex-col gap-3">
-                            <div className="flex justify-between">
-                                <h5 className="text-xs text-primary font-semibold">William Butcher</h5>
-                                <span className="flex gap-3 nunito"><RiStarFill size={12} className="text-yellow-400 mt-px sm:mt-[1.5px]" /><p className="text-xs font-bold">{item.rating}</p></span>
+                            <div className="flex flex-col gap-2">
+                                <h5 className="text-xs outfit text-primary font-semibold">William Butcher</h5>
+                                <span className="flex gap-3 nunito">{renderStars(5)}</span>
                             </div>
-                            <p className="text-xs text-primary/70">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quae alias nisi, harum sint, ex sapiente commodi, cupiditate itaque asperiores quia doloribus ipsum provident rem quaerat tempore mollitia quas facere accusantium excepturi ipsam consectetur quod. Sit voluptates, ea minima, deserunt placeat unde ad cumque laudantium sint officiis hic, et temporibus.</p>
+                            <p className="text-xs nunito text-primary/70">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quae alias nisi, harum sint, ex sapiente commodi, cupiditate itaque asperiores quia doloribus ipsum provident rem quaerat tempore mollitia quas facere accusantium excepturi ipsam consectetur quod. Sit voluptates, ea minima, deserunt placeat unde ad cumque laudantium sint officiis hic, et temporibus.</p>
                             <hr className=" border-neutral-200 mt-3" />
                         </div>
 
                     </div>}
 
 
-                    {/* Add Comment Sec */}
-                    {tab === 'addComment' && <div>
-
+                    {/* Add Review Sec */}
+                    {tab === 'addReview' && <div className="flex flex-col gap-4 my-5">
+                        <div>
+                            <TitleBar firstText={'Write a Review'} className={'text-xs! sm:text-sm!'} showLine />
+                        </div>
+                        <div className="flex gap-3 place-items-center">
+                            <div className="flex gap-1">
+                                <span onClick={() => setRate(1)} className="cursor-pointer"><RiStarFill size={18} className={`${rate >= 1 ? 'text-yellow-400' : ''} text-secondary/20`} /></span>
+                                <span onClick={() => setRate(2)} className="cursor-pointer"><RiStarFill size={18} className={`${rate >= 2 ? 'text-yellow-400' : ''} text-secondary/20`} /></span>
+                                <span onClick={() => setRate(3)} className="cursor-pointer"><RiStarFill size={18} className={`${rate >= 3 ? 'text-yellow-400' : ''} text-secondary/20`} /></span>
+                                <span onClick={() => setRate(4)} className="cursor-pointer"><RiStarFill size={18} className={`${rate >= 4 ? 'text-yellow-400' : ''} text-secondary/20`} /></span>
+                                <span onClick={() => setRate(5)} className="cursor-pointer"><RiStarFill size={18} className={`${rate >= 5 ? 'text-yellow-400' : ''} text-secondary/20`} /></span>
+                            </div>
+                            <p className="text-xs text-secondary/60 outfit">Click stars to rate product</p>
+                        </div>
+                        <textarea name="" id="" placeholder="Write a Review" className="h-20 text-xs nunito px-4 py-2 border border-secondary/20 rounded-[3px] w-full "></textarea>
+                        <button onClick={() => addToCart(product)} className="text-xs w-fit text-white uppercase font-medium border outfit border-primary/50 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-transparent hover:text-secondary hover:border-secondary/20 cursor-pointer transition-colors duration-300">Add Review</button>
                     </div>}
                 </div>
 

@@ -12,15 +12,15 @@ function Addresses() {
         <div>
             <div className="flex items-center ">
                 <TitleBar secText={'Addresses'} showLine />
-                <button onClick={() => setVisibleAddAddress(true)} className="px-4 py-2 border ml-auto border-secondary/50 rounded-[3px] w-fit bg-primary text-[10px] sm:text-xs font-medium text-white outfit uppercase cursor-pointer hover:bg-accent hover:text-secondary transition-colors">+ Add address</button>
+                <button onClick={() => setVisibleAddAddress(true)} className="px-4 py-2 border ml-auto border-secondary/20 rounded-[3px] w-fit bg-primary text-[10px] sm:text-xs font-medium text-white outfit uppercase cursor-pointer hover:bg-accent hover:text-secondary transition-colors">+ Add address</button>
             </div>
 
             <div className="my-4">
 
-                <div className="flex flex-col px-5 py-3 outfit justify-between h-fit bg-accent/40 border border-secondary/50 rounded-[3px] max-w-120">
+                <div className="flex flex-col px-5 py-3 outfit justify-between h-fit bg-accent/40 border border-secondary/20 rounded-[3px] max-w-120">
                     <div className="flex justify-between items-center">
                         <h2 className="font-bold text-primary">Home</h2>
-                        <span className="text-[10px] nunito font-bold text-primary/80 border border-secondary/50 bg-secondary/5 px-3 py-0.5 rounded-full select-none ">Default</span>
+                        <span className="text-[10px] nunito font-bold text-primary/80 border border-secondary/20 bg-secondary/5 px-3 py-0.5 rounded-full select-none ">Default</span>
                     </div>
                     <h6 className="text-xs text-secondary/80 mt-1">John Wick</h6>
                     <p className="text-xs text-secondary/80 mt-1">D184/1 Kaludemada, Hapugastalawa</p>
@@ -47,27 +47,27 @@ function Addresses() {
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="name" className="text-[10px] uppercase text-neutral-500">Name</label>
-                        <input type="text" name="name" id="name" placeholder="Name" className="text-xs text-primary/80 border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
+                        <input type="text" name="name" id="name" placeholder="Name" className="text-xs text-primary/80 border border-secondary/20 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="phone" className="text-[10px] uppercase text-neutral-500">Phone Number</label>
-                        <input type="number" name="phone" id="phone" placeholder="Number" className="text-xs text-primary/80 border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
+                        <input type="number" name="phone" id="phone" placeholder="Number" className="text-xs text-primary/80 border border-secondary/20 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="address" className="text-[10px] uppercase text-neutral-500">Address</label>
-                        <input type="text" name="address" id="address" placeholder="Address" className="text-xs text-primary/80 border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
+                        <input type="text" name="address" id="address" placeholder="Address" className="text-xs text-primary/80 border border-secondary/20 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="city" className="text-[10px] uppercase text-neutral-500">City</label>
-                        <input type="text" name="city" id="city" placeholder="City" className="text-xs text-primary/80 border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
+                        <input type="text" name="city" id="city" placeholder="City" className="text-xs text-primary/80 border border-secondary/20 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="district" className="text-[10px] uppercase text-neutral-500">District</label>
-                        <input type="text" name="district" id="district" placeholder="District" className="text-xs text-primary/80 border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
+                        <input type="text" name="district" id="district" placeholder="District" className="text-xs text-primary/80 border border-secondary/20 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
 
                     <div className="flex gap-1">
@@ -75,7 +75,7 @@ function Addresses() {
                         <p className="text-xs text-secondary ">Set this as my default address</p>
                     </div>
 
-                    <input type="submit" value={'Add Address'} className="px-4 py-2.5 border border-secondary/50 rounded-[3px] w-fit bg-primary text-[10px] sm:text-xs font-medium text-white outfit uppercase cursor-pointer hover:bg-accent hover:text-secondary transition-colors" />
+                    <input type="submit" value={'Add Address'} className="px-4 py-2.5 border border-secondary/20 rounded-[3px] w-fit bg-primary text-[10px] sm:text-xs font-medium text-white outfit uppercase cursor-pointer hover:bg-accent hover:text-secondary transition-colors" />
                 </form>
 
             </Modal>
@@ -95,27 +95,27 @@ function Addresses() {
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="name" className="text-[10px] uppercase text-neutral-500">Name</label>
-                        <input type="text" name="name" id="name" placeholder="Name" className="text-xs text-primary/80 border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
+                        <input type="text" name="name" id="name" placeholder="Name" className="text-xs text-primary/80 border border-secondary/20 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="phone" className="text-[10px] uppercase text-neutral-500">Phone Number</label>
-                        <input type="number" name="phone" id="phone" placeholder="Number" className="text-xs text-primary/80 border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
+                        <input type="number" name="phone" id="phone" placeholder="Number" className="text-xs text-primary/80 border border-secondary/20 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="address" className="text-[10px] uppercase text-neutral-500">Address</label>
-                        <input type="text" name="address" id="address" placeholder="Address" className="text-xs text-primary/80 border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
+                        <input type="text" name="address" id="address" placeholder="Address" className="text-xs text-primary/80 border border-secondary/20 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="city" className="text-[10px] uppercase text-neutral-500">City</label>
-                        <input type="text" name="city" id="city" placeholder="City" className="text-xs text-primary/80 border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
+                        <input type="text" name="city" id="city" placeholder="City" className="text-xs text-primary/80 border border-secondary/20 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="district" className="text-[10px] uppercase text-neutral-500">District</label>
-                        <input type="text" name="district" id="district" placeholder="District" className="text-xs text-primary/80 border border-secondary/50 rounded-[3px] px-4 py-3 outline-none " />
+                        <input type="text" name="district" id="district" placeholder="District" className="text-xs text-primary/80 border border-secondary/20 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
 
                     <div className="flex gap-1">
@@ -123,7 +123,7 @@ function Addresses() {
                         <p className="text-xs text-secondary ">Set this as my default address</p>
                     </div>
 
-                    <input type="submit" value={'Save Changes'} className="px-4 py-2.5 border border-secondary/50 rounded-[3px] w-fit bg-primary text-[10px] sm:text-xs font-medium text-white outfit uppercase cursor-pointer hover:bg-accent hover:text-secondary transition-colors" />
+                    <input type="submit" value={'Save Changes'} className="px-4 py-2.5 border border-secondary/20 rounded-[3px] w-fit bg-primary text-[10px] sm:text-xs font-medium text-white outfit uppercase cursor-pointer hover:bg-accent hover:text-secondary transition-colors" />
                 </form>
 
             </Modal>

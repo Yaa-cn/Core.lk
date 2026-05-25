@@ -11,7 +11,7 @@ function OrderCard({ orderId, placedTime, items, status }) {
     )
 
     const orderItems = items.map(item =>
-        <div key={item.product_id} onClick={() => { navigate(`/product/${item.product_id}`); scrollTo({ top: 0, behavior: 'smooth' }) }} className="flex gap-2 cursor-pointer">
+        <div key={item.product_id} onClick={() => navigate(`/product/${item.product_id}`)} className="flex gap-2 cursor-pointer">
             <p className="text-xs text-secondary line-clamp-1 w-3/5">{item.title} x {item.quantity}</p>
             <p className="text-xs text-secondary ml-auto">{item.unit_price.toFixed(2)} LKR</p>
         </div>)
@@ -38,7 +38,7 @@ function OrderCard({ orderId, placedTime, items, status }) {
     }
 
     return (
-        <div className="flex flex-col px-5 py-3 outfit h-fit bg-accent/40 border border-secondary/50 rounded-[3px]">
+        <div className="flex flex-col px-5 py-3 outfit h-fit bg-accent/40 border border-secondary/20 rounded-[3px]">
             <div className="flex justify-between">
                 <h6 className="text-sm font-medium text-primary">{orderId}</h6>
                 <p className={`text-[10px] nunito font-bold border ${className} px-3 py-0.5 rounded-full select-none`}>{status.charAt(0).toUpperCase() + status.slice(1)}</p>
@@ -50,7 +50,7 @@ function OrderCard({ orderId, placedTime, items, status }) {
                 {orderItems}
             </div>
 
-            <hr className="text-secondary/30 my-2" />
+            <hr className="text-secondary/20 my-2" />
 
             <div className="flex justify-between">
                 <label className="text-xs text-secondary">Total</label>

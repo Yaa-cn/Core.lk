@@ -7,8 +7,8 @@ function Newsletter() {
                 <h6 className="text-xs sm:text-sm tracking-tight text-neutral-500"> Never miss out on the best deals !</h6>
             </div>
             <div className="flex justify-center">
-                <input type="email" autoComplete="false" name="email" className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 py-3 px-4 border border-secondary/50 text-xs rounded-s-[3px] focus:outline-none nunito" placeholder="Enter your email" />
-                <button className="text-xs bg-accent py-3 border-e border-b border-t border-secondary/50 px-5 rounded-e-[3px] hover:bg-secondary hover:text-white transition-colors ease cursor-pointer nunito">Subscribe</button>
+                <input type="email" autoComplete="false" name="email" className="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 py-3 px-4 border border-secondary/20 text-xs rounded-s-[3px] focus:outline-none nunito" placeholder="Enter your email" />
+                <button className="text-xs bg-accent py-3 border-e border-b border-t border-secondary/20 px-5 rounded-e-[3px] hover:bg-secondary hover:text-white transition-colors ease cursor-pointer nunito">Subscribe</button>
             </div>
         </div>
     )

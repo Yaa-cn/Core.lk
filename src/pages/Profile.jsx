@@ -13,8 +13,8 @@ function Profile() {
   return (
     <div className="flex flex-col gap-10 mx-4 my-5 sm:mx-10 sm:my-10">
 
-      <div className="flex justify-between items-center gap-6 bg-accent border border-secondary/50 rounded-[3px] px-8 py-6 ">
-        <div className="grid place-items-center uppercase bg-secondary text-white border border-primary rounded-full w-14 h-14 text-2xl font-bold">
+      <div className="flex justify-between items-center gap-6 bg-accent border border-secondary/20 rounded-[3px] px-8 py-6 ">
+        <div className="grid place-items-center uppercase bg-secondary text-white border border-secondary/20 rounded-full w-14 h-14 text-2xl font-bold">
           <span>{user.name?.charAt(0)}</span>
         </div>
         <div className="mr-auto">

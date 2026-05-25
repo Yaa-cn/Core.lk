@@ -16,7 +16,7 @@ function Hero() {
           <div className='flex flex-col gap-6 py-10 sm:py-15 mx-4 sm:mx-10'>
             <h1 className='outfit text-4xl text-white sm:text-5xl md:text-6xl lg:text-7xl xl:text-[86px] font-medium tracking-tight -translate-x-1 sm:-translate-x-1 md:-translate-x-1.5'>Everything to <br /> <span>enhance your setup.</span> </h1>
             <h6 className='text-xs text-white sm:text-sm lg:text-base'>Smarter accessories for work, gaming, and <br /> More all in one place.</h6>
-            <button className='bg-white border border-secondary/50 w-fit text-[10px] text-primary sm:text-xs font-semibold uppercase outfit px-2.5 sm:px-3 py-2.25 rounded-[3px] hover:translate-x-0.5 transition-transform cursor-pointer' onClick={() => { navigate("/shop"); scrollTo({ top: 0, behavior: 'smooth' }) }}>Explore Now</button>
+            <button className='bg-white border border-secondary/20 w-fit text-[10px] text-primary sm:text-xs font-semibold uppercase outfit px-2.5 sm:px-3 py-2.25 rounded-[3px] hover:translate-x-0.5 transition-transform cursor-pointer' onClick={() => navigate("/shop")}>Explore Now</button>
           </div>
         </div>
       </div>
