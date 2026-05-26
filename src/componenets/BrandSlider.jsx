@@ -7,21 +7,23 @@
 // import hpLogo from '../assets/brands/hp.svg'
 
 // function BrandSlider() {
+//     const logos = [
+//         { src: asusLogo, alt: "asus" },
+//         { src: intelLogo, alt: "intel" },
+//         { src: lenovoLogo, alt: "lenovo" },
+//         { src: logitechLogo, alt: "logitech" },
+//         { src: hpLogo, alt: "hp" },
+//         { src: samsungLogo, alt: "samsung" },
+//     ];
+
 //     return (
-//         <div className='flex  w-max slide'>
-//             <img src={asusLogo} className='h-40' alt="asus" />
-//             <img src={intelLogo} className='h-40' alt="intel" />
-//             <img src={lenovoLogo} className='h-40' alt="lenovo" />
-//             <img src={logitechLogo} className='h-40' alt="logitech" />
-//             <img src={hpLogo} className='h-40' alt="hp" />
-//             <img src={samsungLogo} className='h-40' alt="samsung" />
-//             <img src={asusLogo} className='h-40' alt="asus" />
-//             <img src={intelLogo} className='h-40' alt="intel" />
-//             <img src={lenovoLogo} className='h-40' alt="lenovo" />
-//             <img src={logitechLogo} className='h-40' alt="logitech" />
-//             <img src={hpLogo} className='h-40' alt="hp" />
-//             <img src={samsungLogo} className='h-40' alt="samsung" />
+//         <div className="slider-container">
+//             <div className="slide">
+//                 {logos.concat(logos).concat(logos).map((logo, index) => (
+//                     <img key={index} src={logo.src} alt={logo.alt} className="h-40 ml-30" />
+//                 ))}
+//             </div>
 //         </div>
-//     )
+//     );
 // }
-// export default BrandSlider
+

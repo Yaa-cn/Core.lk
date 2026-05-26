@@ -136,8 +136,16 @@ body::-webkit-scrollbar {
     }
 }
 
-/* .slide {
-    animation: slide 5s infinite linear;
+/* .slider-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+
+.slide {
+    display: flex;
+    width: max-content;
+    animation: slide 4s infinite linear;
 }
 
 @keyframes slide {

@@ -14,7 +14,7 @@ function ProductDetails() {
 
     const [hide, setHide] = useState(true)
     const [loaded, setLoaded] = useState(false)
-    const [rate, setRate] = useState(null)
+    const [rate, setRate] = useState(0)
     const [tab, setTab] = useState('reviews')
     const { items } = useProducts()
     const { addToCart } = useCart()
@@ -55,17 +55,17 @@ function ProductDetails() {
                     <p className={`text-base font-bold mb-2.5`}>LKR {item.price}</p>
                     <div className="flex flex-col gap-0.5 mb-5 select-none">
                         <h6 className="text-sm font-medium">Description </h6>
-                        <h6 onClick={() => setHide(prev => !prev)} className={`text-sm text-neutral-600 ${hide ? 'line-clamp-3' : 'line-clamp-none'} cursor-pointer`}>{item.description}</h6>
+                        <h6 onClick={() => setHide(prev => !prev)} className={`text-sm/5.5 outfit text-secondary/75 ${hide ? 'line-clamp-3' : 'line-clamp-none'} cursor-pointer`}>{item.description}</h6>
                     </div>
                     <div className="flex gap-5 mb-1">
                         <button onClick={() => addToCart(product)} className="text-xs text-white uppercase font-medium border outfit border-primary/20 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-transparent hover:text-secondary hover:border-secondary/20 cursor-pointer transition-colors duration-300">Add to Cart</button>
                         <button className="text-xs text-secondary outfit font-medium uppercase border border-secondary/20 bg-accent px-5 py-2.5 rounded-[3px] hover:bg-primary hover:text-white cursor-pointer hover:border-secondary/20 transition-colors duration-300">Buy Now</button>
                     </div>
-                    <hr className="text-neutral-200 mt-4 mb-4" />
-                    <div className="flex flex-col outfit uppercase text-[10px] gap-1 text-neutral-500/90 mb-1 ">
-                        <p>We proudly offer Cash on Delivery support.</p>
-                        <p>Our platform provides a safe and secure checkout process.</p>
-                        <p>With our 24/7 customer support team.</p>
+                    <hr className="text-neutral-200 mt-4 mb-3" />
+                    <div className="flex flex-col text-sm/5.5 outfit text-secondary/75 mb-1 ">
+                        <p>Cash on Delivery support.</p>
+                        <p>Experience a safe and secure checkout process.</p>
+                        <p>Customer support whenever you need.</p>
                     </div>
                 </div>
             </div>
@@ -116,18 +116,16 @@ function ProductDetails() {
                         <div>
                             <TitleBar firstText={'Write a Review'} className={'text-xs! sm:text-sm!'} showLine />
                         </div>
-                        <div className="flex gap-3 place-items-center">
-                            <div className="flex gap-1">
-                                <span onClick={() => setRate(1)} className="cursor-pointer"><RiStarFill size={18} className={`${rate >= 1 ? 'text-yellow-400' : ''} text-secondary/20`} /></span>
-                                <span onClick={() => setRate(2)} className="cursor-pointer"><RiStarFill size={18} className={`${rate >= 2 ? 'text-yellow-400' : ''} text-secondary/20`} /></span>
-                                <span onClick={() => setRate(3)} className="cursor-pointer"><RiStarFill size={18} className={`${rate >= 3 ? 'text-yellow-400' : ''} text-secondary/20`} /></span>
-                                <span onClick={() => setRate(4)} className="cursor-pointer"><RiStarFill size={18} className={`${rate >= 4 ? 'text-yellow-400' : ''} text-secondary/20`} /></span>
-                                <span onClick={() => setRate(5)} className="cursor-pointer"><RiStarFill size={18} className={`${rate >= 5 ? 'text-yellow-400' : ''} text-secondary/20`} /></span>
+                        <div className="flex gap-4 place-items-center">
+                            <div className="flex gap-1.25">
+                                {[1, 2, 3, 4, 5].map(value => (
+                                    <span key={value} onClick={() => setRate(prev => prev === value ? 0 : value)} className="cursor-pointer"><RiStarFill size={18} className={`${rate >= value ? 'text-yellow-400' : 'text-secondary/20'} `} /></span>
+                                ))}
                             </div>
-                            <p className="text-xs text-secondary/60 outfit">Click stars to rate product</p>
+                            <p className="text-xs text-secondary/60 outfit select-none">Click stars to rate product</p>
                         </div>
-                        <textarea name="" id="" placeholder="Write a Review" className="h-20 text-xs nunito px-4 py-2 border border-secondary/20 rounded-[3px] w-full "></textarea>
-                        <button onClick={() => addToCart(product)} className="text-xs w-fit text-white uppercase font-medium border outfit border-primary/50 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-transparent hover:text-secondary hover:border-secondary/20 cursor-pointer transition-colors duration-300">Add Review</button>
+                        <textarea name="" id="" placeholder="Write a Review" className="h-20 text-xs nunito px-4 py-2 border border-secondary/20 rounded-[3px] w-full outline-gray "></textarea>
+                        <button className="text-xs w-fit text-white uppercase font-medium border outfit border-primary/50 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-transparent hover:text-secondary hover:border-secondary/20 cursor-pointer transition-colors duration-300">Add Review</button>
                     </div>}
                 </div>
 
