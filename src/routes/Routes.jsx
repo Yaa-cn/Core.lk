@@ -15,6 +15,8 @@ import MyOrders from '../pages/profile/MyOrders'
 import Addresses from '../pages/profile/Addresses'
 import LoginPage from '../pages/LoginPage'
 import RegisterPage from '../pages/RegisterPage'
+import Checkout from '../pages/Checkout'
+import OrderStatus from '../pages/OrderStatus'
 
 const App = lazy(() => import('../App'))
 
@@ -80,11 +82,19 @@ const router = createBrowserRouter([
       },
       {
         path: '/login',
-        element: <LoginPage/>
+        element: <LoginPage />
+      },
+      {
+        path: '/checkout',
+        element: <Checkout />
+      },
+      {
+        path: '/orderstatus',
+        element: <OrderStatus />
       },
       {
         path: '/register',
-        element: <RegisterPage/>
+        element: <RegisterPage />
       },
       {
         path: '*',

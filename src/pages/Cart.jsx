@@ -66,7 +66,7 @@ function Cart() {
               <span>LKR {total.toFixed(2)}</span>
             </div>
 
-            <button className='bg-primary outfit border border-secondary/50 rounded-[3px] text-xs text-white uppercase font-medium px-5 py-2.5 w-fit ml-auto mt-5 mb-2 hover:bg-secondary cursor-pointer transition-colors duration-300'>Go to Checkout</button>
+            <button onClick={()=> navigate('/checkout')} className='bg-primary outfit border border-secondary/50 rounded-[3px] text-xs text-white uppercase font-medium px-5 py-2.5 w-fit ml-auto mt-5 mb-2 hover:bg-secondary cursor-pointer transition-colors duration-300'>Go to Checkout</button>
           </div>}
 
       </div>
