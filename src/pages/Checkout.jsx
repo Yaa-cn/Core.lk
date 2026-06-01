@@ -12,7 +12,7 @@ function Checkout() {
 
     return (
 
-        <div className='flex flex-col md:flex-row gap-8 mt-10 mb-10 mx-4 sm:mx-10'>
+        <div className='flex flex-col-reverse md:flex-row gap-8 mt-4 sm:mt-10 mb-10 mx-4 sm:mx-10'>
 
             <div className={`w-full ${cart.length === 0 ? 'w-full' : 'md:1/2 lg:w-4/7 xl:w-5/8'} overflow-y-auto`}>
 
@@ -53,7 +53,23 @@ function Checkout() {
                     </div>
                 </form>
 
-                <button onClick={()=> navigate('/orderstatus')} className='mt-8 bg-primary outfit border border-secondary/50 rounded-[3px] text-xs text-white uppercase font-medium px-5 py-2.5 w-fit hover:bg-secondary cursor-pointer transition-colors duration-300'>{paymentMethod === "cardPayment" ? 'Pay Now' : 'Complete Order'}</button>
+                {/* Payment method select Sec */}
+
+                <div>
+                    <div className='mb-4 mt-10'>
+                        <TitleBar firstText={'Payment'} secText={'Method'} showLine />
+                    </div>
+
+                    <div className='flex gap-3'>
+                        {[['cashOnDelivery', 'Cash on delivery'], ['cardPayment', 'Card payment']].map(([value, label]) =>
+                            <div key={value} onClick={() => setPaymentMethod(value)} className={`text-xs uppercase outfit font-medium ${paymentMethod === value ? 'border-green-300/70 bg-green-100 text-green-700' : 'border-secondary/20 bg-secondary/5  text-primary/80'} border w-fit px-4 py-2 rounded-[3px] select-none cursor-pointer`}>{label}</div>)}
+                    </div>
+
+                    {/* setPaymentMethod(prev => prev === value ? null : value) */}
+
+                </div>
+
+                <button onClick={() => navigate('/orderstatus')} className='mt-8 bg-primary outfit border border-secondary/50 rounded-[3px] text-xs text-white uppercase font-medium px-5 py-2.5 w-fit hover:bg-secondary cursor-pointer transition-colors duration-300'>Complete Order</button>
             </div>
 
 
@@ -97,22 +113,6 @@ function Checkout() {
                         <p>Total</p>
                         <span>LKR {total.toFixed(2)}</span>
                     </div>
-
-                </div>
-
-                {/* Payment method select Sec */}
-
-                <div>
-                    <div className='ml-2 my-4'>
-                        <TitleBar firstText={'Payment'} secText={'Method'} showLine />
-                    </div>
-
-                    <div className='flex gap-3'>
-                        {[['cashOnDelivery', 'Cash on delivery'], ['cardPayment', 'Card payment']].map(([value, label]) =>
-                            <div onClick={() => setPaymentMethod(value)} className={`text-xs uppercase outfit font-medium ${paymentMethod === value ? 'border-green-300/70 bg-green-100 text-green-700' : 'border-secondary/20 bg-secondary/5  text-primary/80'} border w-fit px-4 py-2 rounded-[3px] select-none cursor-pointer`}>{label}</div>)}
-                    </div>
-
-                    {/* setPaymentMethod(prev => prev === value ? null : value) */}
 
                 </div>
 
