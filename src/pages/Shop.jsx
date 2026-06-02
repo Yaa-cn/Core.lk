@@ -40,7 +40,7 @@ function Shop() {
           default: return 0;
         }
       }).filter(item =>
-        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
         item.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
         item.description.toLowerCase().includes(searchTerm.toLowerCase())
       )
@@ -49,7 +49,7 @@ function Shop() {
   }, [items, category, sortBy, searchTerm])
 
   const productsList = products.map((item) => (
-    <ProductCard key={item.id} imgSrc={item.image} category={item.category} rating={item.rating} name={item.title} price={item.price} id={item.id} stock={item.stock} />
+    <ProductCard key={item.id} imgSrc={item.image} category={item.category} rating={item.rating} name={item.name} price={item.price} id={item.id} stock={item.stock} />
   ))
 
   return (
