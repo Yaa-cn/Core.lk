@@ -24,7 +24,7 @@ function ProductDetails() {
 
     const product = item && {
         id: item.id,
-        name: item.title,
+        name: item.name,
         image: item.image,
         price: item.price,
     }
@@ -51,18 +51,18 @@ function ProductDetails() {
                         <p className="text-xs text-secondary font-medium">{item.category}</p>
                         <div className="flex gap-1 "><RiStarFill size={12} className="text-yellow-400 mt-px sm:mt-[1.5px]" /><p className="text-xs font-bold">{item.rating}</p></div>
                     </div>
-                    <h2 className={`text-lg font-extrabold mb-2.5 -ml-px`}>{item.title}</h2>
+                    <h2 className={`text-lg font-extrabold mb-2.5 -ml-px`}>{item.name}</h2>
                     <p className={`text-base font-bold mb-2.5`}>LKR {item.price}</p>
                     <div className="flex flex-col gap-0.5 mb-5 select-none">
                         <h6 className="text-sm font-medium">Description </h6>
-                        <h6 onClick={() => setHide(prev => !prev)} className={`text-sm/5.5 outfit text-secondary/75 ${hide ? 'line-clamp-3' : 'line-clamp-none'} cursor-pointer`}>{item.description}</h6>
+                        <h6 onClick={() => setHide(prev => !prev)} className={`text-sm/5.5 outfit text-secondary/65 ${hide ? 'line-clamp-3' : 'line-clamp-none'} cursor-pointer`}>{item.description}</h6>
                     </div>
                     <div className="flex gap-5 mb-1">
                         <button onClick={() => addToCart(product)} className="text-xs text-white uppercase font-medium border outfit border-primary/20 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-transparent hover:text-secondary hover:border-secondary/20 cursor-pointer transition-colors duration-300">Add to Cart</button>
                         <button className="text-xs text-secondary outfit font-medium uppercase border border-secondary/20 bg-accent px-5 py-2.5 rounded-[3px] hover:bg-primary hover:text-white cursor-pointer hover:border-secondary/20 transition-colors duration-300">Buy Now</button>
                     </div>
                     <hr className="text-neutral-200 mt-4 mb-3" />
-                    <div className="flex flex-col text-sm/5.5 outfit text-secondary/75 mb-1 ">
+                    <div className="flex flex-col text-sm/5.5 outfit text-secondary/65 mb-1 ">
                         <p>Cash on Delivery support.</p>
                         <p>Experience a safe and secure checkout process.</p>
                         <p>Customer support whenever you need.</p>
@@ -86,7 +86,7 @@ function ProductDetails() {
                                 <h5 className="text-xs outfit text-primary font-semibold">John Wick</h5>
                                 <span className="flex gap-3 nunito">{renderStars(item.rating)}</span>
                             </div>
-                            <p className="text-xs nunito text-primary/70">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quae alias nisi, harum sint, ex sapiente commodi, cupiditate itaque asperiores quia doloribus ipsum provident rem quaerat tempore mollitia quas facere accusantium excepturi ipsam consectetur quod. Sit voluptates, ea minima, deserunt placeat unde ad cumque laudantium sint officiis hic, et temporibus.</p>
+                            <p className="text-xs nunito text-primary/60">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quae alias nisi, harum sint, ex sapiente commodi, cupiditate itaque asperiores quia doloribus ipsum provident rem quaerat tempore mollitia quas facere accusantium excepturi ipsam consectetur quod. Sit voluptates, ea minima, deserunt placeat unde ad cumque laudantium sint officiis hic, et temporibus.</p>
                             <hr className=" border-neutral-200 mt-3" />
                         </div>
 
@@ -95,7 +95,7 @@ function ProductDetails() {
                                 <h5 className="text-xs outfit text-primary font-semibold">John Cooper</h5>
                                 <span className="flex gap-3 nunito">{renderStars(item.rating)}</span>
                             </div>
-                            <p className="text-xs nunito text-primary/70">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quae alias nisi, harum sint, ex sapiente commodi, cupiditate itaque asperiores quia doloribus ipsum provident rem quaerat tempore mollitia quas facere accusantium excepturi ipsam consectetur quod. Sit voluptates, ea minima, deserunt placeat unde ad cumque laudantium sint officiis hic, et temporibus.</p>
+                            <p className="text-xs nunito text-primary/60">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quae alias nisi, harum sint, ex sapiente commodi, cupiditate itaque asperiores quia doloribus ipsum provident rem quaerat tempore mollitia quas facere accusantium excepturi ipsam consectetur quod. Sit voluptates, ea minima, deserunt placeat unde ad cumque laudantium sint officiis hic, et temporibus.</p>
                             <hr className=" border-neutral-200 mt-3" />
                         </div>
 
@@ -104,7 +104,7 @@ function ProductDetails() {
                                 <h5 className="text-xs outfit text-primary font-semibold">William Butcher</h5>
                                 <span className="flex gap-3 nunito">{renderStars(5)}</span>
                             </div>
-                            <p className="text-xs nunito text-primary/70">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quae alias nisi, harum sint, ex sapiente commodi, cupiditate itaque asperiores quia doloribus ipsum provident rem quaerat tempore mollitia quas facere accusantium excepturi ipsam consectetur quod. Sit voluptates, ea minima, deserunt placeat unde ad cumque laudantium sint officiis hic, et temporibus.</p>
+                            <p className="text-xs nunito text-primary/60">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem quae alias nisi, harum sint, ex sapiente commodi, cupiditate itaque asperiores quia doloribus ipsum provident rem quaerat tempore mollitia quas facere accusantium excepturi ipsam consectetur quod. Sit voluptates, ea minima, deserunt placeat unde ad cumque laudantium sint officiis hic, et temporibus.</p>
                             <hr className=" border-neutral-200 mt-3" />
                         </div>
 

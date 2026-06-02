@@ -9,7 +9,7 @@ function RelatedProducts({ category, id }) {
     const { items, loading } = useProducts()
 
     const products = items.filter(item => item.category === category && item.id !== id).map((item) => (
-        <ProductCard key={item.id} imgSrc={item.image} category={item.category} rating={item.rating} name={item.title} price={item.price} id={item.id} stock={item.stock} />
+        <ProductCard key={item.id} imgSrc={item.image} category={item.category} rating={item.rating} name={item.name} price={item.price} id={item.id} stock={item.stock} />
     ))
 
     return (
