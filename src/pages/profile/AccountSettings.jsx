@@ -1,4 +1,4 @@
-import TitleBar from "../../componenets/TitleBar"
+import TitleBar from "../../components/TitleBar"
 import { useAuth } from "../../context/AuthContext"
 import { useRef } from "react"
 

@@ -1,5 +1,5 @@
-import Newsletter from '../componenets/Newsletter'
-import TitleBar from "../componenets/TitleBar"
+import Newsletter from '../components/Newsletter'
+import TitleBar from "../components/TitleBar"
 import { RiMapPinFill, RiBallPenFill, RiPhoneFill } from "@remixicon/react"
 
 function Contact() {

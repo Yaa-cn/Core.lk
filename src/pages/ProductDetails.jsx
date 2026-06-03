@@ -1,9 +1,9 @@
-import TitleBar from "../componenets/TitleBar"
-import Newsletter from "../componenets/Newsletter"
-import RelatedProducts from "../componenets/RelatedProducts"
-import Loader from "../componenets/Loader"
-import Skeleton from "../componenets/Skeleton"
-import BackButton from "../componenets/BackButton"
+import TitleBar from "../components/TitleBar"
+import Newsletter from "../components/Newsletter"
+import RelatedProducts from "../components/RelatedProducts"
+import Loader from "../components/Loader"
+import Skeleton from "../components/Skeleton"
+import BackButton from "../components/BackButton"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { RiStarFill } from "@remixicon/react"
@@ -18,12 +18,13 @@ function ProductDetails() {
     const [tab, setTab] = useState('reviews')
     const { items } = useProducts()
     const { addToCart } = useCart()
-    const { id } = useParams()
+    const { slug } = useParams()
 
-    const item = items?.find(item => String(item.id) === id)
+    const item = items?.find(item => item.slug === slug)
 
     const product = item && {
-        id: item.id,
+        id: item._id,
+        slug: item.slug,
         name: item.name,
         image: item.image,
         price: item.price,
@@ -32,7 +33,7 @@ function ProductDetails() {
     const renderStars = (rating) => {
         let stars = []
         for (let i = 1; i <= rating; i++) {
-            stars.push(<RiStarFill size={10} className="text-yellow-400 mt-px sm:mt-[1.5px]" />)
+            stars.push(<RiStarFill key={i} size={10} className="text-yellow-400 mt-px sm:mt-[1.5px]" />)
         }
         return stars
     }
@@ -132,7 +133,7 @@ function ProductDetails() {
             </div>
 
             <>
-                <RelatedProducts category={item.category} id={id} />
+                <RelatedProducts category={item.category} id={item._id} />
             </>
             <Newsletter />
         </div > : <div className='flex justify-center items-center min-h-100'><Loader /></div>

@@ -1,7 +1,7 @@
-import RecentProducts from "../componenets/RecentProducts"
-import TitleBar from "../componenets/TitleBar"
-import ProductCard from "../componenets/ProductCard"
-import Loader from "../componenets/Loader"
+import RecentProducts from "../components/RecentProducts"
+import TitleBar from "../components/TitleBar"
+import ProductCard from "../components/ProductCard"
+import Loader from "../components/Loader"
 import { useEffect, useMemo, useState } from "react"
 import { useProducts } from "../context/ProductsContext"
 import { useFilter } from "../context/FilterContext"
@@ -33,7 +33,7 @@ function Shop() {
     return items.filter(item => category === 'all' ? true : item.category.toLowerCase() === category.toLowerCase())
       .sort((a, b) => {
         switch (sortBy) {
-          case 'newest': return b.id - a.id;
+          case 'newest': return new Date(b.createdAt) - new Date(a.createdAt);
           case 'high to low': return b.price - a.price;
           case 'low to high': return a.price - b.price;
           case 'rating': return b.rating - a.rating;
@@ -49,7 +49,7 @@ function Shop() {
   }, [items, category, sortBy, searchTerm])
 
   const productsList = products.map((item) => (
-    <ProductCard key={item.id} imgSrc={item.image} category={item.category} rating={item.rating} name={item.name} price={item.price} id={item.id} stock={item.stock} />
+    <ProductCard key={item._id} imgSrc={item.image} category={item.category} rating={item.rating} name={item.name} price={item.price} id={item._id} slug={item.slug} stock={item.stock} />
   ))
 
   return (

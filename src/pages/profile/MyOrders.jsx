@@ -1,6 +1,6 @@
 import { useOrders } from '../../context/OrdersContext'
 import { useNavigate } from "react-router-dom"
-import TitleBar from "../../componenets/TitleBar"
+import TitleBar from "../../components/TitleBar"
 
 function OrderCard({ orderId, placedTime, items, status }) {
 
@@ -11,7 +11,7 @@ function OrderCard({ orderId, placedTime, items, status }) {
     )
 
     const orderItems = items.map(item =>
-        <div key={item.product_id} onClick={() => navigate(`/product/${item.product_id}`)} className="flex gap-2 cursor-pointer">
+        <div key={item.product_id} onClick={() => navigate(`/product/${item.slug}`)} className="flex gap-2 cursor-pointer">
             <p className="text-xs text-secondary line-clamp-1 w-3/5">{item.title} x {item.quantity}</p>
             <p className="text-xs text-secondary ml-auto">{item.unit_price.toFixed(2)} LKR</p>
         </div>)

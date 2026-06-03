@@ -4,7 +4,7 @@ import { useWishlist } from "../context/WishlistContext"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { useState } from "react"
 
-function ProductCard({ id, imgSrc, imgAlt, category, name, price, rating, stock }) {
+function ProductCard({ id, slug, imgSrc, imgAlt, category, name, price, rating, stock }) {
 
   const [loaded, setLoaded] = useState(false)
   const location = useLocation()
@@ -21,7 +21,7 @@ function ProductCard({ id, imgSrc, imgAlt, category, name, price, rating, stock 
 
   return (
     <div className='productCard flex flex-col bg-white nunito border border-gray/70 shadow-xs rounded overflow-hidden'>
-      <Link to={`/product/${id}`}className="overflow-hidden aspect-7/5 sm:aspect-5/4">
+      <Link to={`/product/${slug}`}className="overflow-hidden aspect-7/5 sm:aspect-5/4">
         {!loaded &&
           <Skeleton />}
         <img onLoad={() => setLoaded(true)} className={`aspect-7/5 sm:aspect-5/4 object-cover ${loaded ? 'block' : 'none'} w-full`} src={imgSrc} alt={imgAlt} />

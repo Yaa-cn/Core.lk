@@ -1,4 +1,4 @@
-import TitleBar from '../componenets/TitleBar'
+import TitleBar from '../components/TitleBar'
 import { useNavigate } from 'react-router-dom'
 import { useWishlist } from '../context/WishlistContext'
 import HeartIcon from '../assets/icons/heart.png'

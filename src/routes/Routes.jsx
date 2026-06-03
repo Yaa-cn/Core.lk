@@ -9,7 +9,7 @@ import Cart from '../pages/Cart'
 import NotFound from '../pages/NotFound'
 import ProductDetails from '../pages/ProductDetails'
 import Wishlist from '../pages/Wishlist'
-import Loader from '../componenets/Loader'
+import Loader from '../components/Loader'
 import AccountSettings from '../pages/profile/AccountSettings'
 import MyOrders from '../pages/profile/MyOrders'
 import Addresses from '../pages/profile/Addresses'
@@ -77,7 +77,7 @@ const router = createBrowserRouter([
         element: <Wishlist />
       },
       {
-        path: '/product/:id',
+        path: '/product/:slug',
         element: <ProductDetails />
       },
       {

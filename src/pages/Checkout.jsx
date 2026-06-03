@@ -1,7 +1,7 @@
 import { useCart } from '../context/CartContext'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
-import TitleBar from '../componenets/TitleBar'
+import TitleBar from '../components/TitleBar'
 import CartIcon from '../assets/icons/cart.png'
 import { RiCheckboxCircleFill } from '@remixicon/react'
 

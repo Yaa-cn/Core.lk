@@ -1,5 +1,5 @@
 import loginPic from '../assets/images/loginPic.webp'
-import TitleBar from '../componenets/TitleBar'
+import TitleBar from '../components/TitleBar'
 import { Link, useNavigate } from 'react-router-dom'
 
 function LoginPage() {

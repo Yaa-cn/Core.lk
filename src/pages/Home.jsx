@@ -1,9 +1,9 @@
-// import BrandSlider from '../componenets/BrandSlider'
-import Category from '../componenets/Category'
-import Hero from '../componenets/Hero'
-import Newsletter from '../componenets/Newsletter'
-import RecentProducts from '../componenets/RecentProducts'
-import TitleBar from '../componenets/TitleBar'
+// import BrandSlider from '../components/BrandSlider'
+import Category from '../components/Category'
+import Hero from '../components/Hero'
+import Newsletter from '../components/Newsletter'
+import RecentProducts from '../components/RecentProducts'
+import TitleBar from '../components/TitleBar'
 
 function Home() {
 

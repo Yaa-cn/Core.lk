@@ -3,14 +3,14 @@ import { useState } from "react"
 import { useCart } from "../context/CartContext"
 import { useNavigate, Link } from "react-router-dom"
 
-function CartItem({ id, imgSrc, imgAlt, name, price, quantity }) {
+function CartItem({ id, slug, imgSrc, imgAlt, name, price, quantity }) {
 
     const { removeFromCart, increaseQuantity, decreaseQuantity } = useCart()
     const navigate = useNavigate()
 
     return (
         <div className='flex justify-between nunito h-full max-h-25 bg-white border border-neutral-200 overflow-hidden rounded'>
-            <Link to={`/product/${id}`}>
+            <Link to={`/product/${slug}`}>
                 <img className='aspect-5/4 max-w-30 object-cover border-r border-neutral-200' src={imgSrc} alt={imgAlt} loading="lazy" />
             </Link>
             <div className="flex flex-col py-2.5 px-3 sm:p-3 w-full">

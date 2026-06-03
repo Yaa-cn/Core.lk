@@ -1,5 +1,5 @@
 import Uss from '../assets/images/Uss.webp'
-import TitleBar from '../componenets/TitleBar'
+import TitleBar from '../components/TitleBar'
 
 function About() {
   return (

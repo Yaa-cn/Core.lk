@@ -1,6 +1,6 @@
 import { useContext, createContext, useEffect, useState } from "react";
 import { toast } from "sonner";
-import WishlistItem from '../componenets/WishlistItem'
+import WishlistItem from '../components/WishlistItem'
 
 const WishlistContext = createContext()
 

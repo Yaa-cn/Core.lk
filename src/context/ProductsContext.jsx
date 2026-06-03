@@ -40,3 +40,4 @@ export const useProducts = () => {
 
 // https://69eb2c9497482ad5c5273fa1.mockapi.io/api/products
 // https://api.mockfly.dev/mocks/5bce2d90-2177-485d-8946-4f7a5ec88e92
+// http://localhost:3000/api/products

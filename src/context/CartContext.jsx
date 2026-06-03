@@ -1,6 +1,6 @@
 import { useContext, createContext, useEffect, useState } from "react";
 import { toast } from "sonner";
-import CartItem from '../componenets/CartItem'
+import CartItem from '../components/CartItem'
 
 const CartContext = createContext()
 
@@ -33,7 +33,7 @@ export const CartProvider = ({ children }) => {
     const total = subTotal + shippingFee
 
     const cartItems = cart.map((item) =>
-        <CartItem key={item.id} imgSrc={item.image} imgAlt={item.image} name={item.name} price={item.price} quantity={item.quantity} id={item.id} />
+        <CartItem key={item.id} imgSrc={item.image} imgAlt={item.image} name={item.name} price={item.price} quantity={item.quantity} slug={item.slug} id={item.id} />
     )
 
     const removeFromCart = (id) => {

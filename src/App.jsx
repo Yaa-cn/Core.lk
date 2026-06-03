@@ -1,6 +1,6 @@
-import Navbar from './componenets/Navbar'
-import Footer from './componenets/Footer'
-import Toast from './componenets/Toast'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import Toast from './components/Toast'
 import { Outlet, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 

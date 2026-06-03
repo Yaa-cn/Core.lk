@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": "1",
+      "_id": "1",
       "name": "Logitech G Pro X Superlight 2 Wireless Gaming Mouse",
       "slug": "logitech-g-pro-x-superlight-2-wireless-gaming-mouse",
       "category": "Input devices",
@@ -15,7 +15,7 @@
       "createdAt": "2023-03-19T06:23:59.964Z"
     },
     {
-      "id": "2",
+      "_id": "2",
       "name": "Keychron Q3 Pro QMK/VIA Wireless Mechanical Keyboard",
       "slug": "keychron-q3-pro-qmk-via-wireless-mechanical-keyboard",
       "category": "Input devices",
@@ -29,7 +29,7 @@
       "createdAt": "2024-03-15T09:32:06.757Z"
     },
     {
-      "id": "3",
+      "_id": "3",
       "name": "Sony WH-1000XM5 Wireless Noise Cancelling Headphones",
       "slug": "sony-wh-1000xm5-wireless-noise-cancelling-headphones",
       "category": "Audio",
@@ -43,7 +43,7 @@
       "createdAt": "2022-09-04T09:28:24.064Z"
     },
     {
-      "id": "4",
+      "_id": "4",
       "name": "Samsung 990 Pro NVMe M.2 SSD",
       "slug": "samsung-990-pro-nvme-m-2-ssd",
       "category": "Storage",
@@ -57,7 +57,7 @@
       "createdAt": "2023-10-27T04:11:05.627Z"
     },
     {
-      "id": "5",
+      "_id": "5",
       "name": "ASUS ROG Swift PG279QM 27\" IPS Gaming Monitor",
       "slug": "asus-rog-swift-pg279qm-27-ips-gaming-monitor",
       "category": "Display",
@@ -71,7 +71,7 @@
       "createdAt": "2025-02-27T08:43:41.123Z"
     },
     {
-      "id": "6",
+      "_id": "6",
       "name": "TP-Link Archer AX73 Wi-Fi 6 Router",
       "slug": "tp-link-archer-ax73-wi-fi-6-router",
       "category": "Networking",
@@ -85,7 +85,7 @@
       "createdAt": "2025-11-01T17:31:31.658Z"
     },
     {
-      "id": "7",
+      "_id": "7",
       "name": "Razer BlackShark V2 Pro Wireless Gaming Headset",
       "slug": "razer-blackshark-v2-pro-wireless-gaming-headset",
       "category": "Audio",
@@ -99,7 +99,7 @@
       "createdAt": "2024-08-21T15:29:59.551Z"
     },
     {
-      "id": "8",
+      "_id": "8",
       "name": "SteelSeries QcK Heavy XXL Desk Pad",
       "slug": "steelseries-qck-heavy-xxl-desk-pad",
       "category": "Accessories",
@@ -113,7 +113,7 @@
       "createdAt": "2023-01-29T06:26:08.126Z"
     },
     {
-      "id": "9",
+      "_id": "9",
       "name": "Seagate Portable 2TB External Hard Drive",
       "slug": "seagate-portable-2tb-external-hard-drive",
       "category": "Storage",
@@ -127,7 +127,7 @@
       "createdAt": "2024-12-17T13:12:29.078Z"
     },
     {
-      "id": "10",
+      "_id": "10",
       "name": "Corsair K70 RGB Pro Mechanical Gaming Keyboard",
       "slug": "corsair-k70-rgb-pro-mechanical-gaming-keyboard",
       "category": "Input devices",
@@ -141,7 +141,7 @@
       "createdAt": "2022-09-07T12:50:09.823Z"
     },
     {
-      "id": "11",
+      "_id": "11",
       "name": "Anker 341 USB-C Hub 7-in-1",
       "slug": "anker-341-usb-c-hub-7-in-1",
       "category": "Accessories",
@@ -150,12 +150,12 @@
       "stock": 95,
       "rating": 4.5,
       "image": "https://i.ebayimg.com/images/g/2fQAAeSwQphoI7Rt/s-l1200.jpg",
-      "description": "The Anker 341 USB-C Hub transforms a single USB-C port into a versatile 7-in-1 connectivity hub, perfect for ultrabooks and laptops with limited ports. It features a 4K HDMI output, USB-C Power Delivery pass-through up to 85W, three USB-A 3.0 ports, an SD card slot, and a microSD slot — all in one compact unit. The slim, foldable design and lightweight build mean it fits easily in any laptop bag without adding noticeable bulk. Anker's premium quality assurance and durable construction ensure consistent performance without overheating. Compatible with MacBook, iPad Pro, and any USB-C laptop, it is the one hub you will always want in your bag.",
+      "description": "The Anker 341 USB-C Hub transforms a single USB-C port into a versatile 7-in-1 connectivity hub, perfect for ultrabooks and laptops with limited ports. It features a 4K HDMI output, USB-C Power Delivery pass-through up to 85W, three USB-A 3.0 ports, an SD card slot, and a microSD slot \u2014 all in one compact unit. The slim, foldable design and lightweight build mean it fits easily in any laptop bag without adding noticeable bulk. Anker's premium quality assurance and durable construction ensure consistent performance without overheating. Compatible with MacBook, iPad Pro, and any USB-C laptop, it is the one hub you will always want in your bag.",
       "isFeatured": false,
       "createdAt": "2025-06-24T15:50:29.079Z"
     },
     {
-      "id": "12",
+      "_id": "12",
       "name": "LG 27UK850-W 4K UHD IPS Monitor with USB-C",
       "slug": "lg-27uk850-w-4k-uhd-ips-monitor-with-usb-c",
       "category": "Display",
@@ -169,7 +169,7 @@
       "createdAt": "2024-04-05T15:47:41.668Z"
     },
     {
-      "id": "13",
+      "_id": "13",
       "name": "NETGEAR Nighthawk RAX50 AX5400 Wi-Fi 6 Router",
       "slug": "netgear-nighthawk-rax50-ax5400-wi-fi-6-router",
       "category": "Networking",
@@ -183,7 +183,7 @@
       "createdAt": "2024-07-08T10:26:39.737Z"
     },
     {
-      "id": "14",
+      "_id": "14",
       "name": "Audio-Technica ATH-M50x Professional Studio Headphones",
       "slug": "audio-technica-ath-m50x-professional-studio-headphones",
       "category": "Audio",
@@ -197,7 +197,7 @@
       "createdAt": "2023-08-15T05:34:31.861Z"
     },
     {
-      "id": "15",
+      "_id": "15",
       "name": "Elgato Stream Deck MK.2",
       "slug": "elgato-stream-deck-mk-2",
       "category": "Input devices",
@@ -206,12 +206,12 @@
       "stock": 25,
       "rating": 4.8,
       "image": "https://cdn.mos.cms.futurecdn.net/ZjqKpb7dLTUzNibt7fg5mh.jpg",
-      "description": "The Elgato Stream Deck MK.2 is the ultimate control surface for streamers, content creators, and power users who want instant, tactile access to their most-used actions. Its 15 customisable LCD keys display live visuals and trigger any action — launching scenes in OBS, muting microphones, switching camera feeds, triggering sound effects, or opening applications — all with a single tap. The detachable faceplate lets you swap styles to match your setup aesthetics, and a new, improved stand with adjustable angle ensures ergonomic desktop placement. Deep integration with Stream Deck software allows multi-action buttons, profile switching, and integration with over 300 apps including Spotify, Adobe, Zoom, and Twitter. A game-changer for anyone who values workflow efficiency.",
+      "description": "The Elgato Stream Deck MK.2 is the ultimate control surface for streamers, content creators, and power users who want instant, tactile access to their most-used actions. Its 15 customisable LCD keys display live visuals and trigger any action \u2014 launching scenes in OBS, muting microphones, switching camera feeds, triggering sound effects, or opening applications \u2014 all with a single tap. The detachable faceplate lets you swap styles to match your setup aesthetics, and a new, improved stand with adjustable angle ensures ergonomic desktop placement. Deep integration with Stream Deck software allows multi-action buttons, profile switching, and integration with over 300 apps including Spotify, Adobe, Zoom, and Twitter. A game-changer for anyone who values workflow efficiency.",
       "isFeatured": false,
       "createdAt": "2022-12-20T19:11:59.045Z"
     },
     {
-      "id": "16",
+      "_id": "16",
       "name": "WD Blue SN580 NVMe SSD",
       "slug": "wd-blue-sn580-nvme-ssd",
       "category": "Storage",
@@ -225,7 +225,7 @@
       "createdAt": "2024-12-08T10:08:19.127Z"
     },
     {
-      "id": "17",
+      "_id": "17",
       "name": "Logitech MX Keys S Advanced Wireless Keyboard",
       "slug": "logitech-mx-keys-s-advanced-wireless-keyboard",
       "category": "Input devices",
@@ -239,7 +239,7 @@
       "createdAt": "2025-09-15T17:32:52.394Z"
     },
     {
-      "id": "18",
+      "_id": "18",
       "name": "Blue Yeti USB Condenser Microphone",
       "slug": "blue-yeti-usb-condenser-microphone",
       "category": "Audio",
@@ -248,12 +248,12 @@
       "stock": 36,
       "rating": 4.6,
       "image": "https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=400&q=80",
-      "description": "The Blue Yeti is the world's most popular USB microphone for podcasters, streamers, YouTubers, and remote workers who need studio-quality audio without a complex recording chain. Three condenser capsules in an array allow you to switch between four pickup patterns — cardioid, bidirectional, omnidirectional, and stereo — making it one of the most versatile broadcast microphones available. Onboard gain control, mute button, and headphone output for zero-latency monitoring are all built directly into the mic's body. The internal shock mount minimises vibration noise from your desk, while the solid metal construction and removable adjustable stand make it a handsome addition to any workspace. Plug-and-play USB connectivity means no drivers or audio interfaces are needed.",
+      "description": "The Blue Yeti is the world's most popular USB microphone for podcasters, streamers, YouTubers, and remote workers who need studio-quality audio without a complex recording chain. Three condenser capsules in an array allow you to switch between four pickup patterns \u2014 cardioid, bidirectional, omnidirectional, and stereo \u2014 making it one of the most versatile broadcast microphones available. Onboard gain control, mute button, and headphone output for zero-latency monitoring are all built directly into the mic's body. The internal shock mount minimises vibration noise from your desk, while the solid metal construction and removable adjustable stand make it a handsome addition to any workspace. Plug-and-play USB connectivity means no drivers or audio interfaces are needed.",
       "isFeatured": false,
       "createdAt": "2024-06-26T09:29:36.206Z"
     },
     {
-      "id": "19",
+      "_id": "19",
       "name": "BenQ PD3220U 32\" 4K Designer Monitor",
       "slug": "benq-pd3220u-32-4k-designer-monitor",
       "category": "Display",
@@ -267,7 +267,7 @@
       "createdAt": "2024-03-22T15:27:13.011Z"
     },
     {
-      "id": "20",
+      "_id": "20",
       "name": "Razer DeathAdder V3 Pro Wireless Gaming Mouse",
       "slug": "razer-deathadder-v3-pro-wireless-gaming-mouse",
       "category": "Input devices",
@@ -281,7 +281,7 @@
       "createdAt": "2022-08-25T19:04:43.186Z"
     },
     {
-      "id": "21",
+      "_id": "21",
       "name": "Kingston Fury Beast DDR5 RGB RAM",
       "slug": "kingston-fury-beast-ddr5-rgb-ram",
       "category": "Accessories",
@@ -295,7 +295,7 @@
       "createdAt": "2025-07-21T14:49:07.758Z"
     },
     {
-      "id": "22",
+      "_id": "22",
       "name": "TP-Link TL-SG108 8-Port Gigabit Unmanaged Switch",
       "slug": "tp-link-tl-sg108-8-port-gigabit-unmanaged-switch",
       "category": "Networking",
@@ -304,12 +304,12 @@
       "stock": 110,
       "rating": 4.5,
       "image": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&q=80",
-      "description": "The TP-Link TL-SG108 is a reliable 8-port Gigabit Ethernet unmanaged switch that instantly upgrades your wired home or office network to full 1000Mbps speeds on all ports. Its plug-and-play design requires no software, configuration, or management — simply connect it and all eight ports are fully operational within seconds. The metal housing dissipates heat passively without any fan, resulting in completely silent operation ideal for living rooms, home offices, and server closets. Energy-efficient IEEE 802.3az technology automatically reduces power consumption on idle or low-activity ports, saving electricity without any configuration. A sturdy metal chassis supports both desktop and wall-mount installation options.",
+      "description": "The TP-Link TL-SG108 is a reliable 8-port Gigabit Ethernet unmanaged switch that instantly upgrades your wired home or office network to full 1000Mbps speeds on all ports. Its plug-and-play design requires no software, configuration, or management \u2014 simply connect it and all eight ports are fully operational within seconds. The metal housing dissipates heat passively without any fan, resulting in completely silent operation ideal for living rooms, home offices, and server closets. Energy-efficient IEEE 802.3az technology automatically reduces power consumption on idle or low-activity ports, saving electricity without any configuration. A sturdy metal chassis supports both desktop and wall-mount installation options.",
       "isFeatured": false,
       "createdAt": "2023-07-27T09:33:10.006Z"
     },
     {
-      "id": "23",
+      "_id": "23",
       "name": "Elgato Key Light Air Professional Streaming Light",
       "slug": "elgato-key-light-air-professional-streaming-light",
       "category": "Accessories",
@@ -323,7 +323,7 @@
       "createdAt": "2023-10-06T18:34:48.054Z"
     },
     {
-      "id": "24",
+      "_id": "24",
       "name": "Samsung T7 Shield Portable SSD",
       "slug": "samsung-t7-shield-portable-ssd",
       "category": "Storage",
@@ -332,12 +332,12 @@
       "stock": 52,
       "rating": 4.7,
       "image": "https://images.unsplash.com/photo-1597008641621-cefdcf718025?w=400&q=80",
-      "description": "The Samsung T7 Shield is a rugged portable SSD built for adventurers, field workers, and on-the-go creators who need their data safe in demanding environments. An IP65 rating protects against dust and water jets, while the textured rubberised exterior absorbs drops from up to three metres without data loss. USB 3.2 Gen 2 interface delivers read speeds of up to 1,050 MB/s — more than enough for smooth 4K video playback and rapid file transfers directly from camera to drive. Samsung's AES 256-bit hardware encryption keeps your data private on the go. At just 98 grams and fitting easily in a palm, this is the ideal companion for any fieldwork or travel workflow.",
+      "description": "The Samsung T7 Shield is a rugged portable SSD built for adventurers, field workers, and on-the-go creators who need their data safe in demanding environments. An IP65 rating protects against dust and water jets, while the textured rubberised exterior absorbs drops from up to three metres without data loss. USB 3.2 Gen 2 interface delivers read speeds of up to 1,050 MB/s \u2014 more than enough for smooth 4K video playback and rapid file transfers directly from camera to drive. Samsung's AES 256-bit hardware encryption keeps your data private on the go. At just 98 grams and fitting easily in a palm, this is the ideal companion for any fieldwork or travel workflow.",
       "isFeatured": false,
       "createdAt": "2024-01-24T02:37:12.461Z"
     },
     {
-      "id": "25",
+      "_id": "25",
       "name": "ASUS ROG Chakram X Origin Wireless Gaming Mouse",
       "slug": "asus-rog-chakram-x-origin-wireless-gaming-mouse",
       "category": "Input devices",
@@ -346,12 +346,12 @@
       "stock": 15,
       "rating": 4.5,
       "image": "https://dlcdnwebimgs.asus.com/files/media/F14CB22F-1315-4DC6-AC15-D32EA062DA0E/v1/img/aura/bg-aura.png",
-      "description": "The ASUS ROG Chakram X Origin is a flagship multi-mode wireless gaming mouse that supports tri-mode connectivity — 2.4GHz RF, Bluetooth, and wired USB — giving you seamless transitions across all your devices. A push-fit hot-swappable switch socket lets you replace the main switches in seconds with any 3-pin Omron-compatible switch, giving you full control over tactile feel and actuation force. The 36,000 DPI ROG AimPoint Pro optical sensor with up to 750 IPS tracking speed and 50G acceleration ensures pixel-perfect cursor control. The signature removable analogue joystick on the thumb rest adds remappable functionality unavailable in any other gaming mouse. ROG Armory Crate software handles full macro programming, RGB personalisation, and firmware updates.",
+      "description": "The ASUS ROG Chakram X Origin is a flagship multi-mode wireless gaming mouse that supports tri-mode connectivity \u2014 2.4GHz RF, Bluetooth, and wired USB \u2014 giving you seamless transitions across all your devices. A push-fit hot-swappable switch socket lets you replace the main switches in seconds with any 3-pin Omron-compatible switch, giving you full control over tactile feel and actuation force. The 36,000 DPI ROG AimPoint Pro optical sensor with up to 750 IPS tracking speed and 50G acceleration ensures pixel-perfect cursor control. The signature removable analogue joystick on the thumb rest adds remappable functionality unavailable in any other gaming mouse. ROG Armory Crate software handles full macro programming, RGB personalisation, and firmware updates.",
       "isFeatured": false,
       "createdAt": "2024-09-14T04:44:05.326Z"
     },
     {
-      "id": "26",
+      "_id": "26",
       "name": "Jabra Evolve2 75 Wireless Business Headset",
       "slug": "jabra-evolve2-75-wireless-business-headset",
       "category": "Audio",
@@ -365,7 +365,7 @@
       "createdAt": "2025-07-28T02:55:08.574Z"
     },
     {
-      "id": "27",
+      "_id": "27",
       "name": "Twelve South HiRise Pro Monitor Stand",
       "slug": "twelve-south-hirise-pro-monitor-stand",
       "category": "Accessories",
@@ -379,7 +379,7 @@
       "createdAt": "2023-01-01T16:46:16.278Z"
     },
     {
-      "id": "28",
+      "_id": "28",
       "name": "Ubiquiti UniFi 6 Lite Wi-Fi 6 Access Point",
       "slug": "ubiquiti-unifi-6-lite-wi-fi-6-access-point",
       "category": "Networking",
@@ -393,7 +393,7 @@
       "createdAt": "2023-02-05T03:28:48.043Z"
     },
     {
-      "id": "29",
+      "_id": "29",
       "name": "Corsair HS80 RGB Wireless Gaming Headset",
       "slug": "corsair-hs80-rgb-wireless-gaming-headset",
       "category": "Audio",
@@ -407,7 +407,7 @@
       "createdAt": "2022-09-07T19:56:19.004Z"
     },
     {
-      "id": "30",
+      "_id": "30",
       "name": "Ugreen 100W 4-Port GaN Desktop Charger",
       "slug": "ugreen-100w-4-port-gan-desktop-charger",
       "category": "Accessories",
@@ -443,7 +443,8 @@
           "unit_price": 28500,
           "discount_percent": 10,
           "discounted_price": 25650,
-          "line_total": 25650
+          "line_total": 25650,
+          "slug": "logitech-g-pro-x-superlight-2-wireless-gaming-mouse"
         }
       ],
       "subtotal": 25650,
@@ -475,7 +476,7 @@
     {
       "order_id": "ORD-2025-001799",
       "placed_at": "2025-04-22T16:45:10Z",
-      "status": "delivered",
+      "status": "pending",
       "payment_status": "paid",
       "payment_method": "mastercard",
       "payment_last4": "8812",
@@ -493,7 +494,8 @@
           "unit_price": 62000,
           "discount_percent": 12,
           "discounted_price": 54560,
-          "line_total": 54560
+          "line_total": 54560,
+          "slug": "sony-wh-1000xm5-wireless-noise-cancelling-headphones"
         },
         {
           "product_id": "8",
@@ -508,7 +510,8 @@
           "unit_price": 5800,
           "discount_percent": 0,
           "discounted_price": 5800,
-          "line_total": 5800
+          "line_total": 5800,
+          "slug": "steelseries-qck-heavy-xxl-desk-pad"
         }
       ],
       "subtotal": 60360,
@@ -558,7 +561,8 @@
           "unit_price": 31500,
           "discount_percent": 8,
           "discounted_price": 28980,
-          "line_total": 28980
+          "line_total": 28980,
+          "slug": "samsung-990-pro-nvme-m-2-ssd"
         }
       ],
       "subtotal": 28980,
@@ -608,7 +612,8 @@
           "unit_price": 26500,
           "discount_percent": 8,
           "discounted_price": 24380,
-          "line_total": 24380
+          "line_total": 24380,
+          "slug": "corsair-k70-rgb-pro-mechanical-gaming-keyboard"
         }
       ],
       "subtotal": 24380,
@@ -662,7 +667,8 @@
           "unit_price": 145000,
           "discount_percent": 7,
           "discounted_price": 134850,
-          "line_total": 134850
+          "line_total": 134850,
+          "slug": "asus-rog-swift-pg279qm-27-ips-gaming-monitor"
         }
       ],
       "subtotal": 134850,
@@ -712,7 +718,8 @@
           "unit_price": 132000,
           "discount_percent": 7,
           "discounted_price": 122760,
-          "line_total": 122760
+          "line_total": 122760,
+          "slug": "benq-pd3220u-32-4k-designer-monitor"
         }
       ],
       "subtotal": 122760,
@@ -767,7 +774,8 @@
           "unit_price": 22500,
           "discount_percent": 5,
           "discounted_price": 21375,
-          "line_total": 21375
+          "line_total": 21375,
+          "slug": "kingston-fury-beast-ddr5-rgb-ram"
         },
         {
           "product_id": "16",
@@ -782,7 +790,8 @@
           "unit_price": 17500,
           "discount_percent": 10,
           "discounted_price": 15750,
-          "line_total": 15750
+          "line_total": 15750,
+          "slug": "wd-blue-sn580-nvme-ssd"
         },
         {
           "product_id": "30",
@@ -797,7 +806,8 @@
           "unit_price": 7900,
           "discount_percent": 5,
           "discounted_price": 7505,
-          "line_total": 7505
+          "line_total": 7505,
+          "slug": "ugreen-100w-4-port-gan-desktop-charger"
         }
       ],
       "subtotal": 44630,
@@ -848,7 +858,8 @@
           "unit_price": 34900,
           "discount_percent": 5,
           "discounted_price": 33155,
-          "line_total": 33155
+          "line_total": 33155,
+          "slug": "keychron-q3-pro-qmk-via-wireless-mechanical-keyboard"
         }
       ],
       "subtotal": 33155,
@@ -898,7 +909,8 @@
           "unit_price": 24500,
           "discount_percent": 8,
           "discounted_price": 22540,
-          "line_total": 22540
+          "line_total": 22540,
+          "slug": "blue-yeti-usb-condenser-microphone"
         },
         {
           "product_id": "15",
@@ -913,7 +925,8 @@
           "unit_price": 29500,
           "discount_percent": 5,
           "discounted_price": 28025,
-          "line_total": 28025
+          "line_total": 28025,
+          "slug": "elgato-stream-deck-mk-2"
         }
       ],
       "subtotal": 50565,
@@ -963,7 +976,8 @@
           "unit_price": 24500,
           "discount_percent": 6,
           "discounted_price": 23030,
-          "line_total": 23030
+          "line_total": 23030,
+          "slug": "tp-link-archer-ax73-wi-fi-6-router"
         },
         {
           "product_id": "22",
@@ -976,7 +990,8 @@
           "unit_price": 4200,
           "discount_percent": 0,
           "discounted_price": 4200,
-          "line_total": 4200
+          "line_total": 4200,
+          "slug": "tp-link-tl-sg108-8-port-gigabit-unmanaged-switch"
         },
         {
           "product_id": "11",
@@ -991,7 +1006,8 @@
           "unit_price": 6900,
           "discount_percent": 5,
           "discounted_price": 6555,
-          "line_total": 13110
+          "line_total": 13110,
+          "slug": "anker-341-usb-c-hub-7-in-1"
         }
       ],
       "subtotal": 40340,

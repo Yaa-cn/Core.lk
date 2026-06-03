@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { RiCloseCircleFill } from "@remixicon/react"
-import TitleBar from "../../componenets/TitleBar"
-import Modal from "../../componenets/Modal"
+import TitleBar from "../../components/TitleBar"
+import Modal from "../../components/Modal"
 
 function Addresses() {
 

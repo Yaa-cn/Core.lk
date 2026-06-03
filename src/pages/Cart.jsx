@@ -1,4 +1,4 @@
-import TitleBar from '../componenets/TitleBar'
+import TitleBar from '../components/TitleBar'
 import { useCart } from '../context/CartContext'
 import { useNavigate } from 'react-router-dom'
 import CartIcon from '../assets/icons/cart.png'
