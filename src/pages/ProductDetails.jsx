@@ -63,7 +63,7 @@ function ProductDetails() {
                         <button className="text-xs text-secondary outfit font-medium uppercase border border-secondary/20 bg-accent px-5 py-2.5 rounded-[3px] hover:bg-primary hover:text-white cursor-pointer hover:border-secondary/20 transition-colors duration-300">Buy Now</button>
                     </div>
                     <hr className="text-neutral-200 mt-4 mb-3" />
-                    <div className="flex flex-col text-sm/5.5 outfit text-secondary/65 mb-1 ">
+                    <div className="flex flex-col text-xs gap-1 outfit text-secondary/65 mb-1">
                         <p>Cash on Delivery support.</p>
                         <p>Experience a safe and secure checkout process.</p>
                         <p>Customer support whenever you need.</p>
@@ -73,9 +73,9 @@ function ProductDetails() {
 
             <div className="flex flex-col gap-5 mt-4 mx-4 sm:mx-0">
                 <div className="flex flex-col">
-                    <div className="flex text-[10px] outfit font-medium text-secondary ml-1">
-                        <button onClick={() => setTab('reviews')} className={`${tab === 'reviews' ? 'bg-accent' : ''} px-5 py-2 border-t border-x rounded-tl-[3px] border-secondary/20 cursor-pointer uppercase`}>Reviews</button>
-                        <button onClick={() => setTab('addReview')} className={`${tab === 'addReview' ? 'bg-accent' : ''} px-5 py-2 border-t border-r rounded-tr-[3px] border-secondary/20 cursor-pointer uppercase`}>Write a Review</button>
+                    <div className="flex text-xs outfit font-medium text-secondary ml-1">
+                        <button onClick={() => setTab('reviews')} className={`${tab === 'reviews' ? 'bg-accent' : ''} px-5 py-2 border-t border-x rounded-tl-[3px] border-secondary/20 cursor-pointer`}>Reviews</button>
+                        <button onClick={() => setTab('addReview')} className={`${tab === 'addReview' ? 'bg-accent' : ''} px-5 py-2 border-t border-r rounded-tr-[3px] border-secondary/20 cursor-pointer`}>Write a review</button>
                     </div>
                     <hr className=" border-secondary/20" />
 

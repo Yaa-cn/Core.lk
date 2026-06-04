@@ -13,7 +13,7 @@ function CartItem({ id, slug, imgSrc, imgAlt, name, price, quantity }) {
             <Link to={`/product/${slug}`}>
                 <img className='aspect-5/4 max-w-30 object-cover border-r border-neutral-200' src={imgSrc} alt={imgAlt} loading="lazy" />
             </Link>
-            <div className="flex flex-col py-2.5 px-3 sm:p-3 w-full">
+            <div className="flex flex-col py-2.5 px-3 lg:p-3 w-full">
                 <h5 className='text-xs xl:text-sm font-medium line-clamp-2 mb-1'>{name}</h5>
                 <div className="flex gap-1 mb-1">
                     <p className="text-[10px] mt-[1.5px]">Quantity</p>

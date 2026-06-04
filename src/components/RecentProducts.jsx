@@ -5,7 +5,7 @@ import TitleBar from './TitleBar'
 
 function RecentProducts() {
 
-    const { items, loading } = useProducts()
+    const { items, loading, error } = useProducts()
 
     const products = items.map((item) => (
         <ProductCard key={item._id} imgSrc={item.image} category={item.category} rating={item.rating} name={item.name} price={item.price} id={item._id} slug={item.slug} stock={item.stock} />
@@ -20,9 +20,10 @@ function RecentProducts() {
                     <div className='mt-4 mb-3 sm:mt-6 sm:mb-4'>
                         <TitleBar firstText={'Recent'} secText={'Products'} />
                     </div>
-                    <div className='grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:gap-6'>
-                        {recentProducts}
-                    </div>
+                    {!error ?
+                        <div className='grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:gap-6'>
+                            {recentProducts}
+                        </div> : <div><p className='my-5 text-[tomato]'>{error}</p></div>}
                 </div>
             }
         </>

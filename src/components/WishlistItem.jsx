@@ -13,7 +13,7 @@ function WishlistItem({ id, imgSrc, imgAlt, name, price, quantity, stock }) {
             <Link to={`/product/${id}`}>
                 <img className='aspect-5/4 max-w-30 object-cover border-r border-neutral-200' src={imgSrc} alt={imgAlt} loading="lazy" />
             </Link>
-            <div className="flex flex-col py-2.5 px-3 sm:p-3 w-full">
+            <div className="flex flex-col py-2.5 px-3 lg:p-3 w-full">
                 <h5 className='text-xs xl:text-sm font-medium line-clamp-2 mb-1'>{name}</h5>
                 <p className={`text-xs font-medium ${stock > 0 ? 'text-green-600' : 'text-[tomato]'} `}>{stock > 0 ? 'In Stock' : 'Out of Stock'}</p>
                 <div className=" flex justify-between mt-auto">

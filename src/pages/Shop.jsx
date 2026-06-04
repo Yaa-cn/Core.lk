@@ -15,7 +15,7 @@ function Shop() {
   const [query, setQuery] = useState('')
   const [searchTerm, setSearchTerm] = useState('')
   const { category, setCategory, sortBy, sortList } = useFilter()
-  const { items, loading, setLoading } = useProducts()
+  const { items, loading, setLoading, error } = useProducts()
 
   useEffect(() => {
     if (!visible) return
@@ -97,10 +97,10 @@ function Shop() {
             <TitleBar secText={category} showLine />
             <div onClick={() => setVisible(true)} className={`${visible ? 'hidden' : 'flex'} gap-1.5 mr-0.75 cursor-pointer sm:hidden`}><RiFilter3Line size={16} className="mt-px" /><span className="text-sm outfit font-medium tracking-wide">Filter</span></div>
           </div>
-          {loading ? <div className='flex justify-center items-center h-full min-h-dvh'><Loader /></div> :
+          {loading ? <div className='flex justify-center items-center h-full min-h-dvh'><Loader /></div> : !error ?
             <div className="grid grid-cols-2 gap-3 xl:gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mb-4 xl:mb-10 mx-4 xl:mx-10">
               {productsList}
-            </div>
+            </div> : <div><p className='my-2 mx-4 xl:mx-10 text-[tomato]'>{error}</p></div>
           }
         </div>
 

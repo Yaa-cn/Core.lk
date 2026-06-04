@@ -6,15 +6,18 @@ export const ProductsProvider = ({ children }) => {
 
   const [items, setItems] = useState([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     const getItems = async () => {
       try {
-        const res = await fetch("https://69eb2c9497482ad5c5273fa1.mockapi.io/api/products");
+        const res = await fetch("https://corebe.up.railway.app/api/products");
         const data = await res.json();
         setItems(data);
+        setError(null)
       } catch (err) {
         console.log(err.message)
+        setError("Unable to fetch !")
       } finally {
         setLoading(false);
       }
@@ -27,6 +30,7 @@ export const ProductsProvider = ({ children }) => {
       items,
       loading,
       setLoading,
+      error
     }}>
       {children}
     </ProductsContext.Provider>
@@ -38,6 +42,7 @@ export const useProducts = () => {
   return useContext(ProductsContext);
 }
 
+// https://corebe.up.railway.app/api/products
 // https://69eb2c9497482ad5c5273fa1.mockapi.io/api/products
-// https://api.mockfly.dev/mocks/5bce2d90-2177-485d-8946-4f7a5ec88e92
 // http://localhost:3000/api/products
+// http://localhost:3000/products
