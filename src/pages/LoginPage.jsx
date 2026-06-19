@@ -47,7 +47,7 @@ function LoginPage() {
                             minLength={6}
                             title='Minimum 6 characters required.'
                             className='text-primary text-xs border-b border-primary/40 nunito py-2 px-1 outline-none w-full h-fit' />
-                        {formData.password && <span onMouseDown={() => setInputType('text')} onMouseLeave={() => setInputType('password')} onMouseUp={() => setInputType('password')} className='absolute text-[11px] text-secondary top-1.75 right-2 cursor-pointer hover:text-secondary/80 transition-colors select-none'>Show</span>}
+                        {formData.password && <span onMouseDown={() => setInputType('text')} onMouseLeave={() => setInputType('password')} onMouseUp={() => setInputType('password')} onTouchStart={() => setInputType('text')} onTouchEnd={() => setInputType('password')} className='absolute text-[11px] text-secondary top-1.75 right-2 cursor-pointer hover:text-secondary/80 transition-colors select-none'>Show</span>}
                     </div>
 
                     <p className='text-xs text-secondary cursor-pointer hover:text-primary/60 transition-colors ml-auto'>Forget password ? </p>

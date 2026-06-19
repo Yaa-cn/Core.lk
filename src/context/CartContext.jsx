@@ -7,6 +7,7 @@ const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
 
+    const API_URL = import.meta.env.VITE_API_URL
     const { user } = useAuth()
     const [quantity, setQuantity] = useState(1)
     const [loading, setLoading] = useState(true)
@@ -17,7 +18,7 @@ export const CartProvider = ({ children }) => {
 
     const fetchCart = async () => {
         try {
-            const res = await fetch('http://localhost:3000/api/cart', {
+            const res = await fetch(API_URL + '/api/cart', {
                 credentials: 'include'
             })
 
@@ -36,43 +37,43 @@ export const CartProvider = ({ children }) => {
         if (!user) {
             const existingCart = JSON.parse(localStorage.getItem('cart') || "[]")
             setCart(existingCart)
-        }
+        } else {
 
-        const mergeCart = async () => {
-            try {
-                const cartItems = JSON.parse(
-                    localStorage.getItem('cart') || '[]'
-                )
-
-                if (cartItems.length > 0) {
-                    const res = await fetch(
-                        'http://localhost:3000/api/cart/merge',
-                        {
-                            method: 'POST',
-                            credentials: 'include',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify({ cartItems })
-                        }
+            const mergeCart = async () => {
+                try {
+                    const cartItems = JSON.parse(
+                        localStorage.getItem('cart') || '[]'
                     )
 
-                    if (!res.ok) {
-                        console.error('Cart merge failed!', res.status)
-                        return
+                    if (cartItems.length > 0) {
+                        const res = await fetch(API_URL + '/api/cart/merge',
+                            {
+                                method: 'POST',
+                                credentials: 'include',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({ cartItems })
+                            }
+                        )
+
+                        if (!res.ok) {
+                            console.error('Cart merge failed!', res.status)
+                            return
+                        }
+
+                        localStorage.removeItem('cart')
                     }
 
-                    localStorage.removeItem('cart')
+                    await fetchCart()
+
+                } catch (err) {
+                    console.error(err.message)
                 }
-
-                await fetchCart()
-
-            } catch (err) {
-                console.error(err.message)
             }
-        }
 
-        mergeCart()
+            mergeCart()
+        }
 
     }, [user])
 
@@ -80,7 +81,7 @@ export const CartProvider = ({ children }) => {
     const addToCart = async (product) => {
         if (user) {
             try {
-                const res = await fetch('http://localhost:3000/api/cart', {
+                const res = await fetch(API_URL + '/api/cart', {
                     method: 'POST',
                     credentials: 'include',
                     headers: {
@@ -147,7 +148,7 @@ export const CartProvider = ({ children }) => {
     const removeFromCart = async (id) => {
         if (user) {
             try {
-                const res = await fetch(`http://localhost:3000/api/cart/${id}`, {
+                const res = await fetch(API_URL + `/api/cart/${id}`, {
                     method: 'DELETE',
                     credentials: 'include'
                 })
@@ -166,7 +167,7 @@ export const CartProvider = ({ children }) => {
     const increaseQuantity = async (id) => {
         if (user) {
             try {
-                const res = await fetch(`http://localhost:3000/api/cart/${id}`, {
+                const res = await fetch(API_URL + `/api/cart/${id}`, {
                     method: 'PATCH',
                     credentials: 'include',
                     headers: {
@@ -191,7 +192,7 @@ export const CartProvider = ({ children }) => {
     const decreaseQuantity = async (id) => {
         if (user) {
             try {
-                const res = await fetch(`http://localhost:3000/api/cart/${id}`, {
+                const res = await fetch(API_URL + `/api/cart/${id}`, {
                     method: 'PATCH',
                     credentials: 'include',
                     headers: {

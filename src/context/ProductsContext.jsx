@@ -4,6 +4,7 @@ export const ProductsContext = createContext()
 
 export const ProductsProvider = ({ children }) => {
 
+  const API_URL = import.meta.env.VITE_API_URL
   const [items, setItems] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
@@ -11,7 +12,7 @@ export const ProductsProvider = ({ children }) => {
   useEffect(() => {
     const getItems = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/products")
+        const res = await fetch(API_URL + '/api/products')
         const data = await res.json()
         setItems(data)
         setError(null)

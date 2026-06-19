@@ -6,6 +6,7 @@ export const AuthContext = createContext()
 
 export const AuthProvider = ({ children }) => {
 
+    const API_URL = import.meta.env.VITE_API_URL
     const navigate = useNavigate()
     const [loading, setLoading] = useState(true)
     const [user, setUser] = useState(null)
@@ -16,7 +17,7 @@ export const AuthProvider = ({ children }) => {
 
     const checkAuth = async () => {
         try {
-            const res = await fetch('http://localhost:3000/api/auth/check', {
+            const res = await fetch(API_URL + '/api/auth/check', {
                 credentials: 'include'
             });
 
@@ -37,7 +38,7 @@ export const AuthProvider = ({ children }) => {
 
     const registerUser = async (formData) => {
         try {
-            const res = await fetch('http://localhost:3000/api/auth/register', {
+            const res = await fetch(API_URL + '/api/auth/register', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -62,7 +63,7 @@ export const AuthProvider = ({ children }) => {
 
     const loginUser = async (formData) => {
         try {
-            const res = await fetch('http://localhost:3000/api/auth/login', {
+            const res = await fetch(API_URL + '/api/auth/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -90,7 +91,7 @@ export const AuthProvider = ({ children }) => {
 
     const logoutUser = async () => {
         try {
-            const res = await fetch('http://localhost:3000/api/auth/logout', {
+            const res = await fetch(API_URL + '/api/auth/logout', {
                 method: 'POST',
                 credentials: 'include'
             })

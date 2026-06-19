@@ -1,16 +1,17 @@
-import { useState, createContext, useEffect, useContext } from "react";
+import { useState, createContext, useEffect, useContext } from "react"
 
 export const OrdersContext = createContext()
 
 export const OrdersProvider = ({ children }) => {
 
+  const API_URL = 'https://69eb2c9497482ad5c5273fa1.mockapi.io'
   const [orders, setOrders] = useState([])
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const getOrders = async () => {
       try {
-        const res = await fetch("https://69eb2c9497482ad5c5273fa1.mockapi.io/api/orders");
+        const res = await fetch(API_URL + '/api/orders');
         const data = await res.json();
         setOrders(data);
       } catch (err) {
