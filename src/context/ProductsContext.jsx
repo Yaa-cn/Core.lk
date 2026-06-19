@@ -11,7 +11,7 @@ export const ProductsProvider = ({ children }) => {
   useEffect(() => {
     const getItems = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/products")
+        const res = await fetch("https://corebe.up.railway.app/api/products")
         const data = await res.json()
         setItems(data)
         setError(null)
