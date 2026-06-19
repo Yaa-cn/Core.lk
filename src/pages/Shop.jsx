@@ -49,7 +49,7 @@ function Shop() {
   }, [items, category, sortBy, searchTerm])
 
   const productsList = products.map((item) => (
-    <ProductCard key={item._id} imgSrc={item.image} category={item.category} rating={item.rating} name={item.name} price={item.price} id={item._id} slug={item.slug} stock={item.stock} />
+    <ProductCard key={item._id} imgSrc={item.image} category={item.category} rating={item.rating} name={item.name} price={item.price} slug={item.slug} item={item} />
   ))
 
   return (

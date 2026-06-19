@@ -46,6 +46,11 @@ function Addresses() {
                 <form className="flex flex-col gap-4">
 
                     <div className="flex flex-col gap-0.5">
+                        <label htmlFor="label" className="text-[10px] uppercase text-neutral-500">Label</label>
+                        <input type="text" name="label" id="label" placeholder="Label" className="text-xs text-primary/80 border border-secondary/20 rounded-[3px] px-4 py-3 outline-none " />
+                    </div>
+
+                    <div className="flex flex-col gap-0.5">
                         <label htmlFor="name" className="text-[10px] uppercase text-neutral-500">Name</label>
                         <input type="text" name="name" id="name" placeholder="Name" className="text-xs text-primary/80 border border-secondary/20 rounded-[3px] px-4 py-3 outline-none " />
                     </div>
@@ -92,6 +97,11 @@ function Addresses() {
                 </div>
 
                 <form className="flex flex-col gap-4">
+
+                    <div className="flex flex-col gap-0.5">
+                        <label htmlFor="label" className="text-[10px] uppercase text-neutral-500">Label</label>
+                        <input type="text" name="label" id="label" placeholder="Label" className="text-xs text-primary/80 border border-secondary/20 rounded-[3px] px-4 py-3 outline-none " />
+                    </div>
 
                     <div className="flex flex-col gap-0.5">
                         <label htmlFor="name" className="text-[10px] uppercase text-neutral-500">Name</label>

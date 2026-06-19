@@ -4,7 +4,7 @@ import { useWishlist } from "../context/WishlistContext"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { useState } from "react"
 
-function ProductCard({ id, slug, imgSrc, imgAlt, category, name, price, rating, stock }) {
+function ProductCard({ slug, imgSrc, category, name, price, rating, item }) {
 
   const [loaded, setLoaded] = useState(false)
   const location = useLocation()
@@ -12,19 +12,15 @@ function ProductCard({ id, slug, imgSrc, imgAlt, category, name, price, rating, 
   const { addToWishlist } = useWishlist()
 
   const product = {
-    id,
-    name,
-    image: imgSrc,
-    price,
-    stock
+    ...item
   }
 
   return (
     <div className='productCard flex flex-col bg-white nunito border border-gray/70 shadow-xs rounded overflow-hidden'>
-      <Link to={`/product/${slug}`}className="overflow-hidden aspect-7/5 sm:aspect-5/4">
+      <Link to={`/product/${slug}`} className="overflow-hidden aspect-7/5 sm:aspect-5/4">
         {!loaded &&
           <Skeleton />}
-        <img onLoad={() => setLoaded(true)} className={`aspect-7/5 sm:aspect-5/4 object-cover ${loaded ? 'block' : 'none'} w-full`} src={imgSrc} alt={imgAlt} />
+        <img onLoad={() => setLoaded(true)} className={`aspect-7/5 sm:aspect-5/4 object-cover ${loaded ? 'block' : 'none'} w-full`} src={imgSrc} alt={`${slug}.jpg`} />
       </Link>
       <div className='flex flex-col gap-2 sm:gap-1.5 lg:gap-2.5 m-2.5 sm:m-3.5 grow justify-between'>
         <div className="flex justify-between">

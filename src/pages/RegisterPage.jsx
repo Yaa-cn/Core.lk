@@ -1,10 +1,20 @@
 import loginPic from '../assets/images/loginPic.webp'
 import TitleBar from '../components/TitleBar'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { useAuth } from '../context/AuthContext'
 
 function RegisterPage() {
 
-  const navigate = useNavigate()
+  const { registerUser } = useAuth()
+  const [formData, setFormData] = useState({ name: "", email: "", password: "" })
+  const [inputType, setInputType] = useState("password")
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const data = await registerUser(formData)
+    e.target.reset()
+  }
 
   return (
     <div className='flex flex-col sm:flex-row w-full'>
@@ -16,12 +26,40 @@ function RegisterPage() {
           <TitleBar firstText={'Create'} secText={'Account'} className={'text-xl sm:text-2xl! font-semibold!'} showLine />
           <p className='text-xs text-primary/50'>Please enter your details</p>
         </div>
-        <form className="flex flex-col gap-5">
-          <input type="text" placeholder='Name' className='text-primary text-xs border-b border-primary/40 nunito py-2 px-1 outline-none ' />
-          <input type="text" placeholder='Email Address' className='text-primary text-xs border-b border-primary/40 nunito py-2 px-1 outline-none ' />
-          <input type="password" placeholder='Password' className='text-primary text-xs border-b border-primary/40 nunito py-2 px-1 outline-none ' />
-          <button onClick={(e) => { navigate('/profile'); e.preventDefault() }} className='text-xs text-white uppercase mt-2 font-medium border outfit border-primary/50 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-transparent hover:text-secondary hover:border-secondary/50 cursor-pointer transition-colors duration-300'>Register</button>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+
+          <input
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            type="text"
+            placeholder='Name'
+            required
+            pattern='[A-Za-z\s]+'
+            title='Numbers and special characters are not allowed.'
+            className='text-primary text-xs border-b border-primary/40 nunito py-2 px-1 outline-none ' />
+
+          <input
+            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+            type="email" placeholder='Email Address'
+            required
+            className='text-primary text-xs border-b border-primary/40 nunito py-2 px-1 outline-none ' />
+
+          <div className='relative'>
+            <input
+              onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+              type={inputType} placeholder='Password'
+              required
+              minLength={6}
+              title='Minimum 6 characters required.'
+              className='text-primary text-xs border-b border-primary/40 nunito py-2 px-1 outline-none w-full h-fit' />
+            {formData.password && <span onMouseDown={() => setInputType('text')} onMouseLeave={() => setInputType('password')} onMouseUp={() => setInputType('password')} className='absolute text-[11px] text-secondary top-1.75 right-2 cursor-pointer hover:text-secondary/80 transition-colors select-none'>Show</span>}
+          </div>
+
+          <button
+            type='submit'
+            className='text-xs text-white uppercase mt-2 font-medium border outfit border-primary/50 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-transparent hover:text-secondary hover:border-secondary/50 cursor-pointer transition-colors duration-300'>Register</button>
+
           <p className='text-xs text-secondary cursor-pointer'>Already have an account ? <span className='cursor-pointer hover:text-primary/60 transition-colors'><Link to={'/login'}>Login</Link></span> </p>
+
         </form>
       </div>
     </div >

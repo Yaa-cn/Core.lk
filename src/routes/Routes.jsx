@@ -17,6 +17,7 @@ import LoginPage from '../pages/LoginPage'
 import RegisterPage from '../pages/RegisterPage'
 import Checkout from '../pages/Checkout'
 import OrderStatus from '../pages/OrderStatus'
+import ProtectedRoute from './ProtectedRoute'
 
 const App = lazy(() => import('../App'))
 
@@ -48,7 +49,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/profile',
-        element: <Profile />,
+        element: <ProtectedRoute><Profile /></ProtectedRoute>,
         children: [
           {
             index: true,

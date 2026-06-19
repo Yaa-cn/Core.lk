@@ -4,7 +4,5 @@ import Routes from './routes/Routes'
 import { MainProvider } from './context/MainContext'
 
 createRoot(document.getElementById('root')).render(
-  <MainProvider>
     <Routes />
-  </MainProvider>
 )

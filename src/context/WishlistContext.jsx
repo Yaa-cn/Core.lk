@@ -12,24 +12,24 @@ export const WishlistProvider = ({ children }) => {
     })
 
     const wishlistItems = wishlist.map((item) =>
-        <WishlistItem key={item.id} imgSrc={item.image} imgAlt={item.image} name={item.name} price={item.price} quantity={item.quantity} id={item.id} stock={item.stock} />
+        <WishlistItem key={item._id} imgSrc={item.image} slug={item.slug} name={item.name} price={item.price} id={item._id} stock={item.stock} />
     )
 
     const addToWishlist = (product) => {
         setWishlist(prevCart => {
-            const exist = prevCart.find(item => item.id === product.id)
+            const exist = prevCart.find(item => item._id === product._id)
             if (exist) {
                 toast.info('Item already in wishlist')
                 return [...prevCart]
             } else {
                 toast.success('Item added to wishlist')
-                return [...prevCart, { ...product, quantity: 1 }]
+                return [...prevCart, { ...product }]
             }
         })
     }
 
     const removeFromWishlist = (id) => {
-        setWishlist(prevCart => prevCart.filter(item => item.id !== id))
+        setWishlist(prevCart => prevCart.filter(item => item._id !== id))
     }
 
     useEffect(() => {

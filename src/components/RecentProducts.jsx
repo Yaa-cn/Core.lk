@@ -8,7 +8,7 @@ function RecentProducts() {
     const { items, loading, error } = useProducts()
 
     const products = items.map((item) => (
-        <ProductCard key={item._id} imgSrc={item.image} category={item.category} rating={item.rating} name={item.name} price={item.price} id={item._id} slug={item.slug} stock={item.stock} />
+        <ProductCard key={item._id} imgSrc={item.image} category={item.category} rating={item.rating} name={item.name} price={item.price} slug={item.slug} item={item} />
     ))
 
     const recentProducts = products.slice(0, 10)

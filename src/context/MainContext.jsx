@@ -9,20 +9,20 @@ import { AuthProvider } from "./AuthContext"
 export const MainProvider = ({ children }) => {
 
     return (
-        <WishlistProvider>
-            <CartProvider>
-                <FilterProvider>
-                    <UiProvider>
-                        <OrdersProvider>
-                            <AuthProvider>
+        <AuthProvider>
+            <WishlistProvider>
+                <CartProvider>
+                    <FilterProvider>
+                        <UiProvider>
+                            <OrdersProvider>
                                 <ProductsProvider>
                                     {children}
                                 </ProductsProvider>
-                            </AuthProvider>
-                        </OrdersProvider>
-                    </UiProvider>
-                </FilterProvider>
-            </CartProvider>
-        </WishlistProvider>
+                            </OrdersProvider>
+                        </UiProvider>
+                    </FilterProvider>
+                </CartProvider>
+            </WishlistProvider>
+        </AuthProvider >
     )
 }

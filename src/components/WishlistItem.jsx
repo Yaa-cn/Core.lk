@@ -3,7 +3,7 @@ import { useState } from "react"
 import { useNavigate, Link } from "react-router-dom"
 import { useWishlist } from "../context/WishlistContext"
 
-function WishlistItem({ id, imgSrc, imgAlt, name, price, quantity, stock }) {
+function WishlistItem({ id, slug, imgSrc, name, price, stock }) {
 
     const { removeFromWishlist } = useWishlist()
     const navigate = useNavigate()
@@ -11,7 +11,7 @@ function WishlistItem({ id, imgSrc, imgAlt, name, price, quantity, stock }) {
     return (
         <div className='flex justify-between nunito h-full max-h-25 bg-white border border-neutral-200 overflow-hidden rounded'>
             <Link to={`/product/${id}`}>
-                <img className='aspect-5/4 max-w-30 object-cover border-r border-neutral-200' src={imgSrc} alt={imgAlt} loading="lazy" />
+                <img className='aspect-5/4 max-w-30 object-cover border-r border-neutral-200' src={imgSrc} alt={`${slug}.jpg`} loading="lazy" />
             </Link>
             <div className="flex flex-col py-2.5 px-3 lg:p-3 w-full">
                 <h5 className='text-xs xl:text-sm font-medium line-clamp-2 mb-1'>{name}</h5>

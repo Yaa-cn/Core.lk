@@ -1,4 +1,4 @@
-import { useState, createContext, useEffect, useContext } from "react";
+import { useState, createContext, useEffect, useContext } from "react"
 
 export const ProductsContext = createContext()
 
@@ -11,15 +11,15 @@ export const ProductsProvider = ({ children }) => {
   useEffect(() => {
     const getItems = async () => {
       try {
-        const res = await fetch("https://corebe.up.railway.app/api/products");
-        const data = await res.json();
-        setItems(data);
+        const res = await fetch("http://localhost:3000/api/products")
+        const data = await res.json()
+        setItems(data)
         setError(null)
       } catch (err) {
         console.log(err.message)
         setError("Unable to fetch !")
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
     }
     getItems()
@@ -39,7 +39,7 @@ export const ProductsProvider = ({ children }) => {
 }
 
 export const useProducts = () => {
-  return useContext(ProductsContext);
+  return useContext(ProductsContext)
 }
 
 // https://corebe.up.railway.app/api/products

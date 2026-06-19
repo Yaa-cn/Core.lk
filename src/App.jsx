@@ -3,6 +3,7 @@ import Footer from './components/Footer'
 import Toast from './components/Toast'
 import { Outlet, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import { MainProvider } from './context/MainContext'
 
 function App() {
 
@@ -14,10 +15,12 @@ function App() {
 
   return (
     <>
-      <Navbar />
-      <Toast />
-      <Outlet />
-      <Footer />
+      <MainProvider>
+        <Navbar />
+        <Toast />
+        <Outlet />
+        <Footer />
+      </MainProvider>
     </>
   )
 }

@@ -6,28 +6,30 @@ import Skeleton from "../components/Skeleton"
 import BackButton from "../components/BackButton"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
-import { RiStarFill } from "@remixicon/react"
+import { RiStarFill, RiArrowLeftSFill, RiArrowRightSFill } from "@remixicon/react"
 import { useCart } from "../context/CartContext"
 import { useProducts } from "../context/ProductsContext"
+import { useLocation } from "react-router-dom"
 
 function ProductDetails() {
 
     const [hide, setHide] = useState(true)
     const [loaded, setLoaded] = useState(false)
     const [rate, setRate] = useState(0)
-    const [tab, setTab] = useState('reviews')
+    const [tab, setTab] = useState('description')
     const { items } = useProducts()
-    const { addToCart } = useCart()
+    const { addToCart, quantity, setQuantity } = useCart()
     const { slug } = useParams()
+    const location = useLocation()
+
+    useEffect(() => {
+        setQuantity(1)
+    }, [location])
 
     const item = items?.find(item => item.slug === slug)
 
     const product = item && {
-        id: item._id,
-        slug: item.slug,
-        name: item.name,
-        image: item.image,
-        price: item.price,
+        ...item
     }
 
     const renderStars = (rating) => {
@@ -50,13 +52,25 @@ function ProductDetails() {
                 <div className="flex flex-col mx-4 sm:mx-0">
                     <div className="flex justify-between mb-1">
                         <p className="text-xs text-secondary font-medium">{item.category}</p>
-                        <div className="flex gap-1 "><RiStarFill size={12} className="text-yellow-400 mt-px sm:mt-[1.5px]" /><p className="text-xs font-bold">{item.rating}</p></div>
+                        {/* <div className="flex gap-1 "><RiStarFill size={12} className="text-yellow-400 mt-px sm:mt-[1.5px]" /><p className="text-xs font-bold">{item.rating}</p></div> */}
                     </div>
-                    <h2 className={`text-lg font-extrabold mb-2.5 -ml-px`}>{item.name}</h2>
+                    <h2 className={`text-lg font-extrabold mb-0.5 -ml-px`}>{item.name}</h2>
+                    <span className="flex items-center gap-3 nunito mb-2">{renderStars(item.rating)} <span className="text-xs font-bold">( {item.rating} )</span></span>
+                    {item.stock > 10 && <p className="text-xs text-green-600 font-medium mb-2">{item.stock} in Stock</p>}
+                    {item.stock < 10 && <p className="text-xs text-yellow-600 font-medium mb-2">Only {item.stock} left !</p>}
+                    {item.stock === 0 && <p className="text-xs text-red-400 font-medium mb-2">Out of Stock</p>}
                     <p className={`text-base font-bold mb-2.5`}>LKR {item.price}</p>
-                    <div className="flex flex-col gap-0.5 mb-5 select-none">
+                    {/* <div className="flex flex-col gap-0.5 mb-5 select-none">
                         <h6 className="text-sm font-medium">Description </h6>
                         <h6 onClick={() => setHide(prev => !prev)} className={`text-sm/5.5 outfit text-secondary/65 ${hide ? 'line-clamp-3' : 'line-clamp-none'} cursor-pointer`}>{item.description}</h6>
+                    </div> */}
+                    <div className="flex gap-1 mb-4">
+                        <p className="text-[10px] mt-[1.5px]">Quantity</p>
+                        <div className="flex gap-2 w-fit">
+                            <button disabled={quantity === 1} type="submit" onClick={() => setQuantity(prev => prev - 1)} className="cursor-pointer"><RiArrowLeftSFill className="text-secondary" size={18} /></button>
+                            <span className="text-[10px] mt-0.5">{quantity}</span>
+                            <button type="submit" onClick={() => setQuantity(prev => prev + 1)} className="cursor-pointer"><RiArrowRightSFill className="text-secondary" size={18} /></button>
+                        </div>
                     </div>
                     <div className="flex gap-5 mb-1">
                         <button onClick={() => addToCart(product)} className="text-xs text-white uppercase font-medium border outfit border-primary/20 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-transparent hover:text-secondary hover:border-secondary/20 cursor-pointer transition-colors duration-300">Add to Cart</button>
@@ -74,10 +88,16 @@ function ProductDetails() {
             <div className="flex flex-col gap-5 mt-4 mx-4 sm:mx-0">
                 <div className="flex flex-col">
                     <div className="flex text-xs outfit font-medium text-secondary ml-1">
-                        <button onClick={() => setTab('reviews')} className={`${tab === 'reviews' ? 'bg-accent' : ''} px-5 py-2 border-t border-x rounded-tl-[3px] border-secondary/20 cursor-pointer`}>Reviews</button>
+                        <button onClick={() => setTab('description')} className={`${tab === 'description' ? 'bg-accent' : ''} px-5 py-2 border-t border-l rounded-tl-[3px] border-secondary/20 cursor-pointer`}>Description</button>
+                        <button onClick={() => setTab('reviews')} className={`${tab === 'reviews' ? 'bg-accent' : ''} px-5 py-2 border-t border-x  border-secondary/20 cursor-pointer`}>Reviews</button>
                         <button onClick={() => setTab('addReview')} className={`${tab === 'addReview' ? 'bg-accent' : ''} px-5 py-2 border-t border-r rounded-tr-[3px] border-secondary/20 cursor-pointer`}>Write a review</button>
                     </div>
                     <hr className=" border-secondary/20" />
+
+                    {/* Description Sec */}
+                    {tab === 'description' && <div className="flex flex-col gap-4 my-4">
+                        <h6 className="text-sm/6 outfit text-secondary/65 cursor-pointer">{item.description}</h6>
+                    </div>}
 
                     {/* Review Sec */}
                     {tab === 'reviews' && <div className="flex flex-col gap-4 my-4">
