@@ -16,7 +16,7 @@ function ProductDetails() {
     const [hide, setHide] = useState(true)
     const [loaded, setLoaded] = useState(false)
     const [rate, setRate] = useState(0)
-    const [tab, setTab] = useState('description')
+    const [tab, setTab] = useState('reviews')
     const { items } = useProducts()
     const { addToCart, quantity, setQuantity } = useCart()
     const { slug } = useParams()
@@ -52,19 +52,18 @@ function ProductDetails() {
                 <div className="flex flex-col mx-4 sm:mx-0">
                     <div className="flex justify-between mb-1">
                         <p className="text-xs text-secondary font-medium">{item.category}</p>
-                        {/* <div className="flex gap-1 "><RiStarFill size={12} className="text-yellow-400 mt-px sm:mt-[1.5px]" /><p className="text-xs font-bold">{item.rating}</p></div> */}
                     </div>
                     <h2 className={`text-lg font-extrabold mb-0.5 -ml-px`}>{item.name}</h2>
-                    <span className="flex items-center gap-3 nunito mb-2">{renderStars(item.rating)} <span className="text-xs font-bold">( {item.rating} )</span></span>
+                    <span className="flex items-center gap-2.5 nunito mb-2">{renderStars(item.rating)} <span className="text-xs font-bold">( {item.rating} )</span></span>
                     {item.stock > 10 && <p className="text-xs text-green-600 font-medium mb-2">{item.stock} in Stock</p>}
                     {item.stock < 10 && <p className="text-xs text-yellow-600 font-medium mb-2">Only {item.stock} left !</p>}
                     {item.stock === 0 && <p className="text-xs text-red-400 font-medium mb-2">Out of Stock</p>}
                     <p className={`text-base font-bold mb-2.5`}>LKR {item.price}</p>
-                    {/* <div className="flex flex-col gap-0.5 mb-5 select-none">
+                    <div className="flex flex-col gap-0.5 mb-3.5 select-none">
                         <h6 className="text-sm font-medium">Description </h6>
                         <h6 onClick={() => setHide(prev => !prev)} className={`text-sm/5.5 outfit text-secondary/65 ${hide ? 'line-clamp-3' : 'line-clamp-none'} cursor-pointer`}>{item.description}</h6>
-                    </div> */}
-                    <div className="flex gap-1 mb-4">
+                    </div>
+                    <div className="flex gap-1 mb-5">
                         <p className="text-[10px] mt-[1.5px]">Quantity</p>
                         <div className="flex gap-2 w-fit">
                             <button disabled={quantity === 1} type="submit" onClick={() => setQuantity(prev => prev - 1)} className="cursor-pointer"><RiArrowLeftSFill className="text-secondary" size={18} /></button>
@@ -88,16 +87,10 @@ function ProductDetails() {
             <div className="flex flex-col gap-5 mt-4 mx-4 sm:mx-0">
                 <div className="flex flex-col">
                     <div className="flex text-xs outfit font-medium text-secondary ml-1">
-                        <button onClick={() => setTab('description')} className={`${tab === 'description' ? 'bg-accent' : ''} px-5 py-2 border-t border-l rounded-tl-[3px] border-secondary/20 cursor-pointer`}>Description</button>
-                        <button onClick={() => setTab('reviews')} className={`${tab === 'reviews' ? 'bg-accent' : ''} px-5 py-2 border-t border-x  border-secondary/20 cursor-pointer`}>Reviews</button>
+                        <button onClick={() => setTab('reviews')} className={`${tab === 'reviews' ? 'bg-accent' : ''} px-5 py-2 border-t border-x rounded-tl-[3px]  border-secondary/20 cursor-pointer`}>Reviews</button>
                         <button onClick={() => setTab('addReview')} className={`${tab === 'addReview' ? 'bg-accent' : ''} px-5 py-2 border-t border-r rounded-tr-[3px] border-secondary/20 cursor-pointer`}>Write a review</button>
                     </div>
                     <hr className=" border-secondary/20" />
-
-                    {/* Description Sec */}
-                    {tab === 'description' && <div className="flex flex-col gap-4 my-4">
-                        <h6 className="text-sm/6 outfit text-secondary/65 cursor-pointer">{item.description}</h6>
-                    </div>}
 
                     {/* Review Sec */}
                     {tab === 'reviews' && <div className="flex flex-col gap-4 my-4">

@@ -17,7 +17,7 @@ function Cart() {
         <TitleBar firstText={'Shopping'} secText={'Cart'} showLine />
       </div>
 
-      {loading && user ? <div className='flex flex-col justify-center items-center gap-3 mt-10 mb-10'><Loader /></div> :
+      {loading && user ? <div className='flex flex-col justify-center items-center gap-3 mt-30 mb-40'><Loader /></div> :
 
         <div className='flex flex-col md:flex-row gap-8 mb-10 mx-4 sm:mx-10'>
 

@@ -7,7 +7,7 @@ const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
 
-    const API_URL = import.meta.env.VITE_API_URL
+    let API_URL = import.meta.env.VITE_API_URL
     const { user } = useAuth()
     const [quantity, setQuantity] = useState(1)
     const [loading, setLoading] = useState(true)
@@ -26,10 +26,11 @@ export const CartProvider = ({ children }) => {
 
             if (res.ok) {
                 setCart(data.items || [])
-                setLoading(false)
             }
         } catch (err) {
             console.error(err.message)
+        } finally {
+            setLoading(false)
         }
     }
 
@@ -38,7 +39,7 @@ export const CartProvider = ({ children }) => {
             const existingCart = JSON.parse(localStorage.getItem('cart') || "[]")
             setCart(existingCart)
         } else {
-
+            
             const mergeCart = async () => {
                 try {
                     const cartItems = JSON.parse(
@@ -73,6 +74,7 @@ export const CartProvider = ({ children }) => {
             }
 
             mergeCart()
+
         }
 
     }, [user])
