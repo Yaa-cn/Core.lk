@@ -11,19 +11,31 @@ export const ProductsProvider = ({ children }) => {
 
   useEffect(() => {
     const getItems = async () => {
+
+      if (!navigator.onLine) {
+        setError('No internet Connection !')
+        setLoading(false)
+        return
+      }
+
       try {
+
         const res = await fetch(API_URL + '/api/products')
         const data = await res.json()
-        setItems(data)
+
+        setItems(data || [])
         setError(null)
+
       } catch (err) {
         console.log(err.message)
         setError("Unable to fetch !")
       } finally {
         setLoading(false)
       }
+
     }
     getItems()
+
   }, [])
 
   return (

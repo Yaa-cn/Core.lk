@@ -100,7 +100,7 @@ function Shop() {
           {loading ? <div className='flex justify-center items-center h-full min-h-dvh'><Loader /></div> : !error ?
             <div className="grid grid-cols-2 gap-3 xl:gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 mb-4 xl:mb-10 mx-4 xl:mx-10">
               {productsList}
-            </div> : <div><p className='my-2 mx-4 xl:mx-10 text-[tomato]'>{error}</p></div>
+            </div> : <div><p className='text-sm my-2 mx-4 xl:mx-10 text-[tomato]'>{error}</p></div>
           }
         </div>
 

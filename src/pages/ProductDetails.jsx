@@ -10,16 +10,18 @@ import { RiStarFill, RiArrowLeftSFill, RiArrowRightSFill } from "@remixicon/reac
 import { useCart } from "../context/CartContext"
 import { useProducts } from "../context/ProductsContext"
 import { useLocation } from "react-router-dom"
+import { useWishlist } from "../context/WishlistContext"
 
 function ProductDetails() {
 
     const [hide, setHide] = useState(true)
     const [loaded, setLoaded] = useState(false)
     const [rate, setRate] = useState(0)
-    const [tab, setTab] = useState('reviews')
+    const [tab, setTab] = useState('relatedProducts')
     const { items } = useProducts()
     const { addToCart, quantity, setQuantity } = useCart()
     const { slug } = useParams()
+    const { addToWishlist } = useWishlist()
     const location = useLocation()
 
     useEffect(() => {
@@ -44,8 +46,8 @@ function ProductDetails() {
 
         item ? <div className="flex flex-col sm:mt-1 sm:mx-6 md:mx-10">
             <BackButton className={'absolute sm:relative bg-light sm:bg-transparent m-4 sm:m-0 sm:my-2 sm:-ml-2 pr-4 sm:pr-0 border sm:border-none border-secondary/50 rounded-full  '} />
-            <div className='flex gap-4 sm:gap-6 flex-col sm:flex-row nunito'>
-                <div className="aspect-square sm:min-w-80 sm:w-80 sm:h-80 sm:rounded sm:border border-gray sm:overflow-hidden ">
+            <div className='flex gap-4 sm:gap-6 flex-col md:flex-row nunito'>
+                <div className="aspect-square md:min-w-100 md:w-100 md:h-100 sm:rounded sm:border border-gray sm:overflow-hidden ">
                     {!loaded && <Skeleton />}
                     <img onLoad={() => setLoaded(true)} className={`aspect-square ${loaded ? 'block' : 'none'} w-full object-cover`} src={item.image} alt={item.image} loading="lazy" />
                 </div>
@@ -64,16 +66,17 @@ function ProductDetails() {
                         <h6 onClick={() => setHide(prev => !prev)} className={`text-sm/5.5 outfit text-secondary/65 ${hide ? 'line-clamp-3' : 'line-clamp-none'} cursor-pointer`}>{item.description}</h6>
                     </div>
                     <div className="flex gap-1 mb-5">
-                        <p className="text-[10px] mt-[1.5px]">Quantity</p>
+                        <p className="text-xs mt-[1.5px] font-medium">Quantity</p>
                         <div className="flex gap-2 w-fit">
-                            <button disabled={quantity === 1} type="submit" onClick={() => setQuantity(prev => prev - 1)} className="cursor-pointer"><RiArrowLeftSFill className="text-secondary" size={18} /></button>
-                            <span className="text-[10px] mt-0.5">{quantity}</span>
-                            <button type="submit" onClick={() => setQuantity(prev => prev + 1)} className="cursor-pointer"><RiArrowRightSFill className="text-secondary" size={18} /></button>
+                            <button disabled={quantity === 1} type="submit" onClick={() => setQuantity(prev => prev - 1)} className="cursor-pointer"><RiArrowLeftSFill className="text-secondary" size={20} /></button>
+                            <span className="text-xs mt-0.5">{quantity}</span>
+                            <button type="submit" onClick={() => setQuantity(prev => prev + 1)} className="cursor-pointer"><RiArrowRightSFill className="text-secondary" size={20} /></button>
                         </div>
                     </div>
                     <div className="flex gap-5 mb-1">
                         <button onClick={() => addToCart(product)} className="text-xs text-white uppercase font-medium border outfit border-primary/20 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-transparent hover:text-secondary hover:border-secondary/20 cursor-pointer transition-colors duration-300">Add to Cart</button>
-                        <button className="text-xs text-secondary outfit font-medium uppercase border border-secondary/20 bg-accent px-5 py-2.5 rounded-[3px] hover:bg-primary hover:text-white cursor-pointer hover:border-secondary/20 transition-colors duration-300">Buy Now</button>
+                        {/* <button className="text-xs text-secondary outfit font-medium uppercase border border-secondary/20 bg-accent px-5 py-2.5 rounded-[3px] hover:bg-primary hover:text-white cursor-pointer hover:border-secondary/20 transition-colors duration-300">Buy Now</button> */}
+                        <button onClick={() => addToWishlist(product)} className="text-xs text-secondary outfit font-medium uppercase border border-secondary/20 bg-accent px-5 py-2.5 rounded-[3px] hover:bg-primary hover:text-white cursor-pointer hover:border-secondary/20 transition-colors duration-300">Add to Wishlist</button>
                     </div>
                     <hr className="text-neutral-200 mt-4 mb-3" />
                     <div className="flex flex-col text-xs gap-1 outfit text-secondary/65 mb-1">
@@ -87,10 +90,17 @@ function ProductDetails() {
             <div className="flex flex-col gap-5 mt-4 mx-4 sm:mx-0">
                 <div className="flex flex-col">
                     <div className="flex text-xs outfit font-medium text-secondary ml-1">
-                        <button onClick={() => setTab('reviews')} className={`${tab === 'reviews' ? 'bg-accent' : ''} px-5 py-2 border-t border-x rounded-tl-[3px]  border-secondary/20 cursor-pointer`}>Reviews</button>
-                        <button onClick={() => setTab('addReview')} className={`${tab === 'addReview' ? 'bg-accent' : ''} px-5 py-2 border-t border-r rounded-tr-[3px] border-secondary/20 cursor-pointer`}>Write a review</button>
+                        <button onClick={() => setTab('relatedProducts')} className={`${tab === 'relatedProducts' ? 'bg-accent' : ''} px-5 py-2 border-t border-x rounded-tl-[3px]  border-secondary/20 cursor-pointer`}>Related Products</button>
+                        {/* <button onClick={() => setTab('addReview')} className={`${tab === 'addReview' ? 'bg-accent' : ''} px-5 py-2 border-t border-r rounded-tr-[3px] border-secondary/20 cursor-pointer`}>Write a review</button> */}
+                        <button onClick={() => setTab('reviews')} className={`${tab === 'reviews' ? 'bg-accent' : ''} px-5 py-2 border-t border-r rounded-tr-[3px] border-secondary/20 cursor-pointer`}>Reviews</button>
                     </div>
                     <hr className=" border-secondary/20" />
+
+                    {/* Review Sec */}
+                    {tab === 'relatedProducts' && <div className="flex flex-col gap-4 mb-4">
+                        <RelatedProducts category={item.category} id={item._id} />
+                    </div>}
+
 
                     {/* Review Sec */}
                     {tab === 'reviews' && <div className="flex flex-col gap-4 my-4">
@@ -145,9 +155,6 @@ function ProductDetails() {
 
             </div>
 
-            <>
-                <RelatedProducts category={item.category} id={item._id} />
-            </>
             <Newsletter />
         </div > : <div className='flex justify-center items-center min-h-100'><Loader /></div>
     )

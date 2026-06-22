@@ -1,13 +1,13 @@
 import { useContext, createContext, useEffect, useState } from "react"
 import { toast } from "sonner"
-import CartItem from '../components/CartItem'
 import { useAuth } from "./AuthContext"
+import CartItem from '../components/CartItem'
 
 const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
 
-    let API_URL = import.meta.env.VITE_API_URL
+    const API_URL = import.meta.env.VITE_API_URL
     const { user } = useAuth()
     const [quantity, setQuantity] = useState(1)
     const [loading, setLoading] = useState(true)
@@ -25,7 +25,7 @@ export const CartProvider = ({ children }) => {
             const data = await res.json()
 
             if (res.ok) {
-                setCart(data.items || [])
+                setCart(data.cart.items || [])
             }
         } catch (err) {
             console.error(err.message)
@@ -39,7 +39,7 @@ export const CartProvider = ({ children }) => {
             const existingCart = JSON.parse(localStorage.getItem('cart') || "[]")
             setCart(existingCart)
         } else {
-            
+
             const mergeCart = async () => {
                 try {
                     const cartItems = JSON.parse(
@@ -70,11 +70,12 @@ export const CartProvider = ({ children }) => {
 
                 } catch (err) {
                     console.error(err.message)
+                } finally {
+                    setLoading(false)
                 }
             }
 
             mergeCart()
-
         }
 
     }, [user])
@@ -105,8 +106,13 @@ export const CartProvider = ({ children }) => {
                     toast.info(data.message)
                 }
 
+                if (res.status === 401) {
+                    toast.error(data.message)
+                }
+
             } catch (err) {
                 console.error(err.message)
+                toast.error('Somthing went wrong !')
             }
 
             fetchCart()
@@ -149,6 +155,10 @@ export const CartProvider = ({ children }) => {
 
     const removeFromCart = async (id) => {
         if (user) {
+            setCart(cart =>
+                cart.filter(item => item.product._id !== id)
+            )
+
             try {
                 const res = await fetch(API_URL + `/api/cart/${id}`, {
                     method: 'DELETE',
@@ -157,17 +167,23 @@ export const CartProvider = ({ children }) => {
 
             } catch (err) {
                 console.error(err.message)
+                toast.error('Somthing went wrong !')
             }
 
-            fetchCart()
-
         } else {
-            setCart(prevCart => prevCart.filter(item => item.product._id !== id))
+            setCart(prevCart =>
+                prevCart.filter(item => item.product._id !== id)
+            )
         }
     }
 
     const increaseQuantity = async (id) => {
         if (user) {
+
+            setCart(prevCart =>
+                prevCart.map(item => item.product._id === id ? { ...item, quantity: item.quantity + 1 } : item)
+            )
+
             try {
                 const res = await fetch(API_URL + `/api/cart/${id}`, {
                     method: 'PATCH',
@@ -182,9 +198,8 @@ export const CartProvider = ({ children }) => {
 
             } catch (err) {
                 console.error(err.message)
+                toast.error('Somthing went wrong !')
             }
-
-            fetchCart()
 
         } else {
             setCart(prevCart => prevCart.map(item => item.product._id === id ? { ...item, quantity: item.quantity + 1 } : item))
@@ -193,6 +208,11 @@ export const CartProvider = ({ children }) => {
 
     const decreaseQuantity = async (id) => {
         if (user) {
+
+            setCart(prevCart =>
+                prevCart.map(item => item.product._id === id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item)
+            )
+
             try {
                 const res = await fetch(API_URL + `/api/cart/${id}`, {
                     method: 'PATCH',
@@ -207,12 +227,13 @@ export const CartProvider = ({ children }) => {
 
             } catch (err) {
                 console.error(err.message)
+                toast.error('Somthing went wrong !')
             }
 
-            fetchCart()
-
         } else {
-            setCart(prevCart => prevCart.map(item => item.product._id === id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item))
+            setCart(prevCart =>
+                prevCart.map(item => item.product._id === id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item)
+            )
         }
     }
 

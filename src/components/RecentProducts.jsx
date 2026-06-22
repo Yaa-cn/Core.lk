@@ -23,7 +23,7 @@ function RecentProducts() {
                     {!error ?
                         <div className='grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 sm:gap-6'>
                             {recentProducts}
-                        </div> : <div><p className='my-5 text-[tomato]'>{error}</p></div>}
+                        </div> : <div><p className='text-sm my-5 text-[tomato]'>{error}</p></div>}
                 </div>
             }
         </>

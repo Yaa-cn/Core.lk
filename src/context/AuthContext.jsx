@@ -7,9 +7,9 @@ export const AuthContext = createContext()
 export const AuthProvider = ({ children }) => {
 
     const API_URL = import.meta.env.VITE_API_URL
-    const navigate = useNavigate()
     const [loading, setLoading] = useState(true)
     const [user, setUser] = useState(null)
+    const navigate = useNavigate()
 
     useEffect(() => {
         checkAuth()
@@ -105,8 +105,9 @@ export const AuthProvider = ({ children }) => {
         }
     }
 
+
     return (
-        <AuthContext.Provider value={{ user, loading, setUser, registerUser, loginUser, logoutUser }}>
+        <AuthContext.Provider value={{ user, setUser, loading, registerUser, loginUser, logoutUser }}>
             {children}
         </AuthContext.Provider>
     )

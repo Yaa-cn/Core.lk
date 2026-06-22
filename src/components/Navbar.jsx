@@ -3,14 +3,16 @@ import { NavLink, Link, useLocation } from 'react-router-dom'
 import { RiCloseLine, RiMenu2Line, RiSearchLine, RiUserLine, RiHeartLine, RiShoppingCart2Line } from '@remixicon/react'
 import { useUi } from '../context/UiContext'
 import { useCart } from '../context/CartContext'
+import { useWishlist } from '../context/WishlistContext'
 
 function Navbar() {
 
   const [visible, setVisible] = useState(false)
   const [visibleSearchIcon, setVisibleSearchIcon] = useState(true)
   const { visibleSearchBar, setVisibleSearchBar } = useUi()
-  const location = useLocation()
   const { cart } = useCart()
+  const { wishlist } = useWishlist()
+  const location = useLocation()
 
   return (
     <>
@@ -26,7 +28,7 @@ function Navbar() {
         </div>
 
         <ul className='flex gap-5 sm:gap-6 no-underline'>
-          <li onClick={() => setVisible(false)} className='my-auto'><NavLink className='iconColor' to='/wishlist'><RiHeartLine size={18} /></NavLink></li>
+          <li onClick={() => setVisible(false)} className='my-auto relative'><NavLink className='iconColor' to='/wishlist'><RiHeartLine size={18} /><span className={`absolute justify-center items-center rounded-full w-4 h-4 text-[10px] text-white font-medium -right-3.25 -top-2.25 sm:-top-2.5 ${wishlist.length === 0 ? 'hidden' : 'flex'} ${location.pathname.includes('/wishlist') ? 'bg-black' : 'bg-primary'}`}>{wishlist.length}</span></NavLink></li>
           <li onClick={() => setVisible(false)} className='my-auto relative'><NavLink className='iconColor' to='/cart'><RiShoppingCart2Line size={18} /><span className={`absolute justify-center items-center rounded-full w-4 h-4 text-[10px] text-white font-medium -right-3.25 -top-2.25 sm:-top-2.5 ${cart.length === 0 ? 'hidden' : 'flex'} ${location.pathname.includes('/cart') ? 'bg-black' : 'bg-primary'}`}>{cart.length}</span></NavLink></li>
           <li onClick={() => setVisible(false)} className='my-auto'><NavLink className='iconColor' to='/profile'><RiUserLine size={18} /></NavLink></li>
           <div className='sm:hidden flex items-center gap-5'>

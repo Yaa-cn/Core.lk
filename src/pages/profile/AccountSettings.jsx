@@ -1,20 +1,26 @@
 import TitleBar from "../../components/TitleBar"
-import { useAuth } from "../../context/AuthContext"
 import { useRef } from "react"
+import { useAuth } from "../../context/AuthContext"
+import { useProfile } from "../../context/ProfileContext"
 
 function AccountSettings() {
 
-    const { user, setUser } = useAuth()
+    const { user, setUser, } = useAuth()
+    const { changeUserName } = useProfile()
+
 
     const nameInput = useRef()
     const emailInput = useRef()
-    const phoneInput = useRef()
 
     const handleSubmit = (e) => {
         e.preventDefault()
         setUser({
             name: nameInput.current.value,
             email: emailInput.current.value
+        })
+
+        changeUserName({
+            name: nameInput.current.value
         })
     }
 
