@@ -1,0 +1,180 @@
+@import "tailwindcss";
+@import "./styles/theme.css";
+
+@font-face {
+    font-family: nunito;
+    src: url('/src/assets/fonts/Nunito.woff2');
+    font-weight: 100 900;
+    font-display: block;
+}
+
+@font-face {
+    font-family: outfit;
+    src: url('/src/assets/fonts/Outfit.woff2');
+    font-weight: 100 900;
+    font-display: block;
+}
+
+:root {
+    --color-primary: #323031;
+    --color-secondary: #495057;
+    --color-light: #f8f9fa;
+    --color-accent: #e9ecef;
+    --color-gray: #d3d3d3;
+    --warning: #856404;
+    --danger: #c0392b;
+}
+
+body {
+    background-color: var(--color-light);
+    scroll-behavior: smooth;
+}
+
+.nunito {
+    font-family: 'nunito' !important;
+}
+
+.outfit {
+    font-family: 'outfit' !important;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.hideBar::-webkit-scrollbar {
+    display: none;
+}
+
+.showBar::-webkit-scrollbar {
+    display: block;
+}
+
+/* Navigation bar Sec */
+
+.activeLine {
+    position: relative;
+}
+
+.activeLine::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: -18px;
+    width: 0;
+    height: 2.5px;
+    background-color: var(--color-secondary);
+}
+
+.activeLine.active::after {
+    width: 100%;
+    transition: ease 0.3s;
+}
+
+.bottomLine:hover {
+    width: 100%;
+    transition: ease 0.3;
+}
+
+.iconColor.active {
+    color: var(--color-secondary);
+}
+
+
+/* Hero banner Sec */
+
+/* .heroCon {
+    background-color: #dfdbe5;
+    background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%23936639' fill-opacity='0.18' fill-rule='evenodd'/%3E%3C/svg%3E");
+    height: 100%;
+} */
+
+
+/* Category Sec */
+
+.categoryCardCon::-webkit-scrollbar {
+    height: 10px;
+}
+
+.categoryCardCon::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(to left, var(--color-accent), var(--color-secondary));
+    width: 250px;
+}
+
+
+/* Product card */
+
+.productCard img {
+    transition: ease-in 0.2s;
+}
+
+.productCard img:hover {
+    transform: scale(1.1);
+}
+
+.productCard .cardCat {
+    width: fit-content;
+    color: var(--color-secondary);
+}
+
+.productCard .cartBtn {
+    display: flex;
+    width: fit-content;
+    border: 1px solid var(--color-gray);
+    background-color: var(--color-accent);
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.productCard .cartBtn:hover {
+    transform: translate(2px);
+    transition: ease-in 0.3s;
+}
+
+@media (width >=640px) {
+    body.autoOverflow {
+        overflow: auto !important;
+    }
+}
+
+.center {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+}
+
+.orderList {
+    background-color: #f0f0f0;
+    background-image: url("data:image/svg+xml,%3Csvg width='84' height='48' viewBox='0 0 84 48' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h12v6H0V0zm28 8h12v6H28V8zm14-8h12v6H42V0zm14 0h12v6H56V0zm0 8h12v6H56V8zM42 8h12v6H42V8zm0 16h12v6H42v-6zm14-8h12v6H56v-6zm14 0h12v6H70v-6zm0-16h12v6H70V0zM28 32h12v6H28v-6zM14 16h12v6H14v-6zM0 24h12v6H0v-6zm0 8h12v6H0v-6zm14 0h12v6H14v-6zm14 8h12v6H28v-6zm-14 0h12v6H14v-6zm28 0h12v6H42v-6zm14-8h12v6H56v-6zm0-8h12v6H56v-6zm14 8h12v6H70v-6zm0 8h12v6H70v-6zM14 24h12v6H14v-6zm14-8h12v6H28v-6zM14 8h12v6H14V8zM0 8h12v6H0V8z' fill='%23ffffff' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E")
+}
+
+/* .slider-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+
+.slide {
+    display: flex;
+    width: max-content;
+    animation: slide 4s infinite linear;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+} */
+
+/* :root {
+    --color-primary: #936639;
+    --color-secondary: #b08968;
+    --color-light: #faf9f9;
+    --color-accent: #eee6dd;
+    --color-gray: #d3d3d3;
+} */
