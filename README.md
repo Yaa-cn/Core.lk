@@ -73,8 +73,7 @@ Database Configuration
 Environment Variables
 
 1. Copy the example environment file.
-2. cp .env.example .env
-3. Fill in the required values inside the ".env" file before starting the application.
+2. Fill in the required values inside the ".env" file before starting the application.
 
 ## Running the Project
 
@@ -102,6 +101,10 @@ Start the frontend
 - Order Management
 - User Profile
 - Admin Dashboard
+
+## Note
+
+The initial structure of the admin dashboard was AI-assisted. It has since been adapted and integrated with the existing Express.js backend, with changes made to the UI, components, routing, and business logic to align with the architecture and requirements of the Core.lk project.
 
 ## Authentication
 
