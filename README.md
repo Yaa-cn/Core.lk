@@ -1,10 +1,10 @@
-### Core.lk
+# Core.lk
 
 A modern full-stack MERN e-commerce application for purchasing computer accessories. Core.lk is built using MongoDB, Express.js, React, and Node.js with secure session-based authentication, responsive UI, and a complete shopping experience for customers and administrators.
 
 ## Features
 
-# Customer Features
+### Customer Features
 
 - User registration and login
 - Session-based authentication
@@ -23,7 +23,7 @@ A modern full-stack MERN e-commerce application for purchasing computer accessor
 - User profile management
 - Responsive design
 
-# Admin Features
+### Admin Features
 
 - Admin dashboard
 - Product management (CRUD)
@@ -33,7 +33,7 @@ A modern full-stack MERN e-commerce application for purchasing computer accessor
 
 ## Tech Stack
 
-# Frontend
+### Frontend
 
 - React
 - Vite
@@ -42,7 +42,7 @@ A modern full-stack MERN e-commerce application for purchasing computer accessor
 - Context API
 - Fetch API
 
-# Backend
+### Backend
 
 - Node.js
 - Express.js
@@ -55,22 +55,22 @@ A modern full-stack MERN e-commerce application for purchasing computer accessor
 
 Clone the repository
 
-# Install frontend dependencies
+### Install frontend dependencies
 
 cd client
 npm install
 
-# Install backend dependencies
+### Install backend dependencies
 
 cd ../server
 npm install
 
-# Database Configuration
+### Database Configuration
 
 Install MongoDB Community Edition and start the MongoDB services.
 Create a db and get connection string and use that in .env 
 
-# Environment Variables
+### Environment Variables
 
 Copy the example environment file.
 
@@ -78,7 +78,7 @@ cp .env.example .env
 
 Fill in the required values inside the ".env" file before starting the application.
 
-# Running the Project
+## Running the Project
 
 - Start the backend
 
