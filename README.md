@@ -55,40 +55,38 @@ A modern full-stack MERN e-commerce application for purchasing computer accessor
 
 Clone the repository
 
-### Install frontend dependencies
+Install frontend dependencies
 
-cd client
-npm install
+1. cd client
+2. npm install
 
-### Install backend dependencies
+Install backend dependencies
 
-cd ../server
-npm install
+1. cd ../server
+2. npm install
 
-### Database Configuration
+Database Configuration
 
-Install MongoDB Community Edition and start the MongoDB services.
-Create a db and get connection string and use that in .env 
+1. Install MongoDB Community Edition and start the MongoDB services.
+2. Create a db and get connection string and use that in .env 
 
-### Environment Variables
+Environment Variables
 
-Copy the example environment file.
-
-cp .env.example .env
-
-Fill in the required values inside the ".env" file before starting the application.
+1. Copy the example environment file.
+2. cp .env.example .env
+3. Fill in the required values inside the ".env" file before starting the application.
 
 ## Running the Project
 
-- Start the backend
+Start the backend
 
-cd server
-npm run dev
+1. cd server
+2. npm run dev
 
-- Start the frontend
+Start the frontend
 
-cd client
-npm run dev
+1. cd client
+2. npm run dev
 
 ## Main Modules
 
