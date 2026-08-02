@@ -5,12 +5,13 @@ import { useState } from 'react'
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { RiEyeLine, RiEyeOffLine } from '@remixicon/react'
+import { BeatLoader } from 'react-spinners'
 
 function LoginPage() {
 
     const navigate = useNavigate()
     const location = useLocation()
-    const { loginUser, user, loading } = useAuth()
+    const { loginUser, user, loading,loginLoading } = useAuth()
     const [formData, setFormData] = useState({ email: "", password: "" })
     const [inputType, setInputType] = useState("password")
 
@@ -54,7 +55,7 @@ function LoginPage() {
 
                     <p className='text-xs text-secondary cursor-pointer hover:text-primary/60 transition-colors ml-auto'>Forget password ? </p>
 
-                    <button type='submit' className='text-xs text-white uppercase font-medium border outfit border-primary/50 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-transparent hover:text-secondary hover:border-secondary/50 cursor-pointer transition-colors duration-300'>Login</button>
+                    <button type='submit' className='text-xs text-white uppercase font-medium border outfit border-primary/50 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-transparent hover:text-secondary hover:border-secondary/50 cursor-pointer transition-colors duration-300'>{loginLoading ? <BeatLoader size={6} color="#ffffff" /> : 'Login'}</button>
 
                     <p className='text-xs text-secondary cursor-pointer'>Don't you have an account ? <span className='cursor-pointer hover:text-primary/60 transition-colors'><Link to={'/register'}>Register</Link></span> </p>
 

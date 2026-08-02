@@ -17,9 +17,10 @@ import LoginPage from '../pages/LoginPage'
 import RegisterPage from '../pages/RegisterPage'
 import Checkout from '../pages/Checkout'
 import OrderStatus from '../pages/OrderStatus'
-import ProtectedRoute from './ProtectedRoute'
+// import ProtectedRoute from './ProtectedRoute'
 
 const App = lazy(() => import('../App'))
+const ProtectedRoute = lazy(() => import('./ProtectedRoute'))
 
 const router = createBrowserRouter([
   {
@@ -47,7 +48,10 @@ const router = createBrowserRouter([
       },
       {
         path: '/profile',
-        element: <ProtectedRoute><Profile /></ProtectedRoute>,
+        element:
+          <Suspense fallback={<div className='flex justify-center items-center h-dvh'><Loader /></div>}>
+            <ProtectedRoute><Profile/></ProtectedRoute>
+          </Suspense>,
         children: [
           {
             index: true,
@@ -106,7 +110,7 @@ const router = createBrowserRouter([
 
 function Routes() {
   return (
-      <RouterProvider router={router} />
+    <RouterProvider router={router} />
   )
 }
 export default Routes

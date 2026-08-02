@@ -7,7 +7,9 @@ export const AuthContext = createContext()
 export const AuthProvider = ({ children }) => {
 
     const API_URL = import.meta.env.VITE_API_URL
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
+    const [loginLoading, setLoginLoading] = useState(false)
+    const [registerLoading, setRegisterLoading] = useState(false)
     const [user, setUser] = useState(null)
     const navigate = useNavigate()
 
@@ -39,6 +41,7 @@ export const AuthProvider = ({ children }) => {
 
     const registerUser = async (formData) => {
         try {
+            setRegisterLoading(true)
             const res = await fetch(API_URL + '/api/auth/register', {
                 method: 'POST',
                 headers: {
@@ -59,11 +62,14 @@ export const AuthProvider = ({ children }) => {
 
         } catch (err) {
             toast.error('Something went wrong !')
+        } finally {
+            setRegisterLoading(false)
         }
     }
 
     const loginUser = async (formData) => {
         try {
+            setLoginLoading(true)
             const res = await fetch(API_URL + '/api/auth/login', {
                 method: 'POST',
                 headers: {
@@ -79,7 +85,7 @@ export const AuthProvider = ({ children }) => {
 
             if (data.success) {
                 setUser(data.user)
-                toast.success(data.message)
+                // toast.success(data.message)
             } else {
                 setUser(null)
                 toast.error(data.message)
@@ -87,6 +93,8 @@ export const AuthProvider = ({ children }) => {
 
         } catch (err) {
             toast.error('Something went wrong !')
+        } finally {
+            setLoginLoading(false)
         }
     }
 
@@ -108,7 +116,7 @@ export const AuthProvider = ({ children }) => {
 
 
     return (
-        <AuthContext.Provider value={{ user, setUser, loading, registerUser, loginUser, logoutUser }}>
+        <AuthContext.Provider value={{ user, setUser, loading, registerUser, loginUser, logoutUser, loginLoading, registerLoading }}>
             {children}
         </AuthContext.Provider>
     )
