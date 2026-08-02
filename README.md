@@ -7,7 +7,7 @@ A modern full-stack MERN e-commerce application for purchasing computer accessor
 ### Customer Features
 
 - User registration and login
-- Session-based authentication
+- Session based authentication
 - Browse products by category
 - Product search
 - Product filtering and sorting
@@ -57,13 +57,17 @@ Clone the repository
 
 Install frontend dependencies
 
-1. cd client
-2. npm install
+```powershell
+cd client
+npm install
+```
 
 Install backend dependencies
 
-1. cd ../server
-2. npm install
+```powershell
+cd server
+npm install
+```
 
 Database Configuration
 
@@ -79,13 +83,17 @@ Environment Variables
 
 Start the backend
 
-1. cd server
-2. npm run dev
+```powershell
+cd server
+npm run dev
+```
 
 Start the frontend
 
-1. cd client
-2. npm run dev
+```powershell
+cd client
+npm run dev
+```
 
 ## Main Modules
 
@@ -104,7 +112,7 @@ Start the frontend
 
 ## Note
 
-The initial structure of the admin dashboard was AI-assisted. It has since been adapted and integrated with the existing Express.js backend, with changes made to the UI, components, routing, and business logic to align with the architecture and requirements of the Core.lk project.
+The initial structure of the admin dashboard was AI assisted. I then adapted and integrated it with the existing Express.js backend that I created, updating the UI, components, routing, and business logic to align with the architecture and requirements of the Core.lk project.
 
 ## Authentication
 
