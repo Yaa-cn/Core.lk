@@ -1,5 +1,4 @@
 import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
-import { Suspense, lazy } from 'react'
 import Home from '../pages/Home'
 import Shop from '../pages/Shop'
 import About from '../pages/About'
@@ -17,18 +16,13 @@ import LoginPage from '../pages/LoginPage'
 import RegisterPage from '../pages/RegisterPage'
 import Checkout from '../pages/Checkout'
 import OrderStatus from '../pages/OrderStatus'
-// import ProtectedRoute from './ProtectedRoute'
-
-const App = lazy(() => import('../App'))
-const ProtectedRoute = lazy(() => import('./ProtectedRoute'))
+import ProtectedRoute from './ProtectedRoute'
+import App from '../App'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element:
-      <Suspense fallback={<div className='flex justify-center items-center h-dvh'><Loader /></div>} >
-        <App />
-      </Suspense>,
+    element: <App />,
     children: [
       {
         path: '/',
@@ -48,10 +42,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/profile',
-        element:
-          <Suspense fallback={<div className='flex justify-center items-center h-dvh'><Loader /></div>}>
-            <ProtectedRoute><Profile/></ProtectedRoute>
-          </Suspense>,
+        element: <ProtectedRoute><Profile /></ProtectedRoute>,
         children: [
           {
             index: true,

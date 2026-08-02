@@ -57,13 +57,41 @@ router.post("/auth/login", async (req, res) => {
 })
 
 router.get('/auth/check', async (req, res) => {
-    try {
-        const user = await User.findById(req.session.userId).select("-_id name email role")
-        res.status(200).json({ success: true, user })
-    } catch (err) {
-        res.status(500).json({ success: false, message: err.message })
+  try {
+    if (!req.session?.userId) {
+      return res.status(401).json({
+        success: false,
+        message: 'Not authenticated'
+      })
     }
+
+    const user = await User.findById(req.session.userId)
+      .select('name email role')
+
+    if (!user) {
+      return res.status(401).json({
+        success: false,
+        message: 'User not found'
+      })
+    }
+
+    return res.status(200).json({ success: true, user })
+  } catch (err) {
+    return res.status(500).json({
+      success: false,
+      message: 'Internal server error'
+    })
+  }
 })
+
+// router.get('/auth/check', async (req, res) => {
+//     try {
+//         const user = await User.findById(req.session.userId).select("-_id name email role")
+//         res.status(200).json({ success: true, user })
+//     } catch (err) {
+//         res.status(500).json({ success: false, message: err.message })
+//     }
+// })
 
 router.post('/auth/logout', (req, res) => {
     req.session.destroy(err => {

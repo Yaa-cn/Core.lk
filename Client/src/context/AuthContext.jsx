@@ -7,37 +7,30 @@ export const AuthContext = createContext()
 export const AuthProvider = ({ children }) => {
 
     const API_URL = import.meta.env.VITE_API_URL
-    const [loading, setLoading] = useState(false)
+    const [authCheckLoading, setAuthCheckLoading] = useState(true)
     const [loginLoading, setLoginLoading] = useState(false)
     const [registerLoading, setRegisterLoading] = useState(false)
     const [user, setUser] = useState(null)
     const navigate = useNavigate()
 
     useEffect(() => {
+        const checkAuth = async () => {
+            try {
+                const res = await fetch(API_URL + '/api/auth/check', {
+                    credentials: 'include'
+                })
+
+                const data = await res.json()
+                setUser(data.user ?? null)
+
+            } catch (err) {
+                setUser(null)
+            } finally {
+                setAuthCheckLoading(false)
+            }
+        }
         checkAuth()
     }, [])
-
-    const checkAuth = async () => {
-        try {
-            setLoading(true)
-            const res = await fetch(API_URL + '/api/auth/check', {
-                credentials: 'include'
-            })
-
-            const data = await res.json()
-
-            if (data.success) {
-                setUser(data.user)
-            } else {
-                setUser(null)
-            }
-
-        } catch (err) {
-            console.error(err.message)
-        } finally {
-            setLoading(false)
-        }
-    }
 
     const registerUser = async (formData) => {
         try {
@@ -116,7 +109,7 @@ export const AuthProvider = ({ children }) => {
 
 
     return (
-        <AuthContext.Provider value={{ user, setUser, loading, registerUser, loginUser, logoutUser, loginLoading, registerLoading }}>
+        <AuthContext.Provider value={{ user, setUser, authCheckLoading, registerUser, loginUser, logoutUser, loginLoading, registerLoading }}>
             {children}
         </AuthContext.Provider>
     )
