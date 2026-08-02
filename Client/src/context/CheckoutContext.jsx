@@ -10,7 +10,7 @@ export const CheckoutContext = createContext()
 export const CheckoutProvider = ({ children }) => {
 
     const API_URL = import.meta.env.VITE_API_URL
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState(false)
     const { getItems } = useProducts()
     const { setCart, fetchCart } = useCart()
     const { getOrders } = useOrders()
@@ -18,6 +18,7 @@ export const CheckoutProvider = ({ children }) => {
 
     const checkout = async (formData) => {
         try {
+            setLoading(true)
             const res = await fetch(API_URL + '/api/orders', {
                 method: 'POST',
                 headers: {

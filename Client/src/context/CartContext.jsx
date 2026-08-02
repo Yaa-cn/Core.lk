@@ -12,6 +12,7 @@ export const CartProvider = ({ children }) => {
     const { user } = useAuth()
     const [quantity, setQuantity] = useState(1)
     const [loading, setLoading] = useState(true)
+    const [addCartLoading, setAddCartLoading] = useState(null)
     const { orders } = useOrders()
     const [cart, setCart] = useState(() => {
         const data = localStorage.getItem('cart')
@@ -86,20 +87,21 @@ export const CartProvider = ({ children }) => {
     const addToCart = async (product) => {
         if (user) {
 
-            setCart(prevCart => {
-                const exist = prevCart.find(item => item.product._id === product._id)
-                if (exist) {
-                    return [...prevCart]
-                }
+            // setCart(prevCart => {
+            //     const exist = prevCart.find(item => item.product._id === product._id)
+            //     if (exist) {
+            //         return [...prevCart]
+            //     }
 
-                if (quantity > product.stock) {
-                    return [...prevCart]
-                }
+            //     if (quantity > product.stock) {
+            //         return [...prevCart]
+            //     }
 
-                return [...prevCart, { product, quantity: quantity }]
-            })
+            //     return [...prevCart, { product, quantity: quantity }]
+            // })
 
             try {
+                setAddCartLoading(product._id)
                 const res = await fetch(API_URL + '/api/cart', {
                     method: 'POST',
                     credentials: 'include',
@@ -115,6 +117,7 @@ export const CartProvider = ({ children }) => {
                 const data = await res.json()
 
                 if (data.success) {
+                    setCart(prev => [...prev, { product, quantity: quantity }])
                     toast.success(data.message)
                 }
 
@@ -133,6 +136,8 @@ export const CartProvider = ({ children }) => {
             } catch (err) {
                 console.error(err.message)
                 toast.error('Somthing went wrong !')
+            } finally {
+                setAddCartLoading(null)
             }
 
 
@@ -296,7 +301,7 @@ export const CartProvider = ({ children }) => {
 
 
     return (
-        <CartContext.Provider value={{ cart, setCart, loading, quantity, setQuantity, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, subTotal, total, shippingFee, cartItems, fetchCart }}>
+        <CartContext.Provider value={{ cart, setCart, loading, quantity, setQuantity, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, subTotal, total, shippingFee, cartItems, fetchCart, addCartLoading }}>
             {children}
         </CartContext.Provider>
     )

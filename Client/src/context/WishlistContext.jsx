@@ -10,6 +10,7 @@ export const WishlistProvider = ({ children }) => {
     const API_URL = import.meta.env.VITE_API_URL
     const { user } = useAuth()
     const [loading, setLoading] = useState(true)
+    const [addWishlistLoading, setAddWishlistLoading] = useState(null)
     const [wishlist, setWishlist] = useState([])
 
     const fetchWishlist = async () => {
@@ -49,6 +50,7 @@ export const WishlistProvider = ({ children }) => {
     const addToWishlist = async (product) => {
         if (user) {
             try {
+                setAddWishlistLoading(product._id)
                 const res = await fetch(API_URL + '/api/wishlist', {
                     method: 'POST',
                     credentials: 'include',
@@ -63,6 +65,7 @@ export const WishlistProvider = ({ children }) => {
                 const data = await res.json()
 
                 if (res.ok) {
+                    setWishlist(prev => [...prev, { product }])
                     toast.success(data.message)
                 }
 
@@ -77,9 +80,11 @@ export const WishlistProvider = ({ children }) => {
             } catch (err) {
                 console.error(err.message)
                 toast.error('Somthing went wrong !')
+            } finally {
+                setAddWishlistLoading(null)
             }
 
-            fetchWishlist()
+            // fetchWishlist()
         } else {
             toast.info('Login required !')
         }
@@ -119,7 +124,7 @@ export const WishlistProvider = ({ children }) => {
 
 
     return (
-        <WishlistContext.Provider value={{ wishlist, loading, addToWishlist, removeFromWishlist, wishlistItems }}>
+        <WishlistContext.Provider value={{ wishlist, loading, addToWishlist, removeFromWishlist, wishlistItems, addWishlistLoading }}>
             {children}
         </WishlistContext.Provider>
     )

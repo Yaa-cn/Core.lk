@@ -13,6 +13,7 @@ import { useProducts } from "../context/ProductsContext"
 import { useLocation } from "react-router-dom"
 import { useWishlist } from "../context/WishlistContext"
 import { useOrders } from "../context/OrdersContext"
+import { BeatLoader } from "react-spinners"
 
 function ProductDetails() {
 
@@ -20,9 +21,9 @@ function ProductDetails() {
     const [loaded, setLoaded] = useState(false)
     const [tab, setTab] = useState('relatedProducts')
     const { items } = useProducts()
-    const { addToCart, quantity, setQuantity } = useCart()
+    const { addToCart, quantity, setQuantity, addCartLoading } = useCart()
     const { slug } = useParams()
-    const { addToWishlist } = useWishlist()
+    const { addToWishlist, addWishlistLoading } = useWishlist()
     const { reviews, getReviews, reviewsLoading } = useOrders()
     const location = useLocation()
 
@@ -103,9 +104,9 @@ function ProductDetails() {
                         </div>
                     </div>
                     <div className="flex gap-5 mb-1">
-                        <button onClick={() => addToCart(product)} className="text-xs text-white uppercase font-medium border outfit border-primary/20 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-transparent hover:text-secondary hover:border-secondary/20 cursor-pointer transition-colors duration-300">Add to Cart</button>
+                        <button onClick={() => addToCart(product)} className="text-xs text-white w-30 uppercase font-medium border outfit border-primary/20 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-transparent hover:text-secondary hover:border-secondary/20 cursor-pointer transition-colors duration-300">{addCartLoading === product._id ? <BeatLoader size={6} color="#ffffff" /> : 'Add to Cart'}</button>
                         {/* <button className="text-xs text-secondary outfit font-medium uppercase border border-secondary/20 bg-accent px-5 py-2.5 rounded-[3px] hover:bg-primary hover:text-white cursor-pointer hover:border-secondary/20 transition-colors duration-300">Buy Now</button> */}
-                        <button onClick={() => addToWishlist(product)} className="text-xs text-secondary outfit font-medium uppercase border border-secondary/20 bg-accent px-5 py-2.5 rounded-[3px] hover:bg-primary hover:text-white cursor-pointer hover:border-secondary/20 transition-colors duration-300">Add to Wishlist</button>
+                        <button onClick={() => addToWishlist(product)} className="text-xs text-secondary w-36 outfit font-medium uppercase border border-secondary/20 bg-accent px-5 py-2.5 rounded-[3px] hover:bg-primary hover:text-white cursor-pointer hover:border-secondary/20 transition-colors duration-300">{addWishlistLoading === product._id ? <BeatLoader size={6} color="#323031" /> : 'Add to Wishlist'}</button>
                     </div>
                     <hr className="text-neutral-200 mt-4 mb-3" />
                     <div className="flex flex-col text-xs gap-1 outfit text-secondary/65 mb-1">
@@ -119,7 +120,7 @@ function ProductDetails() {
             <div className="flex flex-col gap-5 mt-4 mx-4 sm:mx-0">
                 <div className="flex flex-col">
                     <div className="flex text-xs outfit font-medium text-secondary ml-1">
-                        <button onClick={() => setTab('relatedProducts')} className={`${tab === 'relatedProducts' ? 'bg-accent' : ''} px-5 py-2 border-t border-x rounded-tl-[3px]  border-secondary/20 cursor-pointer`}>Related Products</button>
+                        <button onClick={() => setTab('relatedProducts')} className={`${tab === 'relatedProducts' ? 'bg-accent' : ''} px-5 py-2 border-t border-x rounded-tl-[3px] border-secondary/20 cursor-pointer`}>Related Products</button>
                         {/* <button onClick={() => setTab('addReview')} className={`${tab === 'addReview' ? 'bg-accent' : ''} px-5 py-2 border-t border-r rounded-tr-[3px] border-secondary/20 cursor-pointer`}>Write a review</button> */}
                         <button onClick={() => { setTab('reviews'); getReviews(item._id) }} className={`${tab === 'reviews' ? 'bg-accent' : ''} px-5 py-2 border-t border-r rounded-tr-[3px] border-secondary/20 cursor-pointer`}>Reviews</button>
                     </div>

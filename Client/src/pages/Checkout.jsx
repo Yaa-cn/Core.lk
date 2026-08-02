@@ -6,6 +6,7 @@ import { useAuth } from '../context/AuthContext'
 import { toast } from 'sonner'
 import { useProfile } from '../context/ProfileContext'
 import { useCheckout } from '../context/CheckoutContext'
+import { BeatLoader } from 'react-spinners'
 import TitleBar from '../components/TitleBar'
 import Loader from '../components/Loader'
 
@@ -14,6 +15,7 @@ function Checkout() {
     const [paymentMethod, setPaymentMethod] = useState('cashOnDelivery')
     const [buttonLable, setButtonLabel] = useState('Complete Order')
     const [disabled, setDisabled] = useState(false)
+    const [checkoutLoading, setCheckoutLoading] = useState(false)
     const { cart, setCart, loading, subTotal, total, shippingFee, cartItems } = useCart()
     const { addresses, checkoutAddress, setCheckoutAddress } = useProfile()
     const { checkout, loading: isLoading } = useCheckout()
@@ -42,8 +44,11 @@ function Checkout() {
     const fname = nameArray[0]
     const lname = nameArray[1]
 
+
     const checkoutPayhere = async () => {
         try {
+
+            setCheckoutLoading(true)
 
             if (nameInput.current.value === '', phoneInput.current.value === '', addressInput.current.value === '', cityInput.current.value === '', districtInput.current.value === '') {
                 toast.info("Form fields cannot be empty !")
@@ -109,6 +114,8 @@ function Checkout() {
 
         } catch (error) {
             console.error(error)
+        } finally {
+            setCheckoutLoading(false)
         }
     }
 
@@ -124,7 +131,7 @@ function Checkout() {
             paymentMethod: payMethod
         })
         setDisabled(true)
-        isLoading && setButtonLabel('Completing ....')
+        // isLoading && setButtonLabel(<BeatLoader size={6} color="#ffffff" />)
     }
 
     return (
@@ -258,7 +265,7 @@ function Checkout() {
                         <span>LKR {total.toFixed(2)}</span>
                     </div>
 
-                    <button onClick={() => { paymentMethod === 'cashOnDelivery' ? handleCompleteOrder() : checkoutPayhere() }} disabled={disabled} className='mt-6 ml-auto bg-primary outfit border border-secondary/50 rounded-[3px] text-xs text-white uppercase font-medium px-5 py-2.5 hover:bg-secondary w-40 cursor-pointer transition-colors duration-300'>{buttonLable}</button>
+                    <button onClick={() => { paymentMethod === 'cashOnDelivery' ? handleCompleteOrder() : checkoutPayhere() }} disabled={disabled} className='mt-6 ml-auto bg-primary outfit border border-secondary/50 rounded-[3px] text-xs text-white uppercase font-medium px-5 py-2.5 hover:bg-secondary w-40 cursor-pointer transition-colors duration-300'>{isLoading || checkoutLoading ? <BeatLoader size={6} color="#ffffff" /> : 'Complete Order'}</button>
 
                 </div>
 

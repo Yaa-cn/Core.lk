@@ -3,13 +3,14 @@ import { RiHeartFill, RiStarFill } from "@remixicon/react"
 import { useWishlist } from "../context/WishlistContext"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { useState } from "react"
+import { PuffLoader } from "react-spinners"
 
 function ProductCard({ slug, imgSrc, category, name, price, rating, item }) {
 
   const [loaded, setLoaded] = useState(false)
   const location = useLocation()
   const navigate = useNavigate()
-  const { addToWishlist } = useWishlist()
+  const { addToWishlist, addWishlistLoading } = useWishlist()
 
   const product = {
     ...item
@@ -32,7 +33,7 @@ function ProductCard({ slug, imgSrc, category, name, price, rating, item }) {
 
         <div className="flex justify-between">
           <p className={`text-xs ${location.pathname.includes('/shop') ? 'xl:text-xs' : 'xl:text-sm'} font-medium my-auto`}>{price} LKR</p>
-          <button onClick={() => addToWishlist(product)} className='rounded-full bg-accent w-7 sm:w-8 h-7 sm:h-8 border border-secondary/20 cursor-pointer hover:bg-secondary/30 hover:text-white transition ease-in duration-200'><RiHeartFill className="m-auto w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" /></button>
+          <button onClick={() => addToWishlist(product)} className='rounded-full bg-accent w-7 sm:w-8 h-7 sm:h-8 border border-secondary/20 cursor-pointer hover:bg-secondary/30 hover:text-white transition ease-in duration-200'>{addWishlistLoading === item._id ? <PuffLoader size={19} color="#323031" className="ml-1.5 mb-px" /> : <RiHeartFill className="m-auto w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />}</button>
         </div>
       </div>
     </div>
