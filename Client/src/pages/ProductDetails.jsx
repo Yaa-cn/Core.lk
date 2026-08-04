@@ -26,6 +26,7 @@ function ProductDetails() {
     const { addToWishlist, addWishlistLoading } = useWishlist()
     const { reviews, getReviews, reviewsLoading } = useOrders()
     const location = useLocation()
+    const [disabled, setDisabled] = useState(false)
 
     useEffect(() => {
         setQuantity(1)
@@ -104,9 +105,9 @@ function ProductDetails() {
                         </div>
                     </div>
                     <div className="flex gap-5 mb-1">
-                        <button onClick={() => addToCart(product)} className="text-xs text-white w-30 uppercase font-medium border outfit border-primary/20 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-transparent hover:text-secondary hover:border-secondary/20 cursor-pointer transition-colors duration-300">{addCartLoading === product._id ? <BeatLoader size={6} color="#ffffff" /> : 'Add to Cart'}</button>
+                        <button onClick={() => addToCart(product)} disabled={addCartLoading} className="text-xs text-white w-30 uppercase font-medium border outfit border-primary/20 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-primary/90 cursor-pointer transition-colors duration-300">{addCartLoading === product._id ? <BeatLoader size={6} color="#ffffff" /> : 'Add to Cart'}</button>
                         {/* <button className="text-xs text-secondary outfit font-medium uppercase border border-secondary/20 bg-accent px-5 py-2.5 rounded-[3px] hover:bg-primary hover:text-white cursor-pointer hover:border-secondary/20 transition-colors duration-300">Buy Now</button> */}
-                        <button onClick={() => addToWishlist(product)} className="text-xs text-secondary w-36 outfit font-medium uppercase border border-secondary/20 bg-accent px-5 py-2.5 rounded-[3px] hover:bg-primary hover:text-white cursor-pointer hover:border-secondary/20 transition-colors duration-300">{addWishlistLoading === product._id ? <BeatLoader size={6} color="#323031" /> : 'Add to Wishlist'}</button>
+                        <button onClick={() => addToWishlist(product)} disabled={addWishlistLoading} className="text-xs text-secondary w-36 outfit font-medium uppercase border border-secondary/20 bg-accent px-5 py-2.5 rounded-[3px] hover:bg-primary/10 cursor-pointer transition-colors duration-300">{addWishlistLoading === product._id ? <BeatLoader size={6} color="#323031" /> : 'Add to Wishlist'}</button>
                     </div>
                     <hr className="text-neutral-200 mt-4 mb-3" />
                     <div className="flex flex-col text-xs gap-1 outfit text-secondary/65 mb-1">

@@ -58,7 +58,7 @@ function RegisterPage() {
 
           <button
             type='submit'
-            className='text-xs text-white uppercase mt-2 font-medium border outfit border-primary/50 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-transparent hover:text-secondary hover:border-secondary/50 cursor-pointer transition-colors duration-300'>{registerLoading ? <BeatLoader size={6} color="#ffffff" /> : 'Register'}</button>
+            className='text-xs text-white uppercase mt-2 font-medium border outfit border-primary/50 bg-primary px-5 py-2.5 rounded-[3px] hover:bg-primary/90 cursor-pointer transition-colors duration-300'>{registerLoading ? <BeatLoader size={6} color="#ffffff" /> : 'Register'}</button>
 
           <p className='text-xs text-secondary cursor-pointer'>Already have an account ? <span className='cursor-pointer hover:text-primary/60 transition-colors'><Link to={'/login'}>Login</Link></span> </p>
 

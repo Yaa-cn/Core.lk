@@ -33,7 +33,7 @@ function ProductCard({ slug, imgSrc, category, name, price, rating, item }) {
 
         <div className="flex justify-between">
           <p className={`text-xs ${location.pathname.includes('/shop') ? 'xl:text-xs' : 'xl:text-sm'} font-medium my-auto`}>{price} LKR</p>
-          <button onClick={() => addToWishlist(product)} className='rounded-full bg-accent w-7 sm:w-8 h-7 sm:h-8 border border-secondary/20 cursor-pointer hover:bg-secondary/30 hover:text-white transition ease-in duration-200'>{addWishlistLoading === item._id ? <RiHeartFill className="m-auto w-3.5 h-3.5 animate-pulse sm:w-4 sm:h-4 text-primary" /> : <RiHeartFill className="m-auto w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />}</button>
+          <button onClick={() => addToWishlist(product)} disabled={addWishlistLoading} className='rounded-full bg-accent w-7 sm:w-8 h-7 sm:h-8 border border-secondary/20 cursor-pointer hover:bg-secondary/30 hover:text-white transition ease-in duration-200'>{addWishlistLoading === item._id ? <RiHeartFill className="m-auto w-3.5 h-3.5 animate-pulse sm:w-4 sm:h-4 text-primary" /> : <RiHeartFill className="m-auto w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />}</button>
         </div>
       </div>
     </div>

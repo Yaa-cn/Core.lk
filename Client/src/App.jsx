@@ -16,10 +16,12 @@ function App() {
   return (
     <>
       <MainProvider>
+        <div className='flex flex-col min-h-screen'>
         <Navbar />
         <Toast />
-        <Outlet />
+        <div className='flex-1'><Outlet /></div>
         <Footer />
+        </div>
       </MainProvider>
     </>
   )

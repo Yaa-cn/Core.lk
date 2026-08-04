@@ -119,7 +119,7 @@ function Addresses() {
         <div>
             <div className="flex items-center ">
                 <TitleBar secText={'Addresses'} showLine />
-                <button onClick={() => setVisibleAddAddress(true)} className="px-4 py-2 border ml-auto border-secondary/20 rounded-[3px] w-fit bg-primary text-[10px] sm:text-xs font-medium text-white outfit uppercase cursor-pointer hover:bg-accent hover:text-secondary transition-colors">+ Add address</button>
+                <button onClick={() => setVisibleAddAddress(true)} className="px-4 py-2 border ml-auto border-secondary/20 rounded-[3px] w-fit bg-primary text-[10px] sm:text-xs font-medium text-white outfit uppercase cursor-pointer hover:bg-accent hover:text-secondary transition-colors ease-in duration-200">+ Add address</button>
             </div>
 
             {loading ? <div className="flex justify-center items-center mt-20 mb-20"><Loader /></div> :
@@ -199,7 +199,7 @@ function Addresses() {
                         <p className="text-xs text-secondary ">Set this as my default address</p>
                     </div>
 
-                    <input type="submit" value={'Add Address'} className="px-4 py-2.5 border border-secondary/20 rounded-[3px] w-fit bg-primary text-[10px] sm:text-xs font-medium text-white outfit uppercase cursor-pointer hover:bg-accent hover:text-secondary transition-colors" />
+                    <input type="submit" value={'Add Address'} className="px-4 py-2.5 border border-secondary/20 rounded-[3px] w-fit bg-primary text-[10px] sm:text-xs font-medium text-white outfit uppercase cursor-pointer hover:bg-accent hover:text-secondary transition-colors ease-in duration-200" />
                 </form>
 
             </Modal>
@@ -252,7 +252,7 @@ function Addresses() {
                         <p className="text-xs text-secondary ">Set this as my default address</p>
                     </div>
 
-                    <input type="submit" value={'Save Changes'} className="px-4 py-2.5 border border-secondary/20 rounded-[3px] w-fit bg-primary text-[10px] sm:text-xs font-medium text-white outfit uppercase cursor-pointer hover:bg-accent hover:text-secondary transition-colors" />
+                    <input type="submit" value={'Save Changes'} className="px-4 py-2.5 border border-secondary/20 rounded-[3px] w-fit bg-primary text-[10px] sm:text-xs font-medium text-white outfit uppercase cursor-pointer hover:bg-accent hover:text-secondary transition-colors ease-in duration-200" />
                 </form>
 
             </Modal>

@@ -40,7 +40,7 @@ function AccountSettings() {
                     <input ref={emailInput} type="email" placeholder="Email" disabled name="email" value={user.email} className="text-xs text-primary/40 px-4 py-2.5 border border-secondary/20 rounded-xs max-w-120 w-full outline-none" />
                 </div>
 
-                <input type="submit" value={'Save Changes'} className="mt-2 px-4 py-2.5 border border-secondary/50 rounded-[3px] w-fit bg-primary text-[10px] sm:text-xs font-medium text-white outfit uppercase cursor-pointer hover:bg-accent hover:text-secondary transition-colors" />
+                <input type="submit" value={'Save Changes'} className="mt-2 px-4 py-2.5 border border-secondary/50 rounded-[3px] w-fit bg-primary text-[10px] sm:text-xs font-medium text-white outfit uppercase cursor-pointer hover:bg-accent hover:text-secondary transition-colors ease-in duration-200" />
             </form>
         </div>
     )
